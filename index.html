@@ -752,7 +752,7 @@
 </head>
 <body>
     <!-- Navegación -->
-    <nav>
+    <nav class="main-nav">
         <div class="nav-container">
             <div class="logo">
                 <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdC
@@ -1226,7 +1226,7 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
             <p class="subtitle">Descubre la isla en total libertad con nuestra furgoneta camper Ford Transit totalmente equipada</p>
             <p>Reserva de forma segura a través de Yescapa, plataforma líder europea en alquiler de autocaravanas</p>
             <div class="hero-buttons">
-                <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Hero - Ver disponibilidad'});">
                     Ver disponibilidad en Yescapa (reserva segura)
                 </a>
                 <div class="secure-badge">
@@ -1330,7 +1330,7 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
             </div>
 
             <div class="text-center mt-40">
-                <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'Vehiculo - Consultar fechas'});">
                     Consultar Fechas Disponibles
                 </a>
                 <p style="margin-top: 15px; color: #666; font-size: 14px;">
@@ -1345,7 +1345,7 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
         <div class="container">
             <h2>¿Listo para tu Aventura en Gran Canaria?</h2>
             <p>Reserva ahora de forma segura en Yescapa y empieza a planificar tu ruta por la isla</p>
-            <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener noreferrer" class="btn btn-white">
+            <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener noreferrer" class="btn btn-white" onclick="gtag('event', 'click', {event_category: 'CTA', event_label: 'CTA Final - Ir a Yescapa'});">
                 Ir a Yescapa para Reservar
             </a>
         </div>
@@ -1379,7 +1379,8 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
             <div class="text-center mt-40">
                 <p style="font-size: 18px; color: #666; margin-bottom: 15px;">Síguenos en redes sociales</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/campycanaria/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/campycanaria/" aria-label="Instagram" onclick="gtag('event', 'click', {event_category: 'Redes Sociales', event_label: 'Instagram - Siguenos'});"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:campycanaria@gmail.com" aria-label="Email" onclick="gtag('event', 'click', {event_category: 'Redes Sociales', event_label: 'Email - Siguenos'});"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -1472,12 +1473,12 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
             }
         });
     </script>
-</script>
 <!-- Botón flotante Instagram -->
 <a href="https://www.instagram.com/campycanaria/" 
    class="instagram-float" 
    target="_blank" 
-   aria-label="Instagram Campy Canaria">
+   aria-label="Instagram Campy Canaria"
+   onclick="gtag('event', 'click', {event_category: 'Boton Flotante', event_label: 'Instagram Flotante'});">
     <i class="fab fa-instagram"></i>
 </a>
 </body>
