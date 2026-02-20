@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <style>
+html, body {
+  overflow-x: hidden;
+}
+</style>
 <meta name="google-site-verification" content="RZM3kUQZM1YhqFwTWRofMNUVzPeO-pjXOB3gQuBOocw" />
 <!-- Google Analytics 4 — se carga SOLO tras consentimiento explícito (RGPD/LSSI) -->
 <script>
@@ -1440,7 +1445,7 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
         <div class="footer-note">
           <p><strong>Titular:</strong> Campy Canaria (particular propietario del vehículo)</p>
           <p><strong>Domicilio:</strong> Gran Canaria, Islas Canarias, España</p>
-          <p><strong>Contacto:</strong> <a href="mailto:[TU_EMAIL]">[TU_EMAIL]</a> · <a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener">@campycanaria</a></p>
+          <p><strong>Contacto:</strong> <a href="mailto:[campycanaria@gmail.com]">campycanaria@gmail.com</a> · <a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener">@campycanaria</a></p>
           <p><strong>Actividad:</strong> Web informativa sobre alquiler de vehículo particular registrado en la plataforma Yescapa.</p>
           <p><strong>Intermediación:</strong> Campy Canaria no gestiona reservas, pagos ni contratos directamente. Todas las reservas se realizan exclusivamente a través de <a href="https://www.yescapa.es" target="_blank" rel="noopener">Yescapa</a>, plataforma intermediaria responsable de dichas transacciones.</p>
           <p><strong>Responsabilidad:</strong> Los términos y condiciones del alquiler, seguros, pagos y cancelaciones están regulados íntegramente por Yescapa.</p>
@@ -1730,8 +1735,7 @@ function rejectAllFromPanel() {
 function showConsentToast(msg) {
   var t = document.createElement('div');
   t.textContent = msg;
-  t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#323232;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;z-index:11000;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .4s;white-space:nowrap;';
-  document.body.appendChild(t);
+t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#323232;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;z-index:11000;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .4s;max-width:calc(100vw - 32px);white-space:normal;text-align:center;word-break:break-word;';  document.body.appendChild(t);
   setTimeout(function(){ t.style.opacity='0'; setTimeout(function(){ t.remove(); }, 400); }, 3500);
 }
 
