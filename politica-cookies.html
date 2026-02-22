@@ -656,6 +656,22 @@
   top: auto !important;
   left: auto !important;
 }
+  @media (max-width: 768px) {
+    .page-body{
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 24px 16px 50px;
+    }
+
+    .content-card{
+      padding: 22px 18px;
+    }
+
+    .sidebar{
+      order: 2; /* o -1 si lo quieres arriba */
+    }
+  }
+</style>
     </style>
 <!-- Google Analytics 4 — se carga SOLO tras consentimiento explícito (RGPD/LSSI) -->
 <script>
