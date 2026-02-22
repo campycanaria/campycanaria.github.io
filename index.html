@@ -1485,11 +1485,11 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
     <div class="footer-bottom">
       <div>© 2025 Campy Canaria · Gran Canaria, España</div>
       <div class="footer-mini-links">
-        <a href="/aviso-legal">Aviso legal</a>
+        <a href="aviso-legal.html">Aviso legal</a>
         <span class="dot">•</span>
-        <a href="/politica-privacidad">Política de privacidad</a>
+        <a href="politica-privacidad.html">Política de privacidad</a>
         <span class="dot">•</span>
-        <a href="/politica-cookies">Política de cookies</a>
+        <a href="politica-cookies.html">Política de cookies</a>
         <span class="dot">•</span>
         <a href="#" onclick="openCookiePanel(); return false;" id="cookie-prefs-link">Cambiar preferencias de cookies</a>
         <span class="dot">•</span>
@@ -1509,7 +1509,7 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
     <div style="flex:1; min-width:260px;">
       <strong>Esta web usa cookies analíticas</strong><br>
       Utilizamos <strong>Google Analytics 4</strong> para medir el tráfico y mejorar la experiencia. <strong>Ninguna cookie se instala sin tu consentimiento previo.</strong> Los datos se transfieren a Google LLC (EE.UU.) bajo la Decisión de Adecuación UE–EE.UU. (Data Privacy Framework).<br>
-      Puedes aceptar, rechazar o <a href="#" onclick="openCookiePanel();return false;" style="color:#90caf9;">configurar tus preferencias</a>. Más info: <a href="/politica-cookies" style="color:#90caf9;">Política de cookies</a>.<br>
+      Puedes aceptar, rechazar o <a href="#" onclick="openCookiePanel();return false;" style="color:#90caf9;">configurar tus preferencias</a>. Más info: <a href="politica-cookies.html" style="color:#90caf9;">Política de cookies</a>.<br>
       <small style="opacity:0.75;">Base legal: consentimiento — RGPD (UE) 2016/679 art. 6.1.a · LSSI-CE art. 22.2 · Criterios AEPD.</small>
     </div>
     <div style="display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap;">
@@ -1558,7 +1558,7 @@ TnSlETnTnSlETnTnSlETnTnSlEQ5xSlKIlKUoi//2Q==" alt="Campy Canaria - alquiler de c
       <button onclick="rejectAllFromPanel()" style="background:transparent; color:#555; border:1px solid #ccc; padding:11px 22px; border-radius:8px; cursor:pointer; font-size:14px;">Rechazar todo</button>
     </div>
     <p style="font-size:11px; color:#aaa; margin:16px 0 0; text-align:center;">
-      <a href="/politica-cookies" style="color:#2196F3;">Política de cookies</a> · <a href="/politica-privacidad" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
+      <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a> · <a href="/politica-privacidad" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
     </p>
   </div>
 </div>
@@ -1614,7 +1614,7 @@ function getConsent() {
 function deleteGAcookies() {
   var cookies = document.cookie.split(';');
   var domain = location.hostname.replace(/^www\./, '');
-  var paths = ['/', '/politica-cookies', '/aviso-legal', '/politica-privacidad'];
+  var paths = ['/', 'politica-cookies.html', '/aviso-legal', '/politica-privacidad'];
   var domains = [location.hostname, '.' + domain, domain];
   cookies.forEach(function(c) {
     var name = c.split('=')[0].trim();
