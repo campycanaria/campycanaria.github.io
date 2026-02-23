@@ -707,7 +707,7 @@
       <p><i class="fa-solid fa-user"></i> <strong>Titular:</strong> Alberto Martín Contreras Espadas</p>
       <p><i class="fa-solid fa-id-badge"></i> <strong>NIF:</strong> 09078073L</p>
       <p><i class="fa-solid fa-location-dot"></i> <strong>Domicilio:</strong> Calle Pintor Edvard Munch 2, 4B, 35215, Gran Canaria, España</p>
-      <p><i class="fa-solid fa-at"></i> <strong>Correo electrónico:</strong> <a href="mailto:campycanaria@gmail.com">campycanaria@gmail.com</a></p>
+      <p><i class="fa-solid fa-at"></i> <strong>Correo electrónico:</strong> <a href="/cdn-cgi/l/email-protection#88ebe9e5f8f1ebe9e6e9fae1e9c8efe5e9e1e4a6ebe7e5"><span class="__cf_email__" data-cfemail="debdbfb3aea7bdbfb0bfacb7bf9eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</span></a></p>
       <p><i class="fa-solid fa-globe"></i> <strong>Sitio web:</strong> <a href="https://www.campycanaria.com">www.campycanaria.com</a></p>
     </div>
 
@@ -751,9 +751,9 @@
     <div class="back-section">
       <a href="/"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
       <span class="sep">|</span>
-      <a href="/politica-privacidad">Política de privacidad</a>
+      <a href="politica-privacidad.html">Política de privacidad</a>
       <span class="sep">|</span>
-      <a href="/politica-cookies">Política de cookies</a>
+      <a href="politica-cookies.html">Política de cookies</a>
     </div>
 
   </div><!-- /.content-card -->
@@ -786,7 +786,7 @@
     <div class="sidebar-card">
       <h3><i class="fa-solid fa-envelope" style="color:#2196F3;margin-right:8px;"></i> Contacto</h3>
       <div class="info-box">
-        <p><i class="fa-solid fa-at"></i> <a href="mailto:campycanaria@gmail.com">campycanaria@gmail.com</a></p>
+        <p><i class="fa-solid fa-at"></i> <a href="/cdn-cgi/l/email-protection#adceccc0ddd4ceccc3ccdfc4ccedcac0ccc4c183cec2c0"><span class="__cf_email__" data-cfemail="593a383429203a3837382b3038193e34383035773a3634">[email&#160;protected]</span></a></p>
         <p><i class="fa-solid fa-location-dot"></i> Gran Canaria, España</p>
       </div>
     </div>
@@ -914,12 +914,12 @@
       <button onclick="rejectAllFromPanel()" style="background:transparent; color:#555; border:1px solid #ccc; padding:11px 22px; border-radius:8px; cursor:pointer; font-size:14px;">Rechazar todo</button>
     </div>
     <p style="font-size:11px; color:#aaa; margin:16px 0 0; text-align:center;">
-      <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a> · <a href="/politica-privacidad" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
+      <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a> · <a href="politica-privacidad.html" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
     </p>
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ================================================================
 //  GESTIÓN DE CONSENTIMIENTO DE cookies — RGPD / LSSI-CE art. 22.2
 //  IMPLEMENTACIÓN ÚNICA — no existen otras funciones acceptcookies/
@@ -970,7 +970,7 @@ function getConsent() {
 function deleteGAcookies() {
   var cookies = document.cookie.split(';');
   var domain = location.hostname.replace(/^www\./, '');
-  var paths = ['/', 'politica-cookies.html', '/aviso-legal', '/politica-privacidad'];
+  var paths = ['/', '/aviso-legal', '/aviso-legal.html', '/politica-cookies', '/politica-cookies.html', '/politica-privacidad', '/politica-privacidad.html'];
   var domains = [location.hostname, '.' + domain, domain];
   cookies.forEach(function(c) {
     var name = c.split('=')[0].trim();
@@ -1107,13 +1107,14 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
 })();
 </script>
 
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -1126,17 +1127,12 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
-            } else {
-                nav.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
+                }
             }
         });
     </script>
-<!-- Botón flotante Instagram -->
-<a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener" class="instagram-float" aria-label="Síguenos en Instagram">
-  <i class="fab fa-instagram"></i>
-</a>
-
 </body>
 </html>
