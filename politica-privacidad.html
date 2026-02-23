@@ -15,9 +15,8 @@
       line-height: 1.6;
       color: #333;
       background: #f8f9fa;
-      overflow-x: hidden;
     }
-  
+
     /* ── NAV — replica exacta de index.html ── */
     .main-nav {
       background: #fff;
@@ -693,6 +692,35 @@
     }
     .checklist li i.ok { color: #4CAF50; margin-top: 3px; flex-shrink: 0; font-size: 14px; }
     .checklist li i.no { color: #f44336; margin-top: 3px; flex-shrink: 0; font-size: 14px; }
+  @media (max-width: 900px){
+  .page-body{
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 24px 16px 50px !important;
+  }
+
+  .sidebar{
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer-mini-links{
+    flex-wrap: wrap;
+    row-gap: 8px;
+    max-width: 100%;
+  }
+  .footer-mini-links a{
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+@media (max-width: 900px){
+  .footer-mini-links .dot{ display: none; }
+}
+.page-body > .container{
+  min-width: 0;
+}
   </style>
 <!-- Google Analytics 4 — se carga SOLO tras consentimiento explícito (RGPD/LSSI) -->
 <script>
