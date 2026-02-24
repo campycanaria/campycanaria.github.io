@@ -425,6 +425,37 @@
 
         /* Responsive */
 @media (max-width: 768px){
+  /* Animación base del contenedor */
+.nav-links{
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+/* Estado abierto */
+.nav-links.open{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación individual por línea */
+.nav-links li{
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+/* Cuando el menú está abierto */
+.nav-links.open li{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Retrasos progresivos */
+.nav-links.open li:nth-child(1){ transition-delay: .05s; }
+.nav-links.open li:nth-child(2){ transition-delay: .10s; }
+.nav-links.open li:nth-child(3){ transition-delay: .15s; }
+.nav-links.open li:nth-child(4){ transition-delay: .20s; }
 
   .nav-container{
     position: relative;
@@ -1441,17 +1472,94 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
         });
     </script>
 
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   var btn = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.nav-links');
+
   if (!btn || !menu) return;
 
-  btn.addEventListener('click', function () {
-    menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded',
-      menu.classList.contains('open') ? 'true' : 'false'
-    );
+  var OPEN_CLASS = 'open';
+  var body = document.body;
+
+  function isOpen() {
+    return menu.classList.contains(OPEN_CLASS);
+  }
+
+  function setExpanded(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  // (Opcional) bloquear scroll cuando el menú está abierto
+  function lockScroll(lock) {
+    // si ya tienes overlays (cookies, etc.), esto sigue funcionando bien
+    if (lock) {
+      body.dataset.prevOverflow = body.style.overflow || '';
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = body.dataset.prevOverflow || '';
+      delete body.dataset.prevOverflow;
+    }
+  }
+
+  function openMenu() {
+    menu.classList.add(OPEN_CLASS);
+    setExpanded(true);
+    lockScroll(true);
+
+    // Enfocar el primer enlace (mejora accesibilidad)
+    var firstLink = menu.querySelector('a');
+    if (firstLink) firstLink.focus({ preventScroll: true });
+  }
+
+  function closeMenu() {
+    menu.classList.remove(OPEN_CLASS);
+    setExpanded(false);
+    lockScroll(false);
+  }
+
+  function toggleMenu() {
+    if (isOpen()) closeMenu();
+    else openMenu();
+  }
+
+  // Botón: abrir/cerrar
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Click dentro del menú: no cierra (pero los enlaces sí cerrarán)
+  menu.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+
+  // Cerrar al click fuera
+  document.addEventListener('click', function () {
+    if (isOpen()) closeMenu();
+  });
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen()) {
+      closeMenu();
+      btn.focus({ preventScroll: true });
+    }
+  });
+
+  // Cerrar al pulsar un enlace del menú
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      closeMenu();
+    });
+  });
+
+  // Si cambias de tamaño a escritorio, cerrar y desbloquear scroll
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768 && isOpen()) {
+      closeMenu();
+    }
   });
 });
 </script>
