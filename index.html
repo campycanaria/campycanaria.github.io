@@ -542,11 +542,46 @@ html, body {
         }
 
         /* Responsive */
+        .nav-toggle{
+            display: none;
+        }
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+            /* Mostrar boton en movil */
+.nav-toggle{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
+/* Para que el menu se coloque bien */
+.nav-container{
+  position: relative;
+}
+
+/* Menu oculto por defecto */
+.nav-links{
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  left: 20px;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+/* Menu visible cuando se abre */
+.nav-links.open{
+  display: flex;
+}
             .hero h1 {
                 font-size: 36px;
             }
@@ -807,7 +842,9 @@ html, body {
             <div class="logo">
                 <a href="/"><img src="img/logo.webp" alt="Campy Canaria"></a>
             </div>
-            </a>
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#vehiculo">El vehículo</a></li>
@@ -1342,5 +1379,21 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
             }
         });
     </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+
+    if (!toggle || !links) {
+      console.log('No encuentro .nav-toggle o .nav-links');
+      return;
+    }
+
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', links.classList.contains('open') ? 'true' : 'false');
+    });
+  });
+</script>
 </body>
 </html>

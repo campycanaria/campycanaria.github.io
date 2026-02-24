@@ -47,6 +47,7 @@
     }
     .logo img { height: 50px; width: auto; }
     .nav-links { display: flex; list-style: none; gap: 30px; }
+    .nav-toggle{display: none;}
     .nav-links a {
       text-decoration: none;
       color: #333;
@@ -417,10 +418,48 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
 
+  .nav-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .nav-container{
+    position: relative;
+  }
+
+  /* IMPORTANTE: oculto por defecto */
+  .nav-links{
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    left: 20px;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    z-index: 99999;
+  }
+
+  /* visible al abrir */
+  .nav-links.open{
+    display: flex !important;
+  }
+
+  /* cada link ocupa toda la fila */
+  .nav-links li a{
+    display: block;
+    padding: 12px 10px;
+  }
             .hero h1 {
                 font-size: 36px;
             }
@@ -676,6 +715,15 @@
   top: auto !important;
   left: auto !important;
 }
+@media (max-width: 768px){
+  .nav-links.open{
+    position: fixed !important;
+    top: 70px !important;
+    left: 12px !important;
+    right: 12px !important;
+    z-index: 2147483647 !important;
+  }
+}
     </style>
 </head>
 <body>
@@ -686,6 +734,9 @@
     <div class="logo">
 <a href="/"><img src="img/logo.webp" alt="Campy Canaria"></a>
     </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
     <ul class="nav-links">
       <li><a href="/">Inicio</a></li>
       <li><a href="/#vehiculo">El vehículo</a></li>
@@ -1157,5 +1208,23 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
             }
         });
     </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var btn = document.querySelector('.nav-toggle');
+  var menu = document.querySelector('.nav-links');
+
+  if (!btn || !menu) {
+    alert('No encuentro .nav-toggle o .nav-links');
+    return;
+  }
+
+  btn.addEventListener('click', function () {
+    menu.classList.toggle('open');
+    console.log('clases menu:', menu.className);
+  });
+});
+</script>
+
 </body>
 </html>

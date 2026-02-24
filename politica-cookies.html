@@ -46,6 +46,16 @@
       justify-content: space-between;
       align-items: center;
     }
+    .nav-toggle{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo{
+  padding-right: 60px;
+}
     .logo img { height: 50px; width: auto; }
     .nav-links { display: flex; list-style: none; gap: 30px; }
     .nav-links a {
@@ -56,6 +66,16 @@
       transition: color 0.3s;
     }
     .nav-links a:hover { color: #2196F3; }
+    /* Botón hamburguesa oculto en escritorio */
+.nav-toggle{
+  display: none;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
 
     /* ── PAGE HEADER ── */
     .page-header {
@@ -418,10 +438,38 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+/* Mostrar botón en móvil */
+.nav-toggle{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* Menú móvil (oculto por defecto) */
+.nav-links{
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 20px;   /* alineado a la derecha */
+  width: 260px;  /* ancho fijo como en las otras páginas */
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  z-index: 2000;
+}
+
+/* Visible cuando se abre */
+.nav-links.open{
+  display: flex;
+}
+
+/* Links cómodos en móvil */
+.nav-links li a{
+  display: block;
+  padding: 12px 10px;
+}
             .hero h1 {
                 font-size: 36px;
             }
@@ -783,6 +831,9 @@
 <nav class="main-nav">
   <div class="nav-container">
     <div class="logo">
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+  <i class="fas fa-bars"></i>
+</button>
 <a href="/"><img src="img/logo.webp" alt="Campy Canaria"></a>
     </div>
     <ul class="nav-links">
@@ -1365,5 +1416,19 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
             }
         });
     </script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  var btn = document.querySelector('.nav-toggle');
+  var menu = document.querySelector('.nav-links');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function () {
+    menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', menu.classList.contains('open') ? 'true' : 'false');
+  });
+});
+</script>
+
 </body>
 </html>
