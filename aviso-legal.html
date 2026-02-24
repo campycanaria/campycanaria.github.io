@@ -1241,9 +1241,9 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+
   var btn = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.nav-links');
-
   if (!btn || !menu) return;
 
   var OPEN_CLASS = 'open';
@@ -1253,81 +1253,74 @@ document.addEventListener('DOMContentLoaded', function () {
     return menu.classList.contains(OPEN_CLASS);
   }
 
-  function setExpanded(open) {
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-
-  // (Opcional) bloquear scroll cuando el menú está abierto
-  function lockScroll(lock) {
-    // si ya tienes overlays (cookies, etc.), esto sigue funcionando bien
-    if (lock) {
-      body.dataset.prevOverflow = body.style.overflow || '';
-      body.style.overflow = 'hidden';
-    } else {
-      body.style.overflow = body.dataset.prevOverflow || '';
-      delete body.dataset.prevOverflow;
-    }
-  }
-
   function openMenu() {
     menu.classList.add(OPEN_CLASS);
-    setExpanded(true);
-    lockScroll(true);
-
-    // Enfocar el primer enlace (mejora accesibilidad)
-    var firstLink = menu.querySelector('a');
-    if (firstLink) firstLink.focus({ preventScroll: true });
+    btn.setAttribute('aria-expanded', 'true');
+    body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     menu.classList.remove(OPEN_CLASS);
-    setExpanded(false);
-    lockScroll(false);
+    btn.setAttribute('aria-expanded', 'false');
+    body.style.overflow = '';
   }
 
   function toggleMenu() {
-    if (isOpen()) closeMenu();
-    else openMenu();
+    isOpen() ? closeMenu() : openMenu();
   }
 
-  // Botón: abrir/cerrar
+  // Botón
   btn.addEventListener('click', function (e) {
-    e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   });
 
-  // Click dentro del menú: no cierra (pero los enlaces sí cerrarán)
-  menu.addEventListener('click', function (e) {
-    e.stopPropagation();
+  // Click fuera
+  document.addEventListener('click', function (e) {
+    if (isOpen() && !menu.contains(e.target) && e.target !== btn) {
+      closeMenu();
+    }
   });
 
-  // Cerrar al click fuera
-  document.addEventListener('click', function () {
-    if (isOpen()) closeMenu();
-  });
-
-  // Cerrar con ESC
+  // ESC
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && isOpen()) {
       closeMenu();
-      btn.focus({ preventScroll: true });
     }
   });
 
-  // Cerrar al pulsar un enlace del menú
+  // Cerrar al pulsar un enlace
   menu.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      closeMenu();
-    });
+    a.addEventListener('click', closeMenu);
   });
 
-  // Si cambias de tamaño a escritorio, cerrar y desbloquear scroll
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 768 && isOpen()) {
+  // =========================
+  // SWIPE DETECTION
+  // =========================
+
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  document.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+  }, { passive: true });
+
+  function handleGesture() {
+    if (!isOpen()) return;
+
+    var distance = touchEndX - touchStartX;
+
+    // Si desliza más de 70px hacia la derecha → cerrar
+    if (distance > 70) {
       closeMenu();
     }
-  });
+  }
+
 });
 </script>
 
