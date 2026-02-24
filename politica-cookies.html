@@ -8,7 +8,18 @@
   <link rel="canonical" href="https://www.campycanaria.com/politica-cookies">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body{
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip;   
+      }
+      body{
+        ouch-action: pan-y;
+        overscroll-behavior-x: none
+      }
+    .page-header, .breadcrumb, .page-body, nav, footer{
+      max-width: 100%;
+    }    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -438,6 +449,23 @@
             .steps-grid {
                 grid-template-columns: 1fr;
             }
+            .page-body{
+              grid-template-columns: 1fr;
+              gap: 20px;
+            }
+            
+            .content-card{
+              padding: 24px 20px;
+            }
+            /* MUY importante para que el grid deje encoger el contenido */
+            .content, .content-card, .sidebar{
+              min-width: 0;
+            }
+            /* Y para que palabras/enlaces largos no fuerzen ancho */
+            .content-card, .content-card p, .content-card li, .content-card a{
+              overflow-wrap: anywhere;
+              word-break: break-word;
+            }
         }
 
         /* Utilidad */
@@ -676,6 +704,34 @@
       order: 2; /* o -1 si lo quieres arriba */
     }
   }
+.content,
+.content-card,
+.sidebar {
+  min-width: 0;
+}
+
+.content-card,
+.content-card p,
+.content-card li,
+.content-card a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+#cookie-banner a,
+#cookie-banner strong,
+#cookie-banner small{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+/* Asegura que los items directos del grid puedan encoger */
+.page-body > *{
+  min-width: 0;
+}
+
+/* Si hay flex dentro, también */
+.page-body > * *{
+  min-width: 0;
+}
 </style>
 <!-- Google Analytics 4 — se carga SOLO tras consentimiento explícito (RGPD/LSSI) -->
 <script>
@@ -893,7 +949,7 @@
       <div class="info-box">
         <p><i class="fa-solid fa-user"></i> Alberto Martín Contreras Espadas</p>
         <p><i class="fa-solid fa-location-dot"></i> Telde, Gran Canaria</p>
-        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:campycanaria@gmail.com">campycanaria@gmail.com</a>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:campycanaria@gmail.com">campycanaria@gmail.com</a></p>
         </div>
     </div>
   </aside>
