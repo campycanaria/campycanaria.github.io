@@ -1,15 +1,214 @@
 <!doctype html>
 <html lang="es">
 <head>
+<!-- Google Analytics 4 — se carga SOLO tras consentimiento explícito (RGPD/LSSI) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // GA bloqueado por defecto hasta recibir consentimiento
+  window['ga-disable-G-CK0BB6T9TB'] = true;
+
+  // FIX 1: variable independiente como guard, evita doble carga
+  var ga4Loaded = false;
+  // FIX 2: flag que indica que GA4 está inicializado y listo para recibir eventos
+  var ga4Ready = false;
+
+  function safeGtagEvent(eventName, params){
+    try {
+      // FIX 2: solo enviar eventos si GA4 está completamente inicializado
+      if (getConsent() === 'accepted' && ga4Ready) {
+        gtag('event', eventName, params || {});
+      }
+    } catch(e) {}
+  }
+
+  function loadGA4() {
+    // FIX 1: guard correcto usando variable dedicada, no reutilizando ga-disable
+    if (ga4Loaded) return;
+    ga4Loaded = true;
+    window['ga-disable-G-CK0BB6T9TB'] = false;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CK0BB6T9TB';
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag('js', new Date());
+      // anonymize_ip eliminado — en GA4 la anonimización es automática e irrevocable
+      gtag('config', 'G-CK0BB6T9TB', {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      });
+      // FIX 2: marcar GA4 como listo solo tras inicialización completa
+      ga4Ready = true;
+    };
+  }
+</script>
+
+<script>
+var CONSENT_KEY = 'cookie_consent';
+var CONSENT_TS_KEY = 'cookie_consent_ts';
+var CONSENT_TTL_MS = 24 * 30 * 24 * 60 * 60 * 1000; // 12 meses aprox.
+
+function setConsent(value) {
+  try {
+    localStorage.setItem(CONSENT_KEY, value);
+    localStorage.setItem(CONSENT_TS_KEY, Date.now().toString());
+  } catch(e) {}
+}
+
+function getConsent() {
+  try {
+    var value = localStorage.getItem(CONSENT_KEY);
+    var ts = parseInt(localStorage.getItem(CONSENT_TS_KEY) || '0', 10);
+    if (!value) return null;
+    // Si ha caducado, borrar y devolver null para volver a pedir consentimiento
+    if (ts && (Date.now() - ts) > CONSENT_TTL_MS) {
+      localStorage.removeItem(CONSENT_KEY);
+      localStorage.removeItem(CONSENT_TS_KEY);
+      return null;
+    }
+    return value;
+  } catch(e) { return null; }
+}
+
+// --- Borrado real de cookies de GA4 en todos los paths/dominios ---
+function deleteGAcookies() {
+  var cookies = document.cookie.split(';');
+  var domain = location.hostname.replace(/^www\./, '');
+  var paths = ['/', '/aviso-legal', '/aviso-legal.html', '/politica-cookies', '/politica-cookies.html', '/politica-privacidad', '/politica-privacidad.html'];
+  var domains = [location.hostname, '.' + domain, domain];
+  cookies.forEach(function(c) {
+    var name = c.split('=')[0].trim();
+    if (name === '_ga' || name.indexOf('_ga_') === 0) {
+      paths.forEach(function(p) {
+        domains.forEach(function(d) {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + p + '; domain=' + d + ';';
+        });
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + p + ';';
+      });
+    }
+  });
+}
+
+// --- Estado del toggle analíticas ---
+var analyticsEnabled = false;
+
+function setToggle(enabled) {
+  analyticsEnabled = enabled;
+  var track = document.getElementById('toggle-analytics-track');
+  var thumb = document.getElementById('toggle-analytics-thumb');
+  var input = document.getElementById('toggle-analytics');
+  if (track && thumb) {
+    track.style.background = enabled ? '#2196F3' : '#ccc';
+    thumb.style.left = enabled ? '25px' : '3px';
+    // FIX 3: actualizar el input sin disparar onchange (evita bucle)
+    if (input) {
+      input.removeEventListener('change', toggleAnalytics);
+      input.checked = enabled;
+      input.addEventListener('change', toggleAnalytics);
+    }
+  }
+}
+
+function toggleAnalytics() {
+  // FIX 3: sincronizar estado con el valor real del checkbox
+  var input = document.getElementById('toggle-analytics');
+  var newState = input ? input.checked : !analyticsEnabled;
+  analyticsEnabled = newState;
+  var track = document.getElementById('toggle-analytics-track');
+  var thumb = document.getElementById('toggle-analytics-thumb');
+  if (track && thumb) {
+    track.style.background = analyticsEnabled ? '#2196F3' : '#ccc';
+    thumb.style.left = analyticsEnabled ? '25px' : '3px';
+  }
+}
+
+// --- Abrir / cerrar panel ---
+function openCookiePanel() {
+  var consent = getConsent();
+  setToggle(consent === 'accepted');
+  document.getElementById('cookie-banner').style.display = 'none';
+  document.getElementById('cookie-panel').style.display = 'block';
+}
+
+function closeCookiePanel() {
+  document.getElementById('cookie-panel').style.display = 'none';
+  // FIX 4: si el usuario cierra el panel sin haber tomado ninguna decisión,
+  // restaurar el banner para que no quede sin opción de consentir/rechazar
+  if (!getConsent()) {
+    var b = document.getElementById('cookie-banner');
+if (b) b.style.display = 'block';
+  }
+}
+
+// Cerrar panel al hacer clic fuera del contenido
+
+// --- Funciones del banner (primera capa) ---
+function acceptcookies() {
+  setConsent('accepted');
+  document.getElementById('cookie-banner').style.display = 'none';
+  loadGA4();
+  goYescapa();
+}
+
+function rejectcookies() {
+  setConsent('rejected');
+  window['ga-disable-G-CK0BB6T9TB'] = true;
+  deleteGAcookies();
+  document.getElementById('cookie-banner').style.display = 'none';
+  goYescapa();
+}
+
+// --- Funciones del panel (segunda capa) ---
+function savePanelPreferences() {
+  if (analyticsEnabled) {
+    setConsent('accepted');
+    loadGA4();
+  } else {
+    var prev = getConsent();
+    setConsent('rejected');
+    window['ga-disable-G-CK0BB6T9TB'] = true;
+    if (prev === 'accepted') deleteGAcookies(); // borrar cookies reales si cambia de aceptado a rechazado
+  }
+  closeCookiePanel();
+  showConsentToast(analyticsEnabled ? 'Preferencias guardadas: cookies analíticas activadas.' : 'Preferencias guardadas: cookies analíticas desactivadas y eliminadas.');
+}
+
+function acceptAllFromPanel() {
+  setToggle(true);
+  setConsent('accepted');
+  loadGA4();
+  closeCookiePanel();
+  showConsentToast('cookies analíticas aceptadas. ¡Gracias!');
+}
+
+function rejectAllFromPanel() {
+  setToggle(false);
+  var prev = getConsent();
+  setConsent('rejected');
+  window['ga-disable-G-CK0BB6T9TB'] = true;
+  if (prev === 'accepted') deleteGAcookies();
+  closeCookiePanel();
+  showConsentToast('cookies analíticas rechazadas y eliminadas.');
+}
+
+// --- Toast de confirmación ---
+function showConsentToast(msg) {
+  var t = document.createElement('div');
+  t.textContent = msg;
+t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#323232;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;z-index:11000;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .4s;max-width:calc(100vw - 32px);white-space:normal;text-align:center;word-break:break-word;';  document.body.appendChild(t);
+  setTimeout(function(){ t.style.opacity='0'; setTimeout(function(){ t.remove(); }, 400); }, 3500);
+}
+
+
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Redirigiendo…</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://www.campycanaria.com/flyer.html">
-  <script>
-    // Redirige a Yescapa con UTMs para diferenciar soporte
-    window.location.replace("https://www.yescapa.es/campers/100885?utm_source=flyer&utm_medium=offline&utm_campaign=print");
-  </script>
+
 </head>
 <body>
   <p>Redirigiendo… Si no ocurre nada, toca aqui:</p>
@@ -18,5 +217,95 @@
       Ir a la reserva
     </a>
   </p>
+<!-- ============================================================
+     BANNER DE CONSENTIMIENTO DE cookies (RGPD / LSSI-CE art.22.2)
+     ============================================================ -->
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1a1a2e; color:#f0f0f0; padding:18px 24px; z-index:9999; box-shadow:0 -4px 20px rgba(0,0,0,0.35); font-family:'Segoe UI',sans-serif; font-size:14px; line-height:1.6;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
+    <div style="flex:1; min-width:260px;">
+      <strong>Esta web usa cookies analíticas</strong><br>
+      Utilizamos <strong>Google Analytics 4</strong> para medir el tráfico y mejorar la experiencia. <strong>Ninguna cookie se instala sin tu consentimiento previo.</strong> Los datos se transfieren a Google LLC (EE.UU.) bajo la Decisión de Adecuación UE–EE.UU. (Data Privacy Framework).<br>
+      Puedes aceptar, rechazar o <a href="#" onclick="openCookiePanel();return false;" style="color:#90caf9;">configurar tus preferencias</a>. Más info: <a href="politica-cookies.html" style="color:#90caf9;">Política de cookies</a>.<br>
+      <small style="opacity:0.75;">Base legal: consentimiento — RGPD (UE) 2016/679 art. 6.1.a · LSSI-CE art. 22.2 · Criterios AEPD.</small>
+    </div>
+    <div style="display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap;">
+      <button onclick="acceptcookies()" style="background:#2196F3; color:#fff; border:none; padding:10px 22px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px;">Aceptar</button>
+      <button onclick="rejectcookies()" style="background:transparent; color:#f0f0f0; border:1px solid #aaa; padding:10px 22px; border-radius:6px; cursor:pointer; font-size:14px;">Rechazar</button>
+      <button onclick="openCookiePanel()" style="background:transparent; color:#90caf9; border:1px solid #90caf9; padding:10px 18px; border-radius:6px; cursor:pointer; font-size:13px;">Configurar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PANEL DE PREFERENCIAS DE cookies (segunda capa / revisión)
+     ============================================================ -->
+<div id="cookie-panel" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:10000; font-family:'Segoe UI',sans-serif;" role="dialog" aria-modal="true" aria-label="Configurar preferencias de cookies">
+  <div style="position:absolute; bottom:0; left:0; right:0; max-height:90vh; overflow-y:auto; background:#fff; color:#333; padding:32px 28px; max-width:600px; margin:0 auto; border-radius:16px 16px 0 0; box-shadow:0 -8px 40px rgba(0,0,0,0.2);">
+    <h2 style="margin:0 0 8px; font-size:20px;">⚙️ Preferencias de cookies</h2>
+    <p style="font-size:13px; color:#666; margin-bottom:24px;">Puedes activar o desactivar cada categoría. Las cookies estrictamente necesarias no se pueden desactivar ya que son imprescindibles para el funcionamiento del sitio.</p>
+
+    <!-- Fila: Estrictamente necesarias -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:16px 0; border-bottom:1px solid #eee;">
+      <div style="flex:1; padding-right:16px;">
+        <strong style="font-size:14px;">Estrictamente necesarias</strong>
+        <p style="font-size:12px; color:#777; margin:4px 0 0;">Necesarias para que el sitio funcione. No se pueden desactivar.</p>
+      </div>
+      <div style="background:#e0e0e0; color:#555; font-size:12px; padding:4px 12px; border-radius:20px; white-space:nowrap; margin-top:4px;">Siempre activas</div>
+    </div>
+
+    <!-- Fila: Analíticas (toggle) -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:16px 0; border-bottom:1px solid #eee;">
+      <div style="flex:1; padding-right:16px;">
+        <strong style="font-size:14px;">Analíticas (Google Analytics 4)</strong>
+        <p style="font-size:12px; color:#777; margin:4px 0 0;">Nos ayudan a entender cómo se usa el sitio. Datos seudoni­mizados. Proveedor: Google LLC (EE.UU., Data Privacy Framework).</p>
+        <p style="font-size:11px; color:#aaa; margin:4px 0 0;">cookies: <code>_ga</code>, <code>_ga_CK0BB6T9TB</code> · Duración: hasta 1 año.</p>
+      </div>
+      <label style="position:relative; display:inline-block; width:48px; height:26px; flex-shrink:0; margin-top:4px;">
+        <!-- FIX 3: onchange vincula el input al toggle para accesibilidad por teclado (Tab + Space) -->
+        <input type="checkbox" id="toggle-analytics" onchange="toggleAnalytics()" style="opacity:0; width:0; height:0;">
+        <span id="toggle-analytics-track" onclick="toggleAnalytics()" style="position:absolute; cursor:pointer; inset:0; border-radius:26px; background:#ccc; transition:.3s;"></span>
+        <span id="toggle-analytics-thumb" style="position:absolute; height:20px; width:20px; left:3px; bottom:3px; border-radius:50%; background:white; transition:.3s; pointer-events:none;"></span>
+      </label>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;">
+      <button onclick="savePanelPreferences()" style="background:#2196F3; color:#fff; border:none; padding:11px 28px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; flex:1; min-width:140px;">Guardar preferencias</button>
+      <button onclick="acceptAllFromPanel()" style="background:#43a047; color:#fff; border:none; padding:11px 22px; border-radius:8px; cursor:pointer; font-size:14px;">Aceptar todo</button>
+      <button onclick="rejectAllFromPanel()" style="background:transparent; color:#555; border:1px solid #ccc; padding:11px 22px; border-radius:8px; cursor:pointer; font-size:14px;">Rechazar todo</button>
+    </div>
+    <p style="font-size:11px; color:#aaa; margin:16px 0 0; text-align:center;">
+      <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a> · <a href="politica-privacidad.html" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
+    </p>
+  </div>
+</div>
+<script>
+var DESTINO = "https://www.yescapa.es/campers/100885?utm_source=tarjeta&utm_medium=offline&utm_campaign=print";
+
+function goYescapa(){
+  window.location.href = DESTINO;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  var consent = getConsent();
+
+  if (!consent) {
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'block';
+    return;
+  }
+
+  if (consent === 'accepted') {
+    loadGA4();
+    setTimeout(goYescapa, 600);
+    return;
+  }
+
+  if (consent === 'rejected') {
+    setTimeout(goYescapa, 300);
+  }
+
+});
+</script>
 </body>
 </html>
