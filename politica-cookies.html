@@ -1450,7 +1450,6 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-
   var btn = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.nav-links');
   if (!btn || !menu) return;
@@ -1465,71 +1464,119 @@ document.addEventListener('DOMContentLoaded', function () {
   function openMenu() {
     menu.classList.add(OPEN_CLASS);
     btn.setAttribute('aria-expanded', 'true');
+
+    // Bloquear scroll del fondo
+    body.dataset.prevOverflow = body.style.overflow || '';
     body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     menu.classList.remove(OPEN_CLASS);
     btn.setAttribute('aria-expanded', 'false');
-    body.style.overflow = '';
+
+    // Restaurar scroll
+    body.style.overflow = body.dataset.prevOverflow || '';
+    delete body.dataset.prevOverflow;
   }
 
   function toggleMenu() {
-    isOpen() ? closeMenu() : openMenu();
+    if (isOpen()) closeMenu();
+    else openMenu();
   }
 
-  // Botón
+  // ── Botón hamburguesa ──
   btn.addEventListener('click', function (e) {
+    e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   });
 
-  // Click fuera
-  document.addEventListener('click', function (e) {
-    if (isOpen() && !menu.contains(e.target) && e.target !== btn) {
-      closeMenu();
-    }
+  // Click dentro del menú: no cierra
+  menu.addEventListener('click', function (e) {
+    e.stopPropagation();
   });
 
-  // ESC
+  // Click fuera: cierra
+  document.addEventListener('click', function (e) {
+    if (!isOpen()) return;
+    if (menu.contains(e.target) || btn.contains(e.target)) return;
+    closeMenu();
+  });
+
+  // ESC: cierra
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && isOpen()) {
       closeMenu();
+      btn.focus({ preventScroll: true });
     }
   });
 
-  // Cerrar al pulsar un enlace
+  // Cerrar al pulsar un enlace del menú
   menu.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', closeMenu);
+    a.addEventListener('click', function () {
+      closeMenu();
+    });
   });
 
-  // =========================
-  // SWIPE DETECTION
-  // =========================
+  // ─────────────────────────────
+  // SWIPE DENTRO DEL MENÚ (derecha)
+  // ─────────────────────────────
+  var startX_menu = 0;
+  var startY_menu = 0;
 
-  var touchStartX = 0;
-  var touchEndX = 0;
+  menu.addEventListener('touchstart', function (e) {
+    if (!isOpen()) return;
+    var t = e.changedTouches[0];
+    startX_menu = t.clientX;
+    startY_menu = t.clientY;
+  }, { passive: true });
+
+  menu.addEventListener('touchend', function (e) {
+    if (!isOpen()) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - startX_menu;
+    var dy = Math.abs(t.clientY - startY_menu);
+
+    // swipe claramente horizontal a la derecha
+    if (dx > 60 && dy < 50) closeMenu();
+  }, { passive: true });
+
+  // ─────────────────────────────
+  // SWIPE FUERA DEL MENÚ (en la página)
+  // ─────────────────────────────
+  var startX_out = 0;
+  var startY_out = 0;
+  var trackingOutside = false;
 
   document.addEventListener('touchstart', function (e) {
-    touchStartX = e.changedTouches[0].screenX;
+    if (!isOpen()) return;
+
+    // Solo si empieza fuera del menú y fuera del botón
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      var t = e.changedTouches[0];
+      startX_out = t.clientX;
+      startY_out = t.clientY;
+      trackingOutside = true;
+    }
   }, { passive: true });
 
   document.addEventListener('touchend', function (e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleGesture();
-  }, { passive: true });
-
-  function handleGesture() {
+    if (!trackingOutside) return;
+    trackingOutside = false;
     if (!isOpen()) return;
 
-    var distance = touchEndX - touchStartX;
+    var t = e.changedTouches[0];
+    var dx = Math.abs(t.clientX - startX_out);
+    var dy = Math.abs(t.clientY - startY_out);
 
-    // Si desliza más de 70px hacia la derecha → cerrar
-    if (distance > 70) {
-      closeMenu();
-    }
-  }
+    // gesto horizontal dominante fuera del menú -> cerrar
+    if (dx > 50 && dy < 60) closeMenu();
+  }, { passive: true });
 
+  // Si cambia a escritorio, cerrar y restaurar scroll
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768 && isOpen()) closeMenu();
+  });
 });
 </script>
 
