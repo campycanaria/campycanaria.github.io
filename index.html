@@ -1412,131 +1412,117 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
     </script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var btn = document.querySelector('.nav-toggle');
+  var btn  = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.nav-links');
   if (!btn || !menu) return;
+
+  // Crear overlay (si no existe)
+  var overlay = document.querySelector('.nav-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+  }
 
   var OPEN_CLASS = 'open';
   var body = document.body;
 
-  function isOpen() {
-    return menu.classList.contains(OPEN_CLASS);
+  function isOpen(){ return menu.classList.contains(OPEN_CLASS); }
+
+  function lockScroll(lock){
+    if (lock) {
+      body.dataset.prevOverflow = body.style.overflow || '';
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = body.dataset.prevOverflow || '';
+      delete body.dataset.prevOverflow;
+    }
   }
 
-  function openMenu() {
+  function openMenu(){
     menu.classList.add(OPEN_CLASS);
-    btn.setAttribute('aria-expanded', 'true');
-
-    // Bloquear scroll del fondo
-    body.dataset.prevOverflow = body.style.overflow || '';
-    body.style.overflow = 'hidden';
+    overlay.classList.add('show');
+    btn.setAttribute('aria-expanded','true');
+    lockScroll(true);
   }
 
-  function closeMenu() {
+  function closeMenu(){
     menu.classList.remove(OPEN_CLASS);
-    btn.setAttribute('aria-expanded', 'false');
-
-    // Restaurar scroll
-    body.style.overflow = body.dataset.prevOverflow || '';
-    delete body.dataset.prevOverflow;
+    overlay.classList.remove('show');
+    btn.setAttribute('aria-expanded','false');
+    lockScroll(false);
   }
 
-  function toggleMenu() {
-    if (isOpen()) closeMenu();
-    else openMenu();
+  function toggleMenu(){
+    isOpen() ? closeMenu() : openMenu();
   }
 
-  // ── Botón hamburguesa ──
-  btn.addEventListener('click', function (e) {
+  // Botón
+  btn.addEventListener('click', function(e){
     e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   });
 
-  // Click dentro del menú: no cierra
-  menu.addEventListener('click', function (e) {
-    e.stopPropagation();
+  // Click overlay (tap fuera)
+  overlay.addEventListener('click', function(){
+    if (isOpen()) closeMenu();
   });
 
-  // Click fuera: cierra
-  document.addEventListener('click', function (e) {
-    if (!isOpen()) return;
-    if (menu.contains(e.target) || btn.contains(e.target)) return;
-    closeMenu();
+  // ESC
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && isOpen()) closeMenu();
   });
 
-  // ESC: cierra
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && isOpen()) {
-      closeMenu();
-      btn.focus({ preventScroll: true });
-    }
-  });
-
-  // Cerrar al pulsar un enlace del menú
-  menu.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
+  // Cerrar al pulsar un enlace
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
       closeMenu();
     });
   });
 
-  // ─────────────────────────────
-  // SWIPE DENTRO DEL MENÚ (derecha)
-  // ─────────────────────────────
-  var startX_menu = 0;
-  var startY_menu = 0;
+  // =========================
+  // SWIPE EN OVERLAY (fuera del menú)
+  // =========================
+  var startX = 0, startY = 0;
 
-  menu.addEventListener('touchstart', function (e) {
+  overlay.addEventListener('touchstart', function(e){
     if (!isOpen()) return;
     var t = e.changedTouches[0];
-    startX_menu = t.clientX;
-    startY_menu = t.clientY;
+    startX = t.clientX;
+    startY = t.clientY;
   }, { passive: true });
 
-  menu.addEventListener('touchend', function (e) {
+  overlay.addEventListener('touchend', function(e){
     if (!isOpen()) return;
     var t = e.changedTouches[0];
-    var dx = t.clientX - startX_menu;
-    var dy = Math.abs(t.clientY - startY_menu);
+    var dx = t.clientX - startX;
+    var dy = Math.abs(t.clientY - startY);
 
-    // swipe claramente horizontal a la derecha
-    if (dx > 60 && dy < 50) closeMenu();
+    // gesto horizontal claro (en cualquier dirección) -> cerrar
+    if (Math.abs(dx) > 40 && dy < 80) closeMenu();
   }, { passive: true });
 
-  // ─────────────────────────────
-  // SWIPE FUERA DEL MENÚ (en la página)
-  // ─────────────────────────────
-  var startX_out = 0;
-  var startY_out = 0;
-  var trackingOutside = false;
-
-  document.addEventListener('touchstart', function (e) {
+  // (Opcional) swipe dentro del menú hacia la derecha -> cerrar
+  var mStartX = 0, mStartY = 0;
+  menu.addEventListener('touchstart', function(e){
     if (!isOpen()) return;
-
-    // Solo si empieza fuera del menú y fuera del botón
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      var t = e.changedTouches[0];
-      startX_out = t.clientX;
-      startY_out = t.clientY;
-      trackingOutside = true;
-    }
-  }, { passive: true });
-
-  document.addEventListener('touchend', function (e) {
-    if (!trackingOutside) return;
-    trackingOutside = false;
-    if (!isOpen()) return;
-
     var t = e.changedTouches[0];
-    var dx = Math.abs(t.clientX - startX_out);
-    var dy = Math.abs(t.clientY - startY_out);
-
-    // gesto horizontal dominante fuera del menú -> cerrar
-    if (dx > 50 && dy < 60) closeMenu();
+    mStartX = t.clientX;
+    mStartY = t.clientY;
   }, { passive: true });
 
-  // Si cambia a escritorio, cerrar y restaurar scroll
-  window.addEventListener('resize', function () {
+  menu.addEventListener('touchend', function(e){
+    if (!isOpen()) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - mStartX;
+    var dy = Math.abs(t.clientY - mStartY);
+
+    if (dx > 50 && dy < 80) closeMenu();
+  }, { passive: true });
+
+  // Si pasas a escritorio, cerrar
+  window.addEventListener('resize', function(){
     if (window.innerWidth > 768 && isOpen()) closeMenu();
   });
 });
