@@ -119,8 +119,8 @@ html, body {
             url('img/banner1.webp');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
+            background-attachment: scroll;
+            min-height: 100svh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -396,7 +396,7 @@ html, body {
             background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
             url("img/banner2.webp");
             background-size: cover;       /* ← añade esto */
-            background-position: center top 20%;  /* ← y esto */
+            background-position: center 20%;  /* ← y esto */
             color: #fff;
             text-align: center;
             padding: 80px 20px;
@@ -490,59 +490,6 @@ html, body {
             color: #fff;
             transform: translateY(-3px);
         }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 60px 20px 20px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #aaa;
-            text-decoration: none;
-            line-height: 2;
-            display: block;
-            font-size: 14px;
-        }
-
-        .footer-section a:hover {
-            color: #2196F3;
-        }
-
-        .footer-logo {
-            margin-bottom: 20px;
-        }
-
-        .footer-logo img {
-            height: 70px;
-            width: auto;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #666;
-            font-size: 14px;
-        }
-
         /* Responsive */
         .nav-toggle{
             display: none;
@@ -662,12 +609,12 @@ html, body {
         .yescapa-link:hover {
             text-decoration: underline;
         }
-         .instagram-float {
+           .instagram-float {
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: #E1306C;
     color: #fff;
     border-radius: 50%;
@@ -849,12 +796,6 @@ html, body {
     align-items: flex-start;
   }
 }
-.instagram-float{
-  bottom: 20px !important;
-  right: 20px !important;
-  top: auto !important;
-  left: auto !important;
-}
 .logo-link{
   display:inline-flex;
   align-items:center;
@@ -865,6 +806,20 @@ html, body {
 .logo-link:focus-visible{
   outline:2px solid currentColor;
   outline-offset:4px;
+}
+/* Overlay para el menu movil */
+.nav-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 999;
+}
+.nav-overlay.show{
+  opacity: 1;
+  pointer-events: auto;
 }
     </style>
 </head>
@@ -1074,7 +1029,7 @@ html, body {
         <div class="footer-note">
           <p><strong>Titular:</strong> Campy Canaria (particular propietario del vehículo)</p>
           <p><strong>Domicilio:</strong> Gran Canaria, Islas Canarias, España</p>
-          <p><strong>Contacto:</strong> <a href="mailto:campycanaria@gmail.com">campycanaria@gmail.com</a>
+          <p><strong>Contacto:</strong> <a href="mailto:campycanaria@gmail.com">campycanaria@gmail.com</a></p>
           <p><strong>Actividad:</strong> Web informativa sobre alquiler de vehículo particular registrado en la plataforma Yescapa.</p>
           <p><strong>Intermediación:</strong> Campy Canaria no gestiona reservas, pagos ni contratos directamente. Todas las reservas se realizan exclusivamente a través de <a href="https://www.yescapa.es" target="_blank" rel="noopener">Yescapa</a>, plataforma intermediaria responsable de dichas transacciones.</p>
           <p><strong>Responsabilidad:</strong> Los términos y condiciones del alquiler, seguros, pagos y cancelaciones están regulados íntegramente por Yescapa.</p>
@@ -1122,10 +1077,7 @@ html, body {
         <span class="dot">•</span>
         <a href="#" onclick="openCookiePanel(); return false;" id="cookie-prefs-link">Cambiar preferencias de cookies</a>
         <span class="dot">•</span>
-        <a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener">Instagram</a>
-        <span class="dot">•</span>
-        <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener">Reservar</a>
-      </div>
+       </div>
     </div>
   </div>
 </footer>
@@ -1402,15 +1354,17 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
             });
         });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (nav) {
-                if (window.scrollY > 50) {
-                    nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
-                }
-            }
-        });
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('nav');
+  if (nav) {
+    if (window.scrollY > 50) {
+      nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
+    } else {
+      nav.style.boxShadow = '';
+    }
+  }
+});
     </script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {

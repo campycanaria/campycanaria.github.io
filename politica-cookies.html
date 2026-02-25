@@ -14,7 +14,7 @@
       overflow-x: clip;   
       }
       body{
-        ouch-action: pan-y;
+        touch-action: pan-y;
         overscroll-behavior-x: none
       }
     .page-header, .breadcrumb, .page-body, nav, footer{
@@ -81,8 +81,6 @@
     .page-header {
       background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
       url("img/banner3.webp");
-       background-size: cover;       /* ← añade esto */
-    background-position: center;  /* ← y esto */
       color: #fff;
       padding: 110px 20px 60px;
       text-align: center;
@@ -386,73 +384,8 @@
     .back-section a:hover { color: #2196F3; text-decoration: none; }
     .back-section .sep { color: #ddd; }
 
-/* Footer */
-        footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 60px 20px 20px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #aaa;
-            text-decoration: none;
-            line-height: 2;
-            display: block;
-            font-size: 14px;
-        }
-
-        .footer-section a:hover {
-            color: #2196F3;
-        }
-
-        .footer-logo {
-            margin-bottom: 20px;
-        }
-
-        .footer-logo img {
-            height: 70px;
-            width: auto;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #666;
-            font-size: 14px;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
-          /* Animación base del contenedor */
-.nav-links{
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity .25s ease, transform .25s ease;
-}
-
-/* Estado abierto */
-.nav-links.open{
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Animación individual por línea */
 .nav-links li{
   opacity: 0;
@@ -567,12 +500,12 @@
         .yescapa-link:hover {
             text-decoration: underline;
         }
-         .instagram-float {
+           .instagram-float {
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: #E1306C;
     color: #fff;
     border-radius: 50%;
@@ -763,12 +696,6 @@
   .footer-content {
     grid-template-columns: 1fr;
   }
-}
-.instagram-float{
-  bottom: 20px !important;
-  right: 20px !important;
-  top: auto !important;
-  left: auto !important;
 }
   @media (max-width: 768px) {
     .page-body{
@@ -1105,10 +1032,7 @@
         <span class="dot">•</span>
         <a href="#" onclick="openCookiePanel(); return false;" id="cookie-prefs-link">Cambiar preferencias de cookies</a>
         <span class="dot">•</span>
-        <a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener">Instagram</a>
-        <span class="dot">•</span>
-        <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener">Reservar</a>
-      </div>
+       </div>
     </div>
   </div>
 </footer>
@@ -1440,14 +1364,16 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
         });
 
         // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (nav) {
-                if (window.scrollY > 50) {
-                    nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
-                }
-            }
-        });
+       window.addEventListener('scroll', function() {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+
+  if (window.scrollY > 50) {
+    nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
+  } else {
+    nav.style.boxShadow = '';
+  }
+});
     </script>
 
 <script>

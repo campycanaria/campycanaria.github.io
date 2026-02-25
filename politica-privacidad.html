@@ -68,8 +68,6 @@
     .page-header {
       background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
       url("img/banner3.webp");
-       background-size: cover;       /* ← añade esto */
-    background-position: center;  /* ← y esto */
       color: #fff;
       padding: 110px 20px 60px;
       text-align: center;
@@ -373,67 +371,8 @@
     .back-section a:hover { color: #2196F3; text-decoration: none; }
     .back-section .sep { color: #ddd; }
 
-/* Footer */
-        footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 60px 20px 20px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #aaa;
-            text-decoration: none;
-            line-height: 2;
-            display: block;
-            font-size: 14px;
-        }
-
-        .footer-section a:hover {
-            color: #2196F3;
-        }
-
-        .footer-logo {
-            margin-bottom: 20px;
-        }
-
-        .footer-logo img {
-            height: 70px;
-            width: auto;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #666;
-            font-size: 14px;
-        }
-
         /* Responsive */
 @media (max-width: 768px){
-  /* Animación base del contenedor */
-.nav-links{
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity .25s ease, transform .25s ease;
-}
-
 /* Estado abierto */
 .nav-links.open{
   opacity: 1;
@@ -553,12 +492,12 @@
         .yescapa-link:hover {
             text-decoration: underline;
         }
-         .instagram-float {
+           .instagram-float {
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: #E1306C;
     color: #fff;
     border-radius: 50%;
@@ -756,12 +695,6 @@
     grid-template-columns: 1fr;
   }
 }
-.instagram-float{
-  bottom: 20px !important;
-  right: 20px !important;
-  top: auto !important;
-  left: auto !important;
-}
     </style>
   <style>
     /* ── EXTRAS para privacidad ── */
@@ -788,6 +721,84 @@
     .checklist li i.ok { color: #4CAF50; margin-top: 3px; flex-shrink: 0; font-size: 14px; }
     .checklist li i.no { color: #f44336; margin-top: 3px; flex-shrink: 0; font-size: 14px; }
   </style>
+<style>
+      .rights-intro {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      .rights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+        margin: 24px 0 28px;
+      }
+      .right-card {
+        background: #f4f8ff;
+        border: 1px solid #d0e4ff;
+        border-left: 4px solid #2196F3;
+        border-radius: 10px;
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .right-card .right-icon {
+        font-size: 20px;
+        color: #2196F3;
+      }
+      .right-card .right-title {
+        font-weight: 700;
+        font-size: 14px;
+        color: #1a1a2e;
+      }
+      .right-card .right-desc {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.5;
+      }
+      .rights-notice {
+        background: #fffbea;
+        border: 1px solid #ffe082;
+        border-radius: 10px;
+        padding: 18px 20px;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 16px;
+      }
+      .rights-notice strong { color: #333; }
+      .rights-contact {
+        background: #f0f9f4;
+        border: 1px solid #b2dfdb;
+        border-radius: 10px;
+        padding: 18px 20px;
+        font-size: 14px;
+        color: #444;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .rights-contact .contact-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .rights-contact .contact-row i {
+        color: #2e7d52;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .rights-aepd {
+        font-size: 14px;
+        color: #555;
+        background: #fafafa;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 14px 18px;
+      }
+      .rights-aepd i { color: #888; margin-right: 6px; }
+    </style>
 <!-- Google Analytics 4 — se carga SOLO tras consentimiento explícito (RGPD/LSSI) -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -924,84 +935,7 @@
 
     <hr class="section-divider">
 
-    <style>
-      .rights-intro {
-        font-size: 15px;
-        color: #555;
-        margin-bottom: 20px;
-      }
-      .rights-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 14px;
-        margin: 24px 0 28px;
-      }
-      .right-card {
-        background: #f4f8ff;
-        border: 1px solid #d0e4ff;
-        border-left: 4px solid #2196F3;
-        border-radius: 10px;
-        padding: 16px 18px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .right-card .right-icon {
-        font-size: 20px;
-        color: #2196F3;
-      }
-      .right-card .right-title {
-        font-weight: 700;
-        font-size: 14px;
-        color: #1a1a2e;
-      }
-      .right-card .right-desc {
-        font-size: 13px;
-        color: #555;
-        line-height: 1.5;
-      }
-      .rights-notice {
-        background: #fffbea;
-        border: 1px solid #ffe082;
-        border-radius: 10px;
-        padding: 18px 20px;
-        font-size: 14px;
-        color: #555;
-        margin-bottom: 16px;
-      }
-      .rights-notice strong { color: #333; }
-      .rights-contact {
-        background: #f0f9f4;
-        border: 1px solid #b2dfdb;
-        border-radius: 10px;
-        padding: 18px 20px;
-        font-size: 14px;
-        color: #444;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        margin-bottom: 16px;
-      }
-      .rights-contact .contact-row {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .rights-contact .contact-row i {
-        color: #2e7d52;
-        margin-top: 2px;
-        flex-shrink: 0;
-      }
-      .rights-aepd {
-        font-size: 14px;
-        color: #555;
-        background: #fafafa;
-        border: 1px solid #e0e0e0;
-        border-radius: 10px;
-        padding: 14px 18px;
-      }
-      .rights-aepd i { color: #888; margin-right: 6px; }
-    </style>
+    
 
     <h2 id="sec6"><i class="fa-solid fa-user-shield"></i> 6. Derechos de los interesados</h2>
     <p class="rights-intro">En virtud de los artículos 15 a 22 del RGPD y los artículos 12 a 18 de la LOPDGDD, como usuario tienes los siguientes derechos sobre tus datos personales:</p>
@@ -1186,10 +1120,7 @@
         <span class="dot">•</span>
         <a href="#" onclick="openCookiePanel(); return false;" id="cookie-prefs-link">Cambiar preferencias de cookies</a>
         <span class="dot">•</span>
-        <a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener">Instagram</a>
-        <span class="dot">•</span>
-        <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener">Reservar</a>
-      </footer>
+       </footer>
 
       <!-- Botón flotante Instagram -->
 <a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener" class="instagram-float" aria-label="Síguenos en Instagram">
