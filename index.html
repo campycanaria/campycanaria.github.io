@@ -827,7 +827,36 @@ html, body {
 }
     </style>
 </head>
-<body>
+<script>
+function getQRSource(){
+  const params = new URLSearchParams(window.location.search);
+  return params.get("src") || "direct";
+}
+
+window.qrSource = getQRSource();
+</script>
+<script>
+if (window.qrSource && typeof gtag === "function") {
+  gtag('event','qr_visit',{
+    qr_source: window.qrSource
+  });
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const yescapaLinks = document.querySelectorAll('a[href*="yescapa.es/campers"]');
+
+  yescapaLinks.forEach(link => {
+    const base = link.href.split("?")[0];
+
+    link.href =
+      base +
+      "?utm_source=" + window.qrSource +
+      "&utm_medium=qr" +
+      "&utm_campaign=offline";
+  });
+});
+</script><body>
     <!-- Navegación -->
     <nav class="main-nav">
         <div class="nav-container">
