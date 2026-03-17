@@ -701,7 +701,6 @@
       <li><a href="/">Inicio</a></li>
       <li><a href="/#vehiculo">El vehículo</a></li>
       <li><a href="/#como-funciona">Cómo funciona</a></li>
-      <li><a href="/guias/">Guías</a></li>
       <li><a href="/#contacto">Contacto</a></li>
     </ul>
   </div>
@@ -890,82 +889,64 @@
   <i class="fab fa-instagram"></i>
 </a>
 <!-- ============================================================
-     BANNER DE CONSENTIMIENTO DE COOKIES (RGPD / LSSI-CE art.22.2)
+     BANNER DE CONSENTIMIENTO DE cookies (RGPD / LSSI-CE art.22.2)
      ============================================================ -->
-<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#fff; color:#333; padding:16px 24px; z-index:9999; box-shadow:0 -2px 16px rgba(0,0,0,0.10); border-top:1px solid #e8e8e8; font-family:'Segoe UI',sans-serif; font-size:14px; line-height:1.6;">
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1a1a2e; color:#f0f0f0; padding:18px 24px; z-index:9999; box-shadow:0 -4px 20px rgba(0,0,0,0.35); font-family:'Segoe UI',sans-serif; font-size:14px; line-height:1.6;">
   <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
-    <div style="flex:1; min-width:240px;">
-      <strong style="font-size:14px; color:#111;">Esta web usa cookies analíticas</strong><br>
-      <span style="color:#555; font-size:13px;">Usamos Google Analytics para mejorar tu experiencia. Ninguna cookie se instala sin tu permiso.</span><br>
-      <small style="color:#999; font-size:11px;">Base legal: RGPD art. 6.1.a · LSSI-CE art. 22.2 · <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a></small>
+    <div style="flex:1; min-width:260px;">
+      <strong>Esta web usa cookies analíticas</strong><br>
+      Utilizamos <strong>Google Analytics 4</strong> para medir el tráfico y mejorar la experiencia. <strong>Ninguna cookie se instala sin tu consentimiento previo.</strong> Los datos se transfieren a Google LLC (EE.UU.) bajo la Decisión de Adecuación UE–EE.UU. (Data Privacy Framework).<br>
+      Puedes aceptar, rechazar o <a href="#" onclick="openCookiePanel();return false;" style="color:#90caf9;">configurar tus preferencias</a>. Más info: <a href="politica-cookies.html" style="color:#90caf9;">Política de cookies</a>.<br>
+      <small style="opacity:0.75;">Base legal: consentimiento — RGPD (UE) 2016/679 art. 6.1.a · LSSI-CE art. 22.2 · Criterios AEPD.</small>
     </div>
-    <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0; align-items:stretch; min-width:160px;">
-      <button onclick="acceptcookies()" style="background:#2196F3; color:#fff; border:none; padding:12px 28px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; white-space:nowrap;">Aceptar cookies</button>
-      <div style="display:flex; gap:14px; justify-content:center;">
-        <button onclick="rejectcookies()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Rechazar</button>
-        <span style="color:#ccc; font-size:12px;">·</span>
-        <button onclick="openCookiePanel()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Configurar</button>
-      </div>
+    <div style="display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap;">
+      <button onclick="acceptcookies()" style="background:#2196F3; color:#fff; border:none; padding:10px 22px; border-radius:6px; cursor:pointer; font-weight:600; font-size:14px;">Aceptar</button>
+      <button onclick="rejectcookies()" style="background:transparent; color:#f0f0f0; border:1px solid #aaa; padding:10px 22px; border-radius:6px; cursor:pointer; font-size:14px;">Rechazar</button>
+      <button onclick="openCookiePanel()" style="background:transparent; color:#90caf9; border:1px solid #90caf9; padding:10px 18px; border-radius:6px; cursor:pointer; font-size:13px;">Configurar</button>
     </div>
   </div>
 </div>
 
 <!-- ============================================================
-     PANEL DE PREFERENCIAS DE COOKIES (segunda capa)
+     PANEL DE PREFERENCIAS DE cookies (segunda capa / revisión)
      ============================================================ -->
-<div id="cookie-panel" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:10000; font-family:'Segoe UI',sans-serif;" role="dialog" aria-modal="true" aria-label="Configurar preferencias de cookies">
-  <div style="position:absolute; bottom:0; left:0; right:0; max-height:90vh; overflow-y:auto; background:#fff; color:#333; padding:28px 24px; max-width:560px; margin:0 auto; border-radius:16px 16px 0 0; box-shadow:0 -4px 32px rgba(0,0,0,0.15);">
-    <p style="font-size:18px; font-weight:600; margin:0 0 6px; color:#111;">Preferencias de cookies</p>
-    <p style="font-size:13px; color:#777; margin:0 0 20px; line-height:1.5;">Activa o desactiva cada categoría. Las cookies esenciales siempre están activas.</p>
+<div id="cookie-panel" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:10000; font-family:'Segoe UI',sans-serif;" role="dialog" aria-modal="true" aria-label="Configurar preferencias de cookies">
+  <div style="position:absolute; bottom:0; left:0; right:0; max-height:90vh; overflow-y:auto; background:#fff; color:#333; padding:32px 28px; max-width:600px; margin:0 auto; border-radius:16px 16px 0 0; box-shadow:0 -8px 40px rgba(0,0,0,0.2);">
+    <h2 style="margin:0 0 8px; font-size:20px;">⚙️ Preferencias de cookies</h2>
+    <p style="font-size:13px; color:#666; margin-bottom:24px;">Puedes activar o desactivar cada categoría. Las cookies estrictamente necesarias no se pueden desactivar ya que son imprescindibles para el funcionamiento del sitio.</p>
 
-    <!-- Esenciales -->
-    <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid #f0f0f0;">
-      <div>
-        <strong style="font-size:13px; color:#222;">Esenciales</strong>
-        <p style="font-size:12px; color:#aaa; margin:3px 0 0;">Necesarias para el funcionamiento del sitio.</p>
+    <!-- Fila: Estrictamente necesarias -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:16px 0; border-bottom:1px solid #eee;">
+      <div style="flex:1; padding-right:16px;">
+        <strong style="font-size:14px;">Estrictamente necesarias</strong>
+        <p style="font-size:12px; color:#777; margin:4px 0 0;">Necesarias para que el sitio funcione. No se pueden desactivar.</p>
       </div>
-      <span style="background:#f2f2f2; color:#888; font-size:11px; padding:3px 12px; border-radius:20px; white-space:nowrap;">Siempre activas</span>
+      <div style="background:#e0e0e0; color:#555; font-size:12px; padding:4px 12px; border-radius:20px; white-space:nowrap; margin-top:4px;">Siempre activas</div>
     </div>
 
-    <!-- Analíticas -->
-    <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid #f0f0f0;">
+    <!-- Fila: Analíticas (toggle) -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:16px 0; border-bottom:1px solid #eee;">
       <div style="flex:1; padding-right:16px;">
-        <strong style="font-size:13px; color:#222;">Analíticas · Google Analytics 4</strong>
-        <p style="font-size:12px; color:#aaa; margin:3px 0 0; line-height:1.4;">Nos ayudan a mejorar el sitio. Datos seudoanonimizados. Proveedor: Google LLC (EE.UU., Data Privacy Framework).</p>
-        <p style="font-size:11px; color:#ccc; margin:3px 0 0;">Cookies: <code>_ga</code>, <code>_ga_CK0BB6T9TB</code> · Duración: hasta 1 año.</p>
+        <strong style="font-size:14px;">Analíticas (Google Analytics 4)</strong>
+        <p style="font-size:12px; color:#777; margin:4px 0 0;">Nos ayudan a entender cómo se usa el sitio. Datos seudoni­mizados. Proveedor: Google LLC (EE.UU., Data Privacy Framework).</p>
+        <p style="font-size:11px; color:#aaa; margin:4px 0 0;">cookies: <code>_ga</code>, <code>_ga_CK0BB6T9TB</code> · Duración: hasta 1 año.</p>
       </div>
-      <label style="position:relative; display:inline-block; width:48px; height:26px; flex-shrink:0;">
+      <label style="position:relative; display:inline-block; width:48px; height:26px; flex-shrink:0; margin-top:4px;">
+        <!-- FIX 3: onchange vincula el input al toggle para accesibilidad por teclado (Tab + Space) -->
         <input type="checkbox" id="toggle-analytics" onchange="toggleAnalytics()" style="opacity:0; width:0; height:0;">
         <span id="toggle-analytics-track" onclick="toggleAnalytics()" style="position:absolute; cursor:pointer; inset:0; border-radius:26px; background:#ccc; transition:.3s;"></span>
-        <span id="toggle-analytics-thumb" style="position:absolute; height:20px; width:20px; left:3px; bottom:3px; border-radius:50%; background:white; transition:.3s; pointer-events:none; box-shadow:0 1px 3px rgba(0,0,0,0.2);"></span>
+        <span id="toggle-analytics-thumb" style="position:absolute; height:20px; width:20px; left:3px; bottom:3px; border-radius:50%; background:white; transition:.3s; pointer-events:none;"></span>
       </label>
     </div>
 
-    <div style="display:flex; gap:8px; margin-top:20px; flex-wrap:wrap;">
-      <button onclick="savePanelPreferences()" style="background:#2196F3; color:#fff; border:none; padding:11px 22px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; flex:1; min-width:140px;">Guardar preferencias</button>
-      <button onclick="acceptAllFromPanel()" style="background:#f5f5f5; color:#333; border:1px solid #e0e0e0; padding:11px 18px; border-radius:8px; cursor:pointer; font-size:13px;">Aceptar todo</button>
-      <button onclick="rejectAllFromPanel()" style="background:transparent; color:#aaa; border:1px solid #e8e8e8; padding:11px 18px; border-radius:8px; cursor:pointer; font-size:13px;">Rechazar todo</button>
+    <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;">
+      <button onclick="savePanelPreferences()" style="background:#2196F3; color:#fff; border:none; padding:11px 28px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; flex:1; min-width:140px;">Guardar preferencias</button>
+      <button onclick="acceptAllFromPanel()" style="background:#43a047; color:#fff; border:none; padding:11px 22px; border-radius:8px; cursor:pointer; font-size:14px;">Aceptar todo</button>
+      <button onclick="rejectAllFromPanel()" style="background:transparent; color:#555; border:1px solid #ccc; padding:11px 22px; border-radius:8px; cursor:pointer; font-size:14px;">Rechazar todo</button>
     </div>
-    <p style="font-size:11px; color:#bbb; margin:14px 0 0; text-align:center;">
+    <p style="font-size:11px; color:#aaa; margin:16px 0 0; text-align:center;">
       <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a> · <a href="politica-privacidad.html" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
     </p>
-  </div>
-</div>
-<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#fff; color:#333; padding:16px 24px; z-index:9999; box-shadow:0 -2px 16px rgba(0,0,0,0.10); border-top:1px solid #e8e8e8; font-family:'Segoe UI',sans-serif; font-size:14px; line-height:1.6;">
-  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
-    <div style="flex:1; min-width:240px;">
-      <strong style="font-size:14px; color:#111;">Esta web usa cookies analíticas</strong><br>
-      <span style="color:#555; font-size:13px;">Usamos Google Analytics para mejorar tu experiencia. Ninguna cookie se instala sin tu permiso.</span><br>
-      <small style="color:#999; font-size:11px;">Base legal: RGPD art. 6.1.a · LSSI-CE art. 22.2 · <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a></small>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0; align-items:stretch; min-width:160px;">
-      <button onclick="acceptcookies()" style="background:#2196F3; color:#fff; border:none; padding:12px 28px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; white-space:nowrap;">Aceptar cookies</button>
-      <div style="display:flex; gap:14px; justify-content:center;">
-        <button onclick="rejectcookies()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Rechazar</button>
-        <span style="color:#ccc; font-size:12px;">·</span>
-        <button onclick="openCookiePanel()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Configurar</button>
-      </div>
-    </div>
   </div>
 </div>
 
