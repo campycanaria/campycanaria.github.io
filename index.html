@@ -14,6 +14,21 @@
 <link rel="alternate" hreflang="it" href="https://campycanaria.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://campycanaria.com/">
 <link rel="canonical" href="https://campycanaria.com/">
+<script>
+if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+  var idioma = (navigator.language || "").toLowerCase();
+
+  if (idioma.startsWith("en")) {
+    window.location.replace("/en/");
+  } else if (idioma.startsWith("fr")) {
+    window.location.replace("/fr/");
+  } else if (idioma.startsWith("de")) {
+    window.location.replace("/de/");
+  } else if (idioma.startsWith("it")) {
+    window.location.replace("/it/");
+  }
+}
+</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 html, body {
