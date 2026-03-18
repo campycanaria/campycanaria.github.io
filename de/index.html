@@ -98,12 +98,41 @@ html, body {
             justify-content: space-between;
             align-items: center;
         }
-
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
         .logo img {
             height: 50px;
             width: auto;
         }
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
 
+.lang-switcher a {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+    background: #f0f7ff;
+    color: #2196F3;
+}
+
+.lang-switcher a.active {
+    background: #2196F3;
+    color: #fff;
+}
         .nav-links {
             display: flex;
             list-style: none;
@@ -503,10 +532,21 @@ html, body {
         .nav-toggle{
             display: none;
         }
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
+
+          .lang-switcher {
+            margin-left: auto;
+            margin-right: 10px;
+            gap: 6px;
+          }
+
+          .lang-switcher a {
+            font-size: 12px;
+            padding: 5px 6px;
+          }
+
           /* Animación base del contenedor */
-.nav-links{
-  opacity: 0;
+.nav-links{  opacity: 0;
   transform: translateY(-8px);
   transition: opacity .25s ease, transform .25s ease;
 }
@@ -517,8 +557,7 @@ html, body {
   transform: translateY(0);
 }
 
-/* Animación individual por línea */
-.nav-links li{
+/* Animación individual por línea */.nav-links li{
   opacity: 0;
   transform: translateX(10px);
   transition: opacity .25s ease, transform .25s ease;
@@ -867,8 +906,16 @@ document.addEventListener("DOMContentLoaded", function () {
     <nav class="main-nav">
         <div class="nav-container">
             <div class="logo">
-                <a href="/de/"><img src="../img/logo.webp" alt="Campervan mieten auf Gran Canaria - Campy Canaria"></a>
-            </div>
+    <a href="/de/"><img src="../img/logo.webp" alt="Camper mieten auf Gran Canaria"></a>
+
+    <div class="lang-switcher">
+        <a href="/">ES</a>
+        <a href="/en/">EN</a>
+        <a href="/fr/">FR</a>
+        <a href="/de/" class="active">DE</a>
+        <a href="/it/">IT</a>
+    </div>
+</div>
             <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
@@ -876,7 +923,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <li><a href="#inicio">Startseite</a></li>
 <li><a href="#vehiculo">Das Fahrzeug</a></li>
 <li><a href="#como-funciona">Wie es funktioniert</a></li>
-<li><a href="/guias/">Guides</a></li>
+<li><a href="/de/guias/">Guides</a></li>
 <li><a href="#contacto">Kontakt</a></li>
             </ul>
         </div>
