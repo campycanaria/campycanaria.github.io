@@ -881,8 +881,8 @@ function getQRSource(){
 window.qrSource = getQRSource();
 </script>
 <script>
-if (window.qrSource && typeof gtag === "function") {
-  gtag('event','qr_visit',{
+if (getConsent() === 'accepted') {
+  safeGtagEvent('qr_visit', {
     qr_source: window.qrSource
   });
 }

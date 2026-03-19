@@ -1,29 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://campycanaria.com/</loc>
-<lastmod>2026-03-09</lastmod>
-</url>
+  <url>
+    <loc>https://campycanaria.com/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
 
-<url>
-<loc>https://campycanaria.com/en/</loc>
-<lastmod>2026-03-09</lastmod>
-</url>
+  <url>
+    <loc>https://campycanaria.com/en/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
 
-<url>
-<loc>https://campycanaria.com/de/</loc>
-<lastmod>2026-03-09</lastmod>
-</url>
+  <url>
+    <loc>https://campycanaria.com/de/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
 
-<url>
-<loc>https://campycanaria.com/fr/</loc>
-<lastmod>2026-03-09</lastmod>
-</url>
+  <url>
+    <loc>https://campycanaria.com/fr/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
 
-<url>
-<loc>https://campycanaria.com/it/</loc>
-<lastmod>2026-03-09</lastmod>
-</url>
+  <url>
+    <loc>https://campycanaria.com/it/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://campycanaria.com/guias/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://campycanaria.com/en/guias/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://campycanaria.com/de/guias/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://campycanaria.com/fr/guias/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://campycanaria.com/it/guias/</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
 
 </urlset>

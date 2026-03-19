@@ -879,8 +879,8 @@ function getQRSource(){
 window.qrSource = getQRSource();
 </script>
 <script>
-if (window.qrSource && typeof gtag === "function") {
-  gtag('event','qr_visit',{
+if (getConsent() === 'accepted') {
+  safeGtagEvent('qr_visit', {
     qr_source: window.qrSource
   });
 }
@@ -1052,10 +1052,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="container">
 <h2>Commencez MAINTENANT votre aventure à Gran Canaria !</h2>
 <p>Réservez maintenant en toute sécurité sur Yescapa et commencez à planifier votre itinéraire autour de l’île</p>
-    <div class="logo">
-      <a href="/fr/"><img src="../../img/logo.webp" alt="Campy Canaria"></a>
-    </div>
-    Voir les disponibilités sur Yescapa
+   <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener noreferrer" class="btn btn-white">
+  Voir les disponibilités sur Yescapa
 </a>
 </div>
 </section>
@@ -1232,23 +1230,6 @@ et coordination préalable</p>
     <p style="font-size:11px; color:#bbb; margin:14px 0 0; text-align:center;">
       <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a> · <a href="politica-privacidad.html" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
     </p>
-  </div>
-</div>
-<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#fff; color:#333; padding:16px 24px; z-index:9999; box-shadow:0 -2px 16px rgba(0,0,0,0.10); border-top:1px solid #e8e8e8; font-family:'Segoe UI',sans-serif; font-size:14px; line-height:1.6;">
-  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
-    <div style="flex:1; min-width:240px;">
-      <strong style="font-size:14px; color:#111;">Esta web usa cookies analíticas</strong><br>
-      <span style="color:#555; font-size:13px;">Usamos Google Analytics para mejorar tu experiencia. Ninguna cookie se instala sin tu permiso.</span><br>
-      <small style="color:#999; font-size:11px;">Base legal: RGPD art. 6.1.a · LSSI-CE art. 22.2 · <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a></small>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0; align-items:stretch; min-width:160px;">
-      <button onclick="acceptcookies()" style="background:#2196F3; color:#fff; border:none; padding:12px 28px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; white-space:nowrap;">Aceptar cookies</button>
-      <div style="display:flex; gap:14px; justify-content:center;">
-        <button onclick="rejectcookies()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Rechazar</button>
-        <span style="color:#ccc; font-size:12px;">·</span>
-        <button onclick="openCookiePanel()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Configurar</button>
-      </div>
-    </div>
   </div>
 </div>
 
