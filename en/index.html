@@ -1285,7 +1285,15 @@ function getConsent() {
 function deleteGAcookies() {
   var cookies = document.cookie.split(';');
   var domain = location.hostname.replace(/^www\./, '');
-  var paths = ['/', '/aviso-legal', '/aviso-legal.html', '/politica-cookies', '/politica-cookies.html', '/politica-privacidad', '/politica-privacidad.html'];
+  var paths = [
+  '/',
+  '/aviso-legal', '/aviso-legal.html',
+  '/politica-cookies', '/politica-cookies.html',
+  '/politica-privacidad', '/politica-privacidad.html',
+  '/en/aviso-legal', '/en/aviso-legal.html',
+  '/en/politica-cookies', '/en/politica-cookies.html',
+  '/en/politica-privacidad', '/en/politica-privacidad.html'
+];
   var domains = [location.hostname, '.' + domain, domain];
   cookies.forEach(function(c) {
     var name = c.split('=')[0].trim();
