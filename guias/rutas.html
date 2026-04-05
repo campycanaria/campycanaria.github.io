@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rutas por el interior de Gran Canaria en camper: guía completa</title>
+  <meta name="description" content="Descubre rutas por el interior de Gran Canaria en camper: Roque Nublo, Tejeda, Artenara y miradores imprescindibles.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png">
+  <link rel="canonical" href="https://campycanaria.com/guias/rutas-interior/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* ── Navegación ── */
+    .main-nav {
+      background: #fff;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 50px; width: auto; }
+    .nav-links { display: flex; list-style: none; gap: 30px; }
+    .nav-links a {
+      text-decoration: none; color: #333; font-size: 14px;
+      font-weight: 500; transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active-page { color: #2196F3; }
+
+    .nav-toggle { display: none; }
+
+    /* ── Hero ── */
+    .page-hero {
+      background: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+                  url('../../img/banner1.webp') center/cover no-repeat;
+      padding: 160px 20px 80px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .page-hero .breadcrumb {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .page-hero .breadcrumb a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+    }
+
+    .page-hero .breadcrumb a:hover { color: #fff; }
+    .page-hero .breadcrumb span { margin: 0 6px; }
+
+    .page-hero h1 {
+      font-size: 46px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+    }
+
+    .page-hero p {
+      font-size: 19px;
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: .93;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      font-weight: 300;
+    }
+
+    /* ── Contenido guía ── */
+    .guide-content {
+      padding: 80px 20px;
+      background: #fff;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; }
+
+    /* Índice */
+    .guide-index {
+      background: #f8fbff;
+      border: 1px solid #daeaf8;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 54px;
+    }
+
+    .guide-index h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1565C0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .guide-index ol {
+      padding-left: 20px;
+    }
+
+    .guide-index ol li {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .guide-index ol li a {
+      color: #2196F3;
+      text-decoration: none;
+    }
+
+    .guide-index ol li a:hover { text-decoration: underline; }
+
+    /* Secciones */
+    .guide-section { margin-bottom: 54px; }
+
+    .guide-section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e8f4fd;
+    }
+
+    .guide-section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .guide-section ul, .guide-section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .guide-section ul li, .guide-section ol li {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 6px;
+    }
+
+    /* Bloque destacado azul */
+    .guide-box {
+      background: #f0f7ff;
+      border: 1px solid #c8e0f8;
+      border-left: 4px solid #2196F3;
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin: 28px 0;
+    }
+
+    .guide-box h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1565C0;
+      margin-bottom: 12px;
+    }
+
+    .guide-box p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* Bloque aviso amarillo */
+    .guide-warning {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-left: 4px solid #FFC107;
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin: 28px 0;
+    }
+
+    .guide-warning h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #e65100;
+      margin-bottom: 10px;
+    }
+
+    .guide-warning p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid #eaeaea;
+      padding: 22px 0;
+    }
+
+    .faq-item:first-of-type { border-top: 1px solid #eaeaea; }
+
+    .faq-item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* Separador */
+    .guide-divider {
+      border: none;
+      border-top: 1px solid #eaeaea;
+      margin: 52px 0;
+    }
+
+    /* ── CTA final ── */
+    .cta-section {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                  url('../../img/banner2.webp') center 20%/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .cta-section h2 { font-size: 36px; font-weight: 600; margin-bottom: 16px; }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 36px;
+      opacity: .95;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      padding: 16px 42px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      cursor: pointer;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .btn-white { background: #fff; color: #2196F3; border: 2px solid #fff; }
+    .btn-white:hover { background: transparent; color: #fff; border-color: #fff; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #0f1115;
+      color: rgba(255,255,255,.86);
+      padding: 70px 20px 24px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .footer-container { max-width: 1200px; margin: 0 auto; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 0.9fr;
+      gap: 40px;
+    }
+
+    .footer-col h3 { margin: 18px 0 14px; font-size: 16px; letter-spacing: .2px; color: #fff; }
+    .footer-col p { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.85; margin: 0 0 12px; }
+    .footer-col strong { color: rgba(255,255,255,.92); font-weight: 600; }
+
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+    .footer-logo { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); }
+    .footer-brand-name { font-weight: 700; color: #fff; line-height: 1.1; }
+    .footer-brand-tag { font-size: 13px; color: rgba(255,255,255,.65); margin-top: 3px; }
+
+    .footer-note { margin-top: 14px; padding: 14px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+
+    .footer-links { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .footer-links a {
+      color: rgba(255,255,255,.78); text-decoration: none; font-size: 14px;
+      padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03); transition: all .2s ease;
+    }
+    .footer-links a:hover { transform: translateY(-1px); background: rgba(33,150,243,.12); border-color: rgba(33,150,243,.35); color: #fff; }
+
+    .footer-card { margin-top: 18px; padding: 14px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .footer-card-title { font-size: 12px; letter-spacing: .6px; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 6px; }
+    .footer-card-text { color: rgba(255,255,255,.9); font-weight: 600; font-size: 14px; }
+
+    .footer-bottom {
+      margin-top: 38px; padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; color: rgba(255,255,255,.6); font-size: 13px;
+    }
+
+    .footer-mini-links { display: flex; align-items: center; gap: 10px; }
+    .footer-mini-links a { color: rgba(255,255,255,.75); text-decoration: none; }
+    .footer-mini-links a:hover { color: #fff; }
+    .footer-mini-links .dot { color: rgba(255,255,255,.35); }
+
+    /* ── Instagram flotante ── */
+    .instagram-float {
+      position: fixed; bottom: 25px; right: 20px;
+      width: 50px; height: 50px; background: #E1306C; color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      z-index: 9999; transition: all 0.3s ease; text-decoration: none;
+    }
+    .instagram-float:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.35); background: #C72A60; }
+
+    /* ── Overlay menú móvil ── */
+    .nav-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 999; }
+    .nav-overlay.show { opacity: 1; pointer-events: auto; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; opacity: 0; transform: translateY(-8px);
+        transition: opacity .25s ease, transform .25s ease;
+        position: absolute; top: 70px; right: 20px; left: 20px;
+        flex-direction: column; background: #fff; border-radius: 12px;
+        padding: 10px; box-shadow: 0 12px 30px rgba(0,0,0,.12);
+      }
+      .nav-links.open { display: flex; opacity: 1; transform: translateY(0); }
+      .nav-links li { opacity: 0; transform: translateX(10px); transition: opacity .25s ease, transform .25s ease; }
+      .nav-links.open li { opacity: 1; transform: translateX(0); }
+      .nav-links.open li:nth-child(1) { transition-delay: .05s; }
+      .nav-links.open li:nth-child(2) { transition-delay: .10s; }
+      .nav-links.open li:nth-child(3) { transition-delay: .15s; }
+      .nav-links.open li:nth-child(4) { transition-delay: .20s; }
+      .nav-links.open li:nth-child(5) { transition-delay: .25s; }
+
+      .nav-toggle {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 44px; height: 44px; border: 1px solid rgba(0,0,0,.12);
+        background: #fff; border-radius: 10px; cursor: pointer;
+      }
+
+      .nav-container { position: relative; }
+
+      .page-hero h1 { font-size: 30px; }
+      .page-hero p { font-size: 16px; }
+
+      .guide-section h2 { font-size: 20px; }
+      .cta-section h2 { font-size: 28px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navegación ── -->
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/"><img src="../../img/logo.webp" alt="Campy Canaria"></a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/#vehiculo">El vehículo</a></li>
+      <li><a href="/#como-funciona">Cómo funciona</a></li>
+      <li><a href="/guias/" class="active-page">Guías</a></li>
+      <li><a href="/#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="/guias/">Guías</a>
+    <span>›</span>
+    Rutas interior
+  </div>
+  <h1>Rutas por el interior de Gran Canaria</h1>
+  <p>Carreteras de montaña, miradores y pueblos con encanto para descubrir la isla desde dentro</p>
+</div>
+
+<!-- ── Contenido ── -->
+<section class="guide-content">
+  <div class="container">
+
+    <!-- Introducción -->
+    <div class="guide-section">
+      <p>El interior de Gran Canaria ofrece una de las rutas más espectaculares de la isla para hacer en camper. Aquí el viaje no gira tanto en torno a la playa, sino a carreteras de montaña, miradores, pueblos con encanto y paisajes volcánicos que cambian a cada curva.</p>
+      <p>Si estás pensando en recorrer el interior de Gran Canaria en camper, esta ruta te permitirá descubrir una cara mucho más auténtica de la isla, lejos del ambiente más turístico de la costa.</p>
+      <p>En esta guía encontrarás una propuesta pensada para disfrutar con calma, hacer paradas que realmente merecen la pena y entender qué zonas conviene enlazar en un mismo día.</p>
+    </div>
+
+    <!-- Índice -->
+    <div class="guide-index">
+      <h2>📋 Índice</h2>
+      <ol>
+        <li><a href="#por-que">Por qué recorrer el interior</a></li>
+        <li><a href="#ruta">Ruta por Roque Nublo y Tejeda</a></li>
+        <li><a href="#paradas">Paradas imprescindibles</a></li>
+        <li><a href="#consejos">Consejos para hacer la ruta</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ol>
+    </div>
+
+    <!-- Sección 1 -->
+    <div class="guide-section" id="por-que">
+      <h2>Por qué merece la pena recorrer el interior</h2>
+      <p>Si solo conoces la costa, recorrer el interior cambia completamente la imagen que tienes de Gran Canaria. En pocos kilómetros el paisaje pasa de palmeras y playas a barrancos, pinares y cumbres con niebla. Es una transición que sorprende mucho a quien llega esperando solo sol y arena.</p>
+      <p>El interior concentra algunos de los paisajes más espectaculares de la isla: formaciones volcánicas únicas, pueblos que conservan su carácter tradicional y miradores desde los que se ve casi toda la isla. Y al hacerlo en camper, tienes la ventaja de parar cuando quieras, sin depender de horarios ni de puntos de salida fijos.</p>
+      <p>Además, las carreteras del interior son un disfrute en sí mismas. Las curvas, los cambios de altitud y las vistas que se abren a cada tramo convierten el simple hecho de conducir en parte del plan. No hace falta que cada parada sea un gran destino: el trayecto ya tiene mucho valor.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Sección 2 -->
+    <div class="guide-section" id="ruta">
+      <h2>Ruta por el interior: Roque Nublo y Tejeda</h2>
+
+      <h3>Subida por la GC-15</h3>
+      <p>La ruta más habitual para adentrarse en el interior parte de la zona central de la isla y sube por la GC-15, atravesando Santa Brígida y San Mateo. Es una carretera cómoda, bien asfaltada y con vistas que van mejorando a medida que se gana altura. Los últimos kilómetros antes de Tejeda tienen algunas de las panorámicas más reconocibles de Gran Canaria.</p>
+
+      <h3>Roque Nublo</h3>
+      <p>El Roque Nublo es uno de los iconos naturales más importantes de la isla y uno de los puntos imprescindibles de cualquier ruta por el interior. Para llegar hay que dejar la camper en el aparcamiento habilitado cerca de La Goleta y subir a pie por un sendero de unos 45 minutos. La roca monolítica tiene más de 80 metros de altura y desde aquí se ve tanto el Teide como la costa norte y sur en días despejados.</p>
+      <p>Conviene llegar a primera hora de la mañana para evitar la mayor afluencia y disfrutar del lugar con más calma. El camino no es difícil, pero sí tiene algo de desnivel.</p>
+
+      <div class="guide-box">
+        <h3>💡 Consejo para el Roque Nublo</h3>
+        <p>Si el día está nublado en la base, a veces compensa esperar. La zona de cumbre puede aclarar en pocas horas y las vistas cuando despeja son completamente distintas.</p>
+      </div>
+
+      <h3>Tejeda</h3>
+      <p>Tejeda es uno de los pueblos más bonitos de Gran Canaria y el punto de referencia natural de cualquier ruta por el interior. Está situado en un barranco espectacular, con casas blancas y vistas al Roque Nublo y al Roque Bentayga desde casi cualquier punto del pueblo.</p>
+      <p>Merece la pena pasear por sus calles, tomar algo en alguna de sus terrazas y visitar la iglesia de Nuestra Señora del Socorro. Si tienes tiempo, el mirador de Degollada de los Hornos, justo a las afueras, ofrece una de las vistas más impresionantes de toda la ruta.</p>
+
+      <h3>Artenara</h3>
+      <p>Artenara es el municipio más alto de Gran Canaria y quizás la parte más tranquila y auténtica del interior. Tiene mucho menos turismo que Tejeda, lo que lo hace especialmente interesante si buscas algo más pausado. Sus casas cueva, excavadas en la roca volcánica, son una de las particularidades más llamativas de la zona.</p>
+      <p>El mirador de la Virgen de la Cuevita es uno de los más singulares de la isla: una pequeña ermita tallada directamente en la montaña con vistas al barranco y al Roque Nublo al fondo. Un sitio que conviene no saltarse.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Sección 3 -->
+    <div class="guide-section" id="paradas">
+      <h2>Paradas imprescindibles</h2>
+
+      <h3>Mirador del Bentayga</h3>
+      <p>El Roque Bentayga es un monumento natural de origen volcánico con gran importancia arqueológica para la cultura aborigen canaria. Desde el mirador se tiene una perspectiva muy buena de toda la zona central de la isla. Si tienes tiempo, el centro de interpretación cercano explica bien la historia del lugar.</p>
+
+      <h3>Cruz de Tejeda</h3>
+      <p>La Cruz de Tejeda es el punto central geográfico de Gran Canaria y un cruce de caminos tradicional desde hace siglos. El entorno tiene varios miradores y es un buen punto de parada para orientarse sobre la ruta. Desde aquí salen varios senderos hacia distintas zonas de la cumbre.</p>
+
+      <h3>Pinar de Tamadaba</h3>
+      <p>El Parque Natural de Tamadaba es una de las masas forestales más importantes de la isla, con un pinar extenso que contrasta mucho con los paisajes áridos que se ven en otras zonas. Hay rutas señalizadas de distintas duraciones y varios miradores con vistas al Atlántico. Un lugar muy recomendable si buscas tranquilidad y naturaleza.</p>
+
+      <div class="guide-warning">
+        <h3>⚠️ Ten en cuenta esto antes de aparcar</h3>
+        <p>En algunas zonas del interior, como el acceso al Roque Nublo o la Cruz de Tejeda, el aparcamiento puede llenarse rápido en fin de semana. Llegar antes de las 10 de la mañana marca una diferencia notable.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Sección 4 -->
+    <div class="guide-section" id="consejos">
+      <h2>Consejos para hacer la ruta</h2>
+
+      <h3>Conduce sin prisa</h3>
+      <p>Las carreteras del interior de Gran Canaria son estrechas, con curvas continuas y en algunos tramos bastante pendiente. Con una camper conviene mantener una velocidad cómoda, respetar los arcenes y no forzar adelantamientos. El recorrido no es largo en kilómetros, pero sí en tiempo, y eso forma parte del disfrute.</p>
+
+      <h3>Planifica bien las paradas</h3>
+      <p>El interior tiene muchos puntos de interés concentrados en un área relativamente pequeña, lo que puede llevar a querer verlo todo en un solo día. Lo más recomendable es elegir tres o cuatro paradas con tiempo suficiente para cada una, en lugar de pasar rápido por muchos sitios. Así se disfruta mucho más.</p>
+
+      <h3>Lleva algo de abrigo</h3>
+      <p>La temperatura en las zonas altas puede ser varios grados más baja que en la costa, especialmente por la mañana o cuando hay nubes. No hace falta equipación de montaña, pero sí conviene llevar una capa extra por si refresca.</p>
+
+      <h3>Aprovecha los miradores pequeños</h3>
+      <p>Además de los miradores más conocidos, la ruta está llena de pequeños puntos de parada sin nombre oficial que ofrecen vistas extraordinarias. Si ves un hueco seguro donde parar y hay un buen ángulo, merece la pena detenerse. Muchas veces esos son los momentos que más se recuerdan del viaje.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- CTA interno -->
+    <div class="guide-section">
+      <h2>Haz esta ruta en camper</h2>
+      <p>Recorrer el interior de Gran Canaria en camper te da una libertad que no tiene ningún otro medio de transporte. Puedes parar en cualquier mirador, comer con vistas, tomarte el tiempo que quieras en cada pueblo y ajustar el recorrido sobre la marcha sin depender de nadie.</p>
+      <p>Si quieres hacer esta ruta con total comodidad, puedes ver cómo funciona nuestro servicio de <a href="/">alquiler de camper en Gran Canaria</a> y qué incluye.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- FAQ -->
+    <div class="guide-section" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <div class="faq-item">
+        <h3>¿Se puede hacer la ruta del interior en un día?</h3>
+        <p>Sí, es perfectamente posible hacer las paradas principales en un día si se sale con tiempo. Lo ideal es reservar el día completo para no ir con prisa. Si se quiere incluir senderismo al Roque Nublo y visitar Tejeda y Artenara con calma, conviene salir por la mañana temprano.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Las carreteras del interior son aptas para camper?</h3>
+        <p>En general sí, aunque hay que conducir con precaución. Las principales carreteras como la GC-15 o la GC-60 están bien asfaltadas y son accesibles para vehículos de tamaño medio. Algunos accesos secundarios pueden ser más estrechos, pero se pueden evitar sin perderse nada esencial.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Hace falta reservar aparcamiento en el Roque Nublo?</h3>
+        <p>No hace falta reservar, pero el aparcamiento tiene un aforo limitado y en temporada alta o fines de semana puede llenarse. Llegar antes de las 10 de la mañana suele garantizar plaza sin problema.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Dónde se puede dormir en el interior con la camper?</h3>
+        <p>El interior no tiene áreas de servicio para camper habilitadas como en la costa, pero hay zonas donde se puede pernoctar de forma tranquila. Lo más habitual es combinar una jornada por el interior con dormir en la costa o en algún área conocida del norte o sur de la isla.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Qué época del año es mejor para hacer la ruta?</h3>
+        <p>El interior se puede visitar durante todo el año, pero la primavera y el otoño suelen tener las mejores condiciones: temperaturas agradables, menos calor que en verano y menos probabilidad de niebla densa que en invierno. En cualquier caso, el paisaje cambia con cada estación y tiene su propio atractivo en todos los meses.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Conclusión -->
+    <div class="guide-section">
+      <h2>Conclusión</h2>
+      <p>Recorrer el interior de Gran Canaria en camper es una de las mejores formas de descubrir la isla más allá de lo que ve la mayoría. Los paisajes, los pueblos y las carreteras de montaña ofrecen una experiencia completamente distinta a la de la costa, y la libertad de moverse con la camper hace que todo sea mucho más disfrutable.</p>
+      <p>No hace falta ser un experto ni tener un plan cerrado al detalle. Con una ruta básica, tiempo suficiente y ganas de ir despacio, el interior de Gran Canaria tiene todo para sorprender.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA final ── -->
+<section class="cta-section">
+  <div>
+    <h2>Explora Gran Canaria a tu ritmo</h2>
+    <p>Reserva tu camper y descubre la isla con total libertad.</p>
+    <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener" class="btn btn-white">
+      Reservar en Yescapa
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img class="footer-logo" src="../../img/logo.webp" alt="Logo Campy Canaria">
+          <div>
+            <div class="footer-brand-name">Campy Canaria</div>
+            <div class="footer-brand-tag">Alquiler de camper en Gran Canaria</div>
+          </div>
+        </div>
+        <h3>Aviso legal</h3>
+        <p>En cumplimiento de la <strong>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE)</strong>, se informa:</p>
+        <div class="footer-note">
+          <p><strong>Titular:</strong> Campy Canaria (particular propietario del vehículo)</p>
+          <p><strong>Domicilio:</strong> Gran Canaria, Islas Canarias, España</p>
+          <p><strong>Actividad:</strong> Web informativa sobre alquiler de vehículo particular registrado en la plataforma Yescapa.</p>
+          <p><strong>Intermediación:</strong> Campy Canaria no gestiona reservas, pagos ni contratos directamente. Todas las reservas se realizan exclusivamente a través de <a href="https://www.yescapa.es" target="_blank" rel="noopener" style="color:#60a5fa;">Yescapa</a>.</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Privacidad y cookies</h3>
+        <p>Esta web no recoge datos personales directamente ni dispone de formularios de registro.</p>
+        <div class="footer-note">
+          <p><strong>Cookies analíticas:</strong> Esta web utiliza Google Analytics (Google LLC) para medir el uso del sitio. Sólo se instalan con tu consentimiento previo, conforme al RGPD (UE) 2016/679.</p>
+          <p><strong>Derechos RGPD:</strong> Puedes ejercer tus derechos contactando con nosotros vía Instagram o, para datos de reservas, directamente con Yescapa según su <a href="https://www.yescapa.es/privacy/confidentiality" target="_blank" rel="noopener" style="color:#60a5fa;">política de privacidad</a>.</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Enlaces útiles</h3>
+        <nav class="footer-links">
+          <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener">Ir a nuestro anuncio en Yescapa</a>
+          <a href="https://www.yescapa.es/how-yescapa-works" target="_blank" rel="noopener">Cómo funciona Yescapa</a>
+          <a href="https://www.yescapa.es/todos-los-seguros/lagun-aro/" target="_blank" rel="noopener">Seguros en Yescapa</a>
+          <a href="https://www.yescapa.es/privacy/confidentiality" target="_blank" rel="noopener">Política de privacidad de Yescapa</a>
+          <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>
+        </nav>
+        <div class="footer-card">
+          <div class="footer-card-title">Plataforma de reservas</div>
+          <div class="footer-card-text">Yescapa · Alquiler de autocaravanas y campers</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Campy Canaria · Gran Canaria, España</div>
+      <div class="footer-mini-links">
+        <a href="../../aviso-legal.html">Aviso legal</a>
+        <span class="dot">•</span>
+        <a href="../../politica-privacidad.html">Política de privacidad</a>
+        <span class="dot">•</span>
+        <a href="../../politica-cookies.html">Política de cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Instagram flotante ── -->
+<a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener" class="instagram-float" aria-label="Síguenos en Instagram">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('nav');
+    if (nav) nav.style.boxShadow = window.scrollY > 50 ? '0 5px 20px rgba(0,0,0,0.15)' : '';
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-links');
+    if (!btn || !menu) return;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function isOpen() { return menu.classList.contains('open'); }
+    function openMenu() { menu.classList.add('open'); overlay.classList.add('show'); btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { menu.classList.remove('open'); overlay.classList.remove('show'); btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+
+    btn.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); isOpen() ? closeMenu() : openMenu(); });
+    overlay.addEventListener('click', function () { if (isOpen()) closeMenu(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen()) closeMenu(); });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+  });
+</script>
+
+</body>
+</html>
