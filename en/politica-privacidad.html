@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png"> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Campy Canaria</title>
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://campycanaria.com/en/politica-privacidad">
+  <link rel="canonical" href="https://campycanaria.com/en/politica-privacidad.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  <style>
     html, body{
       width: 100%;
@@ -42,6 +44,43 @@
       justify-content: space-between;
       align-items: center;
     }
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+  background: #f0f7ff;
+  color: #2196F3;
+}
+
+.lang-switcher a.active {
+  background: #2196F3;
+  color: #fff;
+}
     .logo img { height: 50px; width: auto; }
     .nav-links { display: flex; list-style: none; gap: 30px; }
     .nav-links a {
@@ -685,6 +724,15 @@
   }
 }
 @media (max-width: 768px) {
+  .lang-switcher {
+  margin-left: 8px;
+  gap: 4px;
+}
+
+.lang-switcher a {
+  font-size: 11px;
+  padding: 4px 5px;
+}
   .page-body {
     grid-template-columns: 1fr;
   }
@@ -849,11 +897,21 @@
 <nav class="main-nav">
   <div class="nav-container">
     <div class="logo">
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <i class="fas fa-bars"></i>
-      </button>
       <a href="/en/"><img src="../img/logo.webp" alt="Campy Canaria"></a>
+
+<div class="lang-switcher">
+  <a href="/politica-privacidad.html">ES</a>
+  <a href="/en/politica-privacidad.html" class="active">EN</a>
+  <a href="/fr/politica-privacidad.html">FR</a>
+  <a href="/de/politica-privacidad.html">DE</a>
+  <a href="/it/politica-privacidad.html">IT</a>
+</div>
     </div>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <ul class="nav-links">
       <li><a href="/en/">Home</a></li>
       <li><a href="/en/#vehiculo">The van</a></li>

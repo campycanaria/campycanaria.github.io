@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png"> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cookie-Richtlinie – Campy Canaria</title>
-  <link rel="alternate" href="https://campycanaria.com/politica-cookies/" hreflang="es">
-<link rel="alternate" href="https://campycanaria.com/de/politica-cookies/" hreflang="de">
-<link rel="alternate" href="https://campycanaria.com/en/politica-cookies/" hreflang="en">
-<link rel="alternate" href="https://campycanaria.com/fr/politica-cookies/" hreflang="fr">
-<link rel="alternate" href="https://campycanaria.com/it/politica-cookies/" hreflang="it">
-<link rel="alternate" href="https://campycanaria.com/politica-cookies/" hreflang="x-default">
+  <link rel="alternate" href="https://campycanaria.com/politica-cookies.html" hreflang="es">
+<link rel="alternate" href="https://campycanaria.com/de/politica-cookies.html" hreflang="de">
+<link rel="alternate" href="https://campycanaria.com/en/politica-cookies.html" hreflang="en">
+<link rel="alternate" href="https://campycanaria.com/fr/politica-cookies.html" hreflang="fr">
+<link rel="alternate" href="https://campycanaria.com/it/politica-cookies.html" hreflang="it">
+<link rel="alternate" href="https://campycanaria.com/politica-cookies.html" hreflang="x-default">
   <meta name="description" content="Cookie-Richtlinie von Campy Canaria. Informationen über die Verwendung von Cookies, Einwilligung und Datenschutz gemäß DSGVO und LSSI-CE.">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://campycanaria.com/de/politica-cookies/">
+  <link rel="canonical" href="https://campycanaria.com/de/politica-cookies.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html, body{
@@ -63,7 +65,39 @@
 .logo{
   padding-right: 60px;
 }
-    .logo img { height: 50px; width: auto; }
+        .logo img { height: 50px; width: auto; }
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+  background: #f0f7ff;
+  color: #2196F3;
+}
+
+.lang-switcher a.active {
+  background: #2196F3;
+  color: #fff;
+}
     .nav-links { display: flex; list-style: none; gap: 30px; }
     .nav-links a {
       text-decoration: none;
@@ -87,7 +121,7 @@
     /* ── PAGE HEADER ── */
     .page-header {
       background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url("img/banner3.webp");
+      url("../img/banner3.webp");
       color: #fff;
       padding: 110px 20px 60px;
       text-align: center;
@@ -392,7 +426,17 @@
     .back-section .sep { color: #ddd; }
 
         /* Responsive */
-        @media (max-width: 768px) {
+                @media (max-width: 768px) {
+          .lang-switcher {
+  margin-left: auto;
+  margin-right: 10px;
+  gap: 6px;
+}
+
+.lang-switcher a {
+  font-size: 12px;
+  padding: 5px 6px;
+}
 /* Animación individual por línea */
 .nav-links li{
   opacity: 0;
@@ -799,17 +843,27 @@
 <nav class="main-nav">
   <div class="nav-container">
     <div class="logo">
-      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
-  <i class="fas fa-bars"></i>
-</button>
-<a href="/"><img src="img/logo.webp" alt="Campy Canaria Campervermietung Gran Canaria"></a>
+      <a href="/de/"><img src="../img/logo.webp" alt="Campy Canaria"></a>
+
+<div class="lang-switcher">
+  <a href="/politica-cookies.html">ES</a>
+  <a href="/en/politica-cookies.html">EN</a>
+  <a href="/fr/politica-cookies.html">FR</a>
+  <a href="/de/politica-cookies.html" class="active">DE</a>
+  <a href="/it/politica-cookies.html">IT</a>
+</div>
     </div>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <ul class="nav-links">
-<li><a href="/">Startseite</a></li>
-<li><a href="/#vehiculo">Fahrzeug</a></li>
-<li><a href="/#como-funciona">So funktioniert es</a></li>
-<li><a href="/guias/">Guides</a></li>
-<li><a href="/#contacto">Kontakt</a></li>
+      <li><a href="/de/">Startseite</a></li>
+      <li><a href="/de/#vehiculo">Fahrzeug</a></li>
+      <li><a href="/de/#como-funciona">So funktioniert es</a></li>
+      <li><a href="/de/guias/">Guides</a></li>
+      <li><a href="/de/#contacto">Kontakt</a></li>
     </ul>
   </div>
 </nav>

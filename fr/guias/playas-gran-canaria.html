@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plages pour dormir en camping-car à Gran Canaria : les meilleures zones</title>
+  <meta name="description" content="Découvrez les meilleures plages pour dormir en camping-car à Gran Canaria : Vargas, El Risco, Tasarte et des conseils pour le faire légalement et sans problèmes.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png">
+  <link rel="canonical" href="https://campycanaria.com/guias/playas-gran-canaria.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .main-nav {
+      background: #fff;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 50px; width: auto; }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 20px;
+    }
+
+    .lang-switcher a {
+      text-decoration: none;
+      color: #333;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 8px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .lang-switcher a:hover { background: #f0f7ff; color: #2196F3; }
+    .lang-switcher a.active { background: #2196F3; color: #fff; }
+
+    .nav-links { display: flex; list-style: none; gap: 30px; }
+    .nav-links a {
+      text-decoration: none; color: #333; font-size: 14px;
+      font-weight: 500; transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active-page { color: #2196F3; }
+
+    .nav-toggle { display: none; }
+
+    .page-hero {
+      background: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+                  url('../../img/banner1.webp') center/cover no-repeat;
+      padding: 160px 20px 80px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .page-hero .breadcrumb {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .page-hero .breadcrumb a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .page-hero .breadcrumb a:hover { color: #fff; }
+    .page-hero .breadcrumb span { margin: 0 6px; }
+
+    .page-hero h1 {
+      font-size: 46px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+    }
+
+    .page-hero p {
+      font-size: 19px;
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: .93;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+      font-weight: 300;
+    }
+
+    .guide-content { padding: 80px 20px; background: #fff; }
+    .container { max-width: 800px; margin: 0 auto; }
+
+    .guide-index {
+      background: #f8fbff;
+      border: 1px solid #daeaf8;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 54px;
+    }
+
+    .guide-index h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1565C0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .guide-index ol { padding-left: 20px; }
+    .guide-index ol li { font-size: 15px; color: #444; margin-bottom: 6px; line-height: 1.6; }
+    .guide-index ol li a { color: #2196F3; text-decoration: none; }
+    .guide-index ol li a:hover { text-decoration: underline; }
+
+    .guide-section { margin-bottom: 54px; }
+
+    .guide-section h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e8f4fd;
+    }
+
+    .guide-section h3 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin: 28px 0 10px; }
+    .guide-section p { font-size: 16px; color: #444; line-height: 1.85; margin-bottom: 16px; }
+    .guide-section ul, .guide-section ol { padding-left: 20px; margin-bottom: 14px; }
+    .guide-section ul li, .guide-section ol li { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 6px; }
+
+    .guide-box {
+      background: #f0f7ff;
+      border: 1px solid #c8e0f8;
+      border-left: 4px solid #2196F3;
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin: 28px 0;
+    }
+
+    .guide-box h3 { font-size: 16px; font-weight: 700; color: #1565C0; margin-bottom: 12px; }
+    .guide-box p { font-size: 15px; color: #333; line-height: 1.8; margin-bottom: 0; }
+
+    .guide-warning {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-left: 4px solid #FFC107;
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin: 28px 0;
+    }
+
+    .guide-warning h3 { font-size: 16px; font-weight: 700; color: #e65100; margin-bottom: 10px; }
+    .guide-warning p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 0; }
+
+    .faq-item { border-bottom: 1px solid #eaeaea; padding: 22px 0; }
+    .faq-item:first-of-type { border-top: 1px solid #eaeaea; }
+    .faq-item h3 { font-size: 17px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; }
+    .faq-item p { font-size: 15px; color: #555; line-height: 1.8; }
+
+    .guide-divider { border: none; border-top: 1px solid #eaeaea; margin: 52px 0; }
+
+    .cta-section {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                  url('../../img/banner2.webp') center 20%/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .cta-section h2 { font-size: 36px; font-weight: 600; margin-bottom: 16px; }
+    .cta-section p { font-size: 18px; margin-bottom: 36px; opacity: .95; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+    .btn { padding: 16px 42px; text-decoration: none; text-transform: uppercase; font-size: 14px; font-weight: 600; letter-spacing: 1px; transition: all 0.3s; cursor: pointer; border-radius: 5px; display: inline-block; }
+    .btn-white { background: #fff; color: #2196F3; border: 2px solid #fff; }
+    .btn-white:hover { background: transparent; color: #fff; border-color: #fff; }
+
+    .site-footer { background: #0f1115; color: rgba(255,255,255,.86); padding: 70px 20px 24px; border-top: 1px solid rgba(255,255,255,.06); }
+    .footer-container { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 0.9fr; gap: 40px; }
+    .footer-col h3 { margin: 18px 0 14px; font-size: 16px; letter-spacing: .2px; color: #fff; }
+    .footer-col p { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.85; margin: 0 0 12px; }
+    .footer-col strong { color: rgba(255,255,255,.92); font-weight: 600; }
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+    .footer-logo { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); }
+    .footer-brand-name { font-weight: 700; color: #fff; line-height: 1.1; }
+    .footer-brand-tag { font-size: 13px; color: rgba(255,255,255,.65); margin-top: 3px; }
+    .footer-note { margin-top: 14px; padding: 14px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .footer-links a { color: rgba(255,255,255,.78); text-decoration: none; font-size: 14px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); transition: all .2s ease; }
+    .footer-links a:hover { transform: translateY(-1px); background: rgba(33,150,243,.12); border-color: rgba(33,150,243,.35); color: #fff; }
+    .footer-card { margin-top: 18px; padding: 14px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .footer-card-title { font-size: 12px; letter-spacing: .6px; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 6px; }
+    .footer-card-text { color: rgba(255,255,255,.9); font-weight: 600; font-size: 14px; }
+    .footer-bottom { margin-top: 38px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; align-items: center; gap: 12px; color: rgba(255,255,255,.6); font-size: 13px; }
+    .footer-mini-links { display: flex; align-items: center; gap: 10px; }
+    .footer-mini-links a { color: rgba(255,255,255,.75); text-decoration: none; }
+    .footer-mini-links a:hover { color: #fff; }
+    .footer-mini-links .dot { color: rgba(255,255,255,.35); }
+
+    .instagram-float { position: fixed; bottom: 25px; right: 20px; width: 50px; height: 50px; background: #E1306C; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.25); z-index: 9999; transition: all 0.3s ease; text-decoration: none; }
+    .instagram-float:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.35); background: #C72A60; }
+
+    .nav-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 999; }
+    .nav-overlay.show { opacity: 1; pointer-events: auto; }
+
+    @media (max-width: 768px) {
+      .lang-switcher { margin-left: auto; margin-right: 10px; gap: 6px; }
+      .lang-switcher a { font-size: 12px; padding: 5px 6px; }
+      .nav-links { display: none; opacity: 0; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease; position: absolute; top: 70px; right: 20px; left: 20px; flex-direction: column; background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+      .nav-links.open { display: flex; opacity: 1; transform: translateY(0); }
+      .nav-links li { opacity: 0; transform: translateX(10px); transition: opacity .25s ease, transform .25s ease; }
+      .nav-links.open li { opacity: 1; transform: translateX(0); }
+      .nav-links.open li:nth-child(1) { transition-delay: .05s; }
+      .nav-links.open li:nth-child(2) { transition-delay: .10s; }
+      .nav-links.open li:nth-child(3) { transition-delay: .15s; }
+      .nav-links.open li:nth-child(4) { transition-delay: .20s; }
+      .nav-links.open li:nth-child(5) { transition-delay: .25s; }
+      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(0,0,0,.12); background: #fff; border-radius: 10px; cursor: pointer; }
+      .nav-container { position: relative; }
+      .page-hero h1 { font-size: 30px; }
+      .page-hero p { font-size: 16px; }
+      .guide-section h2 { font-size: 20px; }
+      .cta-section h2 { font-size: 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/"><img src="../../img/logo.webp" alt="Campy Canaria"></a>
+      <div class="lang-switcher">
+        <a href="/guias/playas-gran-canaria.html">ES</a>
+        <a href="/en/guias/playas-gran-canaria.html">EN</a>
+        <a href="/fr/guias/playas-gran-canaria.html" class="active">FR</a>
+        <a href="/de/guias/playas-gran-canaria.html">DE</a>
+        <a href="/it/guias/playas-gran-canaria.html">IT</a>
+      </div>
+    </div>
+
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/#vehiculo">Le véhicule</a></li>
+      <li><a href="/#como-funciona">Comment ça marche</a></li>
+      <li><a href="/fr/guias/" class="active-page">Guides</a></li>
+      <li><a href="/#contacto">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="/fr/guias/">Guides</a>
+    <span>›</span>
+    Plages pour dormir en camping-car
+  </div>
+  <h1>Plages pour dormir en camping-car à Gran Canaria</h1>
+  <p>Les meilleures zones pour passer la nuit au bord de la mer en toute liberté</p>
+</div>
+
+<!-- ── Contenu ── -->
+<section class="guide-content">
+  <div class="container">
+
+    <!-- Introduction -->
+    <div class="guide-section">
+      <p>Dormir en camping-car face à la mer est l'une des meilleures expériences que vous puissiez vivre à Gran Canaria. L'île offre de nombreuses plages accessibles où vous pouvez vous garer tranquillement et profiter de l'environnement sans vous presser.</p>
+      <p>Dans ce guide, nous vous présentons les meilleures plages pour dormir en camping-car à Gran Canaria, notamment des zones à accès facile, des endroits habituels pour les fourgonnettes et des conseils essentiels pour le faire légalement et sans problèmes.</p>
+    </div>
+
+    <!-- Index -->
+    <div class="guide-index">
+      <h2>📋 Sommaire</h2>
+      <ol>
+        <li><a href="#que-tener-en-cuenta">Ce qu'il faut savoir pour dormir en camping-car sur la plage</a></li>
+        <li><a href="#mejores-playas">Meilleures plages pour dormir en camping-car</a></li>
+        <li><a href="#zonas-tranquilas">Zones plus tranquilles pour passer la nuit</a></li>
+        <li><a href="#consejos">Conseils pour dormir en camping-car sans problèmes</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="guide-section" id="que-tener-en-cuenta">
+      <h2>Ce qu'il faut savoir pour dormir en camping-car sur la plage</h2>
+      <p>Avant de choisir une plage, il est important de comprendre comment fonctionne le fait de dormir en camping-car à Gran Canaria. Toutes les plages ne permettent pas les mêmes choses, et il existe des différences importantes entre se garer et camper.</p>
+      <p>En général, vous pouvez dormir en camping-car à Gran Canaria à condition d'être correctement garé et de ne pas déployer d'éléments à l'extérieur du véhicule. Cela inclut le fait de ne pas sortir tables, chaises ou auvents.</p>
+      <p>Il convient également de tenir compte de plusieurs facteurs avant de choisir où s'arrêter :</p>
+      <ul>
+        <li>Panneaux interdisant expressément les fourgonnettes ou le séjour nocturne</li>
+        <li>Accès facile pour les véhicules de taille moyenne</li>
+        <li>Espace de stationnement suffisant</li>
+        <li>Si c'est une zone où l'on trouve habituellement des camping-cars</li>
+        <li>Niveau de vent (très important sur l'île ; des applications comme Windy sont très utiles)</li>
+        <li>Règles spécifiques des espaces naturels protégés que vous visitez</li>
+      </ul>
+      <p>Bien choisir l'endroit est essentiel pour éviter les problèmes et profiter de l'expérience.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Section 2 -->
+    <div class="guide-section" id="mejores-playas">
+      <h2>Meilleures plages pour dormir en camping-car à Gran Canaria</h2>
+
+      <h3>Playa de Vargas (zone habituelle pour camping-cars)</h3>
+      <p>L'une des plages les plus connues pour dormir en camping-car à Gran Canaria. Elle offre un bon accès, de la place pour se garer et il est courant d'y voir des fourgonnettes, ce qui donne un sentiment de sécurité et de normalité.</p>
+      <p>C'est une zone ouverte et tranquille, bien que très ventée. Idéale pour passer la nuit sans complications et se réveiller face à la mer.</p>
+
+      <h3>Playa de El Risco (Agaete, option tranquille)</h3>
+      <p>Si vous cherchez une plage pour passer la nuit en camping-car sans foule, El Risco est l'une des meilleures options du nord de l'île. Il y a généralement de la place pour se garer et l'environnement est très naturel. Il n'y a pas de services, mais c'est précisément pour cela qu'elle est plus tranquille et offre une expérience plus authentique.</p>
+
+      <h3>Playa de Tasarte (parfaite pour se déconnecter)</h3>
+      <p>L'une des meilleures plages si vous souhaitez dormir en camping-car dans un cadre plus isolé. L'accès se fait par route et ne présente pas de grandes difficultés pour un camping-car standard. Le rythme ici est beaucoup plus lent et il est facile de trouver des endroits pour passer la nuit tranquillement avec à peine quelqu'un aux alentours.</p>
+
+      <h3>Playa del Inglés / Maspalomas (confort total)</h3>
+      <p>Si vous préférez une option plus sécurisée avec des services, cette zone du sud est idéale. Il y a beaucoup d'animation, des places de stationnement disponibles et toutes sortes de commodités à portée de main : supermarchés, restaurants et accès facile à n'importe quel point de l'île.</p>
+      <p>Ce n'est pas la meilleure option si vous cherchez la tranquillité, mais c'est idéal pour ceux qui voyagent pour la première fois ou qui souhaitent combiner la nuit en camping-car avec tous les services à proximité.</p>
+
+      <div class="guide-box">
+        <h3>💡 Comment choisir entre les options ?</h3>
+        <p>Cela dépend du type de nuit que vous souhaitez. Si vous cherchez la solitude et la nature, dirigez-vous vers le nord ou l'ouest. Si vous préférez la facilité et les services, le sud vous simplifie tout. L'important est que la zone corresponde à ce que vous attendez de cette journée.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Section 3 -->
+    <div class="guide-section" id="zonas-tranquilas">
+      <h2>Zones plus tranquilles pour dormir en camping-car</h2>
+      <p>Si votre objectif est d'éviter les zones touristiques et de chercher plus de calme, il existe plusieurs endroits où vous pouvez dormir en camping-car à Gran Canaria avec beaucoup plus de tranquillité. Le nord de l'île est généralement moins fréquenté, avec des plages plus naturelles et moins de pression touristique. Certaines zones de l'ouest offrent également cet équilibre entre accessibilité et isolement que beaucoup de voyageurs en camping-car apprécient.</p>
+      <p>Dans ces endroits, il est généralement plus facile de trouver une place pour se garer, de dormir sans bruit et de profiter de l'environnement sans trop d'agitation alentour. Toujours dans le respect du lieu et sans se faire remarquer.</p>
+
+      <div class="guide-warning">
+        <h3>⚠️ Attention aux espaces naturels protégés</h3>
+        <p>Certaines des zones les plus tranquilles de l'île se trouvent dans des espaces naturels avec une réglementation spécifique. Avant de vous arrêter, vérifiez si l'endroit présente des restrictions de stationnement ou de séjour nocturne. Voir d'autres camping-cars ne suffit pas : la signalisation de l'endroit est la référence valable.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Section 4 -->
+    <div class="guide-section" id="consejos">
+      <h2>Conseils pour dormir en camping-car à Gran Canaria sans problèmes</h2>
+      <p>Pour éviter les amendes ou les situations inconfortables, il existe une série de recommandations à toujours suivre, quelle que soit la zone choisie :</p>
+      <ul>
+        <li><strong>Ne pas camper, seulement se garer.</strong> La différence légale réside dans le fait de ne pas déployer d'éléments à l'extérieur du véhicule.</li>
+        <li><strong>Ne pas sortir tables, chaises ni auvents.</strong> Tout ce que vous utilisez doit rester dans le périmètre du camping-car.</li>
+        <li><strong>Éviter les zones avec des panneaux d'interdiction.</strong> S'il y a un panneau, il n'y a pas de marge d'interprétation.</li>
+        <li><strong>Arriver avant la nuit.</strong> Bien observer l'environnement avant de rester est essentiel pour savoir si la zone vous convient.</li>
+        <li><strong>Ne pas laisser de déchets.</strong> Le respect de l'environnement est fondamental pour que ces zones restent accessibles à tous.</li>
+        <li><strong>Rester discret.</strong> Moins vous vous faites remarquer, plus la nuit sera tranquille.</li>
+      </ul>
+      <p>Dormir en camping-car est tout à fait réalisable sur l'île, à condition de prendre soin de l'environnement et de respecter les personnes qui vivent ou travaillent à proximité.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- CTA interne -->
+    <div class="guide-section">
+      <h2>Louer un camping-car à Gran Canaria pour parcourir ses plages</h2>
+      <p>La meilleure façon de découvrir ces plages est d'avoir une totale liberté de mouvement. Voyager en camping-car vous permet de changer de zone selon le vent, d'explorer des recoins moins connus et de dormir près de la mer sans dépendre des horaires ni des hébergements fixes.</p>
+      <p>Si vous cherchez une option confortable et entièrement équipée, vous pouvez consulter notre service de <a href="/">location de camping-car à Gran Canaria</a>.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- FAQ -->
+    <div class="guide-section" id="faq">
+      <h2>Questions fréquentes</h2>
+
+      <div class="faq-item">
+        <h3>Est-il légal de dormir en camping-car à Gran Canaria ?</h3>
+        <p>Oui, à condition d'être correctement garé et de ne pas camper. Vous pouvez dormir à l'intérieur du véhicule tant que vous ne déployez pas d'éléments extérieurs et n'occupez pas plus d'espace que celui correspondant au stationnement.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Où est-il préférable de dormir en camping-car à Gran Canaria ?</h3>
+        <p>Cela dépend de ce que vous recherchez. Le sud offre un meilleur climat et plus de services, tandis que le nord est plus tranquille et naturel. Pour une première fois, le sud est généralement plus confortable. Pour ceux qui cherchent plus de solitude, le nord ou l'ouest sont de meilleures options.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Y a-t-il des amendes pour avoir dormi en camping-car ?</h3>
+        <p>Seulement si vous campez ou si vous êtes dans une zone interdite. Si le véhicule est bien garé et que vous n'avez rien déployé à l'extérieur, il ne devrait pas y avoir de problème. Cependant, il convient toujours de vérifier la signalisation de la zone.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <!-- Conclusion -->
+    <div class="guide-section">
+      <h2>Conclusion</h2>
+      <p>Dormir en camping-car à Gran Canaria est une expérience unique qui allie liberté, nature et mer. En connaissant les bonnes zones et en respectant la réglementation, vous pouvez profiter de nuits spectaculaires dans certains des plus beaux recoins de l'île.</p>
+      <p>Bien choisir la plage, arriver à temps et voyager avec bon sens rendra votre voyage beaucoup plus complet et sans mauvaises surprises.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA final ── -->
+<section class="cta-section">
+  <div>
+    <h2>Réveillez-vous face à la mer en camping-car</h2>
+    <p>Réservez votre camping-car et découvrez les plus belles plages de Gran Canaria en toute liberté.</p>
+    <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener" class="btn btn-white">
+      Réserver sur Yescapa
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img class="footer-logo" src="../../img/logo.webp" alt="Logo Campy Canaria">
+          <div>
+            <div class="footer-brand-name">Campy Canaria</div>
+            <div class="footer-brand-tag">Location de camping-car à Gran Canaria</div>
+          </div>
+        </div>
+        <h3>Mentions légales</h3>
+        <p>Conformément à la <strong>Loi 34/2002, du 11 juillet, sur les services de la société de l'information et le commerce électronique (LSSI-CE)</strong>, nous informons :</p>
+        <div class="footer-note">
+          <p><strong>Titulaire :</strong> Campy Canaria (propriétaire privé du véhicule)</p>
+          <p><strong>Adresse :</strong> Gran Canaria, Îles Canaries, Espagne</p>
+          <p><strong>Activité :</strong> Site web informatif sur la location d'un véhicule privé enregistré sur la plateforme Yescapa.</p>
+          <p><strong>Intermédiaire :</strong> Campy Canaria ne gère pas directement les réservations, paiements ou contrats. Toutes les réservations s'effectuent exclusivement via <a href="https://www.yescapa.es" target="_blank" rel="noopener" style="color:#60a5fa;">Yescapa</a>.</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Confidentialité et cookies</h3>
+        <p>Ce site web ne collecte pas de données personnelles directement et ne dispose pas de formulaires d'inscription.</p>
+        <div class="footer-note">
+          <p><strong>Cookies analytiques :</strong> Ce site utilise Google Analytics (Google LLC) pour mesurer l'utilisation du site. Ils ne sont installés qu'avec votre consentement préalable, conformément au RGPD (UE) 2016/679.</p>
+          <p><strong>Droits RGPD :</strong> Vous pouvez exercer vos droits en nous contactant via Instagram ou, pour les données de réservation, directement auprès de Yescapa conformément à leur <a href="https://www.yescapa.es/privacy/confidentiality" target="_blank" rel="noopener" style="color:#60a5fa;">politique de confidentialité</a>.</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Liens utiles</h3>
+        <nav class="footer-links">
+          <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener">Voir notre annonce sur Yescapa</a>
+          <a href="https://www.yescapa.es/how-yescapa-works" target="_blank" rel="noopener">Comment fonctionne Yescapa</a>
+          <a href="https://www.yescapa.es/todos-los-seguros/lagun-aro/" target="_blank" rel="noopener">Assurances sur Yescapa</a>
+          <a href="https://www.yescapa.es/privacy/confidentiality" target="_blank" rel="noopener">Politique de confidentialité de Yescapa</a>
+          <a href="https://www.aepd.es" target="_blank" rel="noopener">Agence espagnole de protection des données</a>
+        </nav>
+        <div class="footer-card">
+          <div class="footer-card-title">Plateforme de réservation</div>
+          <div class="footer-card-text">Yescapa · Location de camping-cars</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Campy Canaria · Gran Canaria, Espagne</div>
+      <div class="footer-mini-links">
+        <a href="../../aviso-legal.html">Mentions légales</a>
+        <span class="dot">•</span>
+        <a href="../../politica-privacidad.html">Politique de confidentialité</a>
+        <span class="dot">•</span>
+        <a href="../../politica-cookies.html">Politique de cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Instagram flottant ── -->
+<a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener" class="instagram-float" aria-label="Suivez-nous sur Instagram">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('nav');
+    if (nav) nav.style.boxShadow = window.scrollY > 50 ? '0 5px 20px rgba(0,0,0,0.15)' : '';
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-links');
+    if (!btn || !menu) return;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function isOpen() { return menu.classList.contains('open'); }
+    function openMenu() { menu.classList.add('open'); overlay.classList.add('show'); btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { menu.classList.remove('open'); overlay.classList.remove('show'); btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+
+    btn.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); isOpen() ? closeMenu() : openMenu(); });
+    overlay.addEventListener('click', function () { if (isOpen()) closeMenu(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen()) closeMenu(); });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+  });
+</script>
+
+</body>
+</html>

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png"> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datenschutzerklärung | Campy Canaria</title>
-  <link rel="alternate" href="https://campycanaria.com/politica-privacidad/" hreflang="es">
-<link rel="alternate" href="https://campycanaria.com/de/politica-privacidad/" hreflang="de">
-<link rel="alternate" href="https://campycanaria.com/en/politica-privacidad/" hreflang="en">
-<link rel="alternate" href="https://campycanaria.com/fr/politica-privacidad/" hreflang="fr">
-<link rel="alternate" href="https://campycanaria.com/it/politica-privacidad/" hreflang="it">
-<link rel="alternate" href="https://campycanaria.com/politica-privacidad/" hreflang="x-default">
+  <link rel="alternate" href="https://campycanaria.com/politica-privacidad.html" hreflang="es">
+<link rel="alternate" href="https://campycanaria.com/de/politica-privacidad.html" hreflang="de">
+<link rel="alternate" href="https://campycanaria.com/en/politica-privacidad.html" hreflang="en">
+<link rel="alternate" href="https://campycanaria.com/fr/politica-privacidad.html" hreflang="fr">
+<link rel="alternate" href="https://campycanaria.com/it/politica-privacidad.html" hreflang="it">
+<link rel="alternate" href="https://campycanaria.com/politica-privacidad.html" hreflang="x-default">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://campycanaria.com/de/politica-privacidad/">
+  <link rel="canonical" href="https://campycanaria.com/de/politica-privacidad.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html, body{
@@ -49,7 +51,39 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo img { height: 50px; width: auto; }
+        .logo img { height: 50px; width: auto; }
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+  background: #f0f7ff;
+  color: #2196F3;
+}
+
+.lang-switcher a.active {
+  background: #2196F3;
+  color: #fff;
+}
     .nav-links { display: flex; list-style: none; gap: 30px; }
     .nav-links a {
       text-decoration: none;
@@ -73,7 +107,7 @@
     /* ── PAGE HEADER ── */
     .page-header {
       background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url("img/banner3.webp");
+      url("../img/banner3.webp");
       color: #fff;
       padding: 110px 20px 60px;
       text-align: center;
@@ -691,7 +725,17 @@
     align-items: flex-start;
   }
 }
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
+          .lang-switcher {
+  margin-left: auto;
+  margin-right: 10px;
+  gap: 6px;
+}
+
+.lang-switcher a {
+  font-size: 12px;
+  padding: 5px 6px;
+}
   .page-body {
     grid-template-columns: 1fr;
   }
@@ -856,17 +900,27 @@
 <nav class="main-nav">
   <div class="nav-container">
     <div class="logo">
-      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
-    <i class="fas fa-bars"></i>
-  </button>
-<a href="/de/"><img src="img/logo.webp" alt="Campy Canaria"></a>
+      <a href="/de/"><img src="../img/logo.webp" alt="Campy Canaria"></a>
+
+<div class="lang-switcher">
+  <a href="/politica-privacidad.html">ES</a>
+  <a href="/en/politica-privacidad.html">EN</a>
+  <a href="/fr/politica-privacidad.html">FR</a>
+  <a href="/de/politica-privacidad.html" class="active">DE</a>
+  <a href="/it/politica-privacidad.html">IT</a>
+</div>
     </div>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <ul class="nav-links">
-      <li><a href="/">Startseite</a></li>
-      <li><a href="/#vehiculo">Das Fahrzeug</a></li>
-      <li><a href="/#como-funciona">So funktioniert es</a></li>
-      <li><a href="/guias/">Reiseführer</a></li>
-      <li><a href="/#contacto">Kontakt</a></li>
+      <li><a href="/de/">Startseite</a></li>
+      <li><a href="/de/#vehiculo">Fahrzeug</a></li>
+      <li><a href="/de/#como-funciona">So funktioniert es</a></li>
+      <li><a href="/de/guias/">Guides</a></li>
+      <li><a href="/de/#contacto">Kontakt</a></li>
     </ul>
   </div>
 </nav>

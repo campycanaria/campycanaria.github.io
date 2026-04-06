@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png"> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politique de cookies | Campy Canaria</title>
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://campycanaria.com/fr/politica-cookies">
+  <link rel="canonical" href="https://campycanaria.com/fr/politica-cookies.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html, body{
@@ -46,15 +48,42 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav-toggle{
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.logo{
-  padding-right: 60px;
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+  background: #f0f7ff;
+  color: #2196F3;
+}
+
+.lang-switcher a.active {
+  background: #2196F3;
+  color: #fff;
 }
     .logo img { height: 50px; width: auto; }
     .nav-links { display: flex; list-style: none; gap: 30px; }
@@ -80,7 +109,7 @@
     /* ── PAGE HEADER ── */
     .page-header {
       background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url("img/banner3.webp");
+      url("../img/banner3.webp");
       color: #fff;
       padding: 110px 20px 60px;
       text-align: center;
@@ -386,6 +415,15 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+          .lang-switcher {
+  margin-left: 8px;
+  gap: 4px;
+}
+
+.lang-switcher a {
+  font-size: 11px;
+  padding: 4px 5px;
+}
 /* Animación individual por línea */
 .nav-links li{
   opacity: 0;
@@ -792,11 +830,21 @@
 <nav class="main-nav">
   <div class="nav-container">
     <div class="logo">
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <i class="fas fa-bars"></i>
-      </button>
-      <a href="/fr/"><img src="img/logo.webp" alt="Campy Canaria"></a>
+      <a href="/fr/"><img src="../img/logo.webp" alt="Campy Canaria"></a>
+
+<div class="lang-switcher">
+  <a href="/politica-cookies.html">ES</a>
+  <a href="/en/politica-cookies.html">EN</a>
+  <a href="/fr/politica-cookies.html" class="active">FR</a>
+  <a href="/de/politica-cookies.html">DE</a>
+  <a href="/it/politica-cookies.html">IT</a>
+</div>
     </div>
+
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <ul class="nav-links">
       <li><a href="/fr/">Accueil</a></li>
       <li><a href="/fr/#vehiculo">Le véhicule</a></li>
@@ -976,7 +1024,7 @@
 
       <div class="footer-col">
         <div class="footer-brand">
-          <img class="footer-logo" src="img/logo.webp">
+          <img class="footer-logo" src="../img/logo.webp">
           <div>
             <div class="footer-brand-name">Campy Canaria</div>
             <div class="footer-brand-tag">Location de camping-car à Gran Canaria</div>

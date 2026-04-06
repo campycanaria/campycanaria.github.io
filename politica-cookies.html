@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de cookies | Campy Canaria</title>
@@ -46,15 +48,37 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav-toggle{
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.logo{
-  padding-right: 60px;
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+  background: #f0f7ff;
+  color: #2196F3;
+}
+
+.lang-switcher a.active {
+  background: #2196F3;
+  color: #fff;
 }
     .logo img { height: 50px; width: auto; }
     .nav-links { display: flex; list-style: none; gap: 30px; }
@@ -387,6 +411,16 @@
         /* Responsive */
         @media (max-width: 768px) {
 /* Animación individual por línea */
+.lang-switcher {
+  margin-left: auto;
+  margin-right: 10px;
+  gap: 6px;
+}
+
+.lang-switcher a {
+  font-size: 12px;
+  padding: 5px 6px;
+}
 .nav-links li{
   opacity: 0;
   transform: translateX(10px);
@@ -792,11 +826,21 @@
 <nav class="main-nav">
   <div class="nav-container">
     <div class="logo">
-      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-  <i class="fas fa-bars"></i>
-</button>
-<a href="/"><img src="img/logo.webp" alt="Campy Canaria"></a>
+      <a href="/"><img src="img/logo.webp" alt="Campy Canaria"></a>
+
+      <div class="lang-switcher">
+   <a href="/politica-cookies.html" class="active">ES</a>
+  <a href="/en/politica-cookies.html">EN</a>
+  <a href="/fr/politica-cookies.html">FR</a>
+  <a href="/de/politica-cookies.html">DE</a>
+  <a href="/it/politica-cookies.html">IT</a>
+      </div>
     </div>
+
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <ul class="nav-links">
       <li><a href="/">Inicio</a></li>
       <li><a href="/#vehiculo">El vehículo</a></li>

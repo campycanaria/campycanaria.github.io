@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aviso legal | Campy Canaria</title>
@@ -45,9 +47,53 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo img { height: 50px; width: auto; }
-    .nav-links { display: flex; list-style: none; gap: 30px; }
-    .nav-toggle{display: none;}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+  background: #f0f7ff;
+  color: #2196F3;
+}
+
+.lang-switcher a.active {
+  background: #2196F3;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-toggle {
+  display: none;
+}
     .nav-links a {
       text-decoration: none;
       color: #333;
@@ -366,7 +412,16 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+.lang-switcher {
+  margin-left: auto;
+  margin-right: 10px;
+  gap: 6px;
+}
 
+.lang-switcher a {
+  font-size: 12px;
+  padding: 5px 6px;
+}
 /* Animación individual por línea */
 .nav-links li{
   opacity: 0;
@@ -693,11 +748,21 @@
 <nav class="main-nav">
   <div class="nav-container">
     <div class="logo">
-<a href="/"><img src="img/logo.webp" alt="Campy Canaria"></a>
+      <a href="/"><img src="img/logo.webp" alt="Campy Canaria"></a>
+
+<div class="lang-switcher">
+  <a href="/politica-privacidad.html" class="active">ES</a>
+  <a href="/en/politica-privacidad.html">EN</a>
+  <a href="/fr/politica-privacidad.html">FR</a>
+  <a href="/de/politica-privacidad.html">DE</a>
+  <a href="/it/politica-privacidad.html">IT</a>
+</div>
     </div>
+
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </button>
+
     <ul class="nav-links">
       <li><a href="/">Inicio</a></li>
       <li><a href="/#vehiculo">El vehículo</a></li>
