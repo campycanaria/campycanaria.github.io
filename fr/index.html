@@ -1193,28 +1193,49 @@ et coordination préalable</p>
 </div>
 
 <!-- ============================================================
-     PANEL DE PREFERENCIAS DE COOKIES (segunda capa)
+     COOKIE CONSENT BANNER (GDPR / LSSI-CE art.22.2)
      ============================================================ -->
-<div id="cookie-panel" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:10000; font-family:'Segoe UI',sans-serif;" role="dialog" aria-modal="true" aria-label="Configurar preferencias de cookies">
-  <div style="position:absolute; bottom:0; left:0; right:0; max-height:90vh; overflow-y:auto; background:#fff; color:#333; padding:28px 24px; max-width:560px; margin:0 auto; border-radius:16px 16px 0 0; box-shadow:0 -4px 32px rgba(0,0,0,0.15);">
-    <p style="font-size:18px; font-weight:600; margin:0 0 6px; color:#111;">Preferencias de cookies</p>
-    <p style="font-size:13px; color:#777; margin:0 0 20px; line-height:1.5;">Activa o desactiva cada categoría. Las cookies esenciales siempre están activas.</p>
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#fff; color:#333; padding:16px 24px; z-index:9999; box-shadow:0 -2px 16px rgba(0,0,0,0.10); border-top:1px solid #e8e8e8; font-family:'Segoe UI',sans-serif; font-size:14px; line-height:1.6;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; gap:16px;">
+    <div style="flex:1; min-width:240px;">
+      <strong style="font-size:14px; color:#111;">Ce site utilise des cookies analytiques</strong><br>
+      <span style="color:#555; font-size:13px;">Nous utilisons Google Analytics pour améliorer votre expérience. Aucun cookie n'est installé sans votre accord.</span><br>
+      <small style="color:#999; font-size:11px;">Base légale : RGPD art. 6.1.a · LSSI-CE art. 22.2 · <a href="politica-cookies.html" style="color:#2196F3;">Politique de cookies</a></small>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0; align-items:stretch; min-width:160px;">
+      <button onclick="acceptcookies()" style="background:#2196F3; color:#fff; border:none; padding:12px 28px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; white-space:nowrap;">Accepter les cookies</button>
+      <div style="display:flex; gap:14px; justify-content:center;">
+        <button onclick="rejectcookies()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Refuser</button>
+        <span style="color:#ccc; font-size:12px;">·</span>
+        <button onclick="openCookiePanel()" style="background:none; border:none; padding:0; cursor:pointer; font-size:12px; color:#999; text-decoration:underline; text-underline-offset:2px;">Configurer</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Esenciales -->
+<!-- ============================================================
+     COOKIE PREFERENCES PANEL (second layer)
+     ============================================================ -->
+<div id="cookie-panel" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:10000; font-family:'Segoe UI',sans-serif;" role="dialog" aria-modal="true" aria-label="Configurer les préférences de cookies">
+  <div style="position:absolute; bottom:0; left:0; right:0; max-height:90vh; overflow-y:auto; background:#fff; color:#333; padding:28px 24px; max-width:560px; margin:0 auto; border-radius:16px 16px 0 0; box-shadow:0 -4px 32px rgba(0,0,0,0.15);">
+    <p style="font-size:18px; font-weight:600; margin:0 0 6px; color:#111;">Préférences de cookies</p>
+    <p style="font-size:13px; color:#777; margin:0 0 20px; line-height:1.5;">Activez ou désactivez chaque catégorie. Les cookies essentiels sont toujours actifs.</p>
+
+    <!-- Essential -->
     <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid #f0f0f0;">
       <div>
-        <strong style="font-size:13px; color:#222;">Esenciales</strong>
-        <p style="font-size:12px; color:#aaa; margin:3px 0 0;">Necesarias para el funcionamiento del sitio.</p>
+        <strong style="font-size:13px; color:#222;">Essentiels</strong>
+        <p style="font-size:12px; color:#aaa; margin:3px 0 0;">Nécessaires au bon fonctionnement du site.</p>
       </div>
-      <span style="background:#f2f2f2; color:#888; font-size:11px; padding:3px 12px; border-radius:20px; white-space:nowrap;">Siempre activas</span>
+      <span style="background:#f2f2f2; color:#888; font-size:11px; padding:3px 12px; border-radius:20px; white-space:nowrap;">Toujours actifs</span>
     </div>
 
-    <!-- Analíticas -->
+    <!-- Analytics -->
     <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid #f0f0f0;">
       <div style="flex:1; padding-right:16px;">
-        <strong style="font-size:13px; color:#222;">Analíticas · Google Analytics 4</strong>
-        <p style="font-size:12px; color:#aaa; margin:3px 0 0; line-height:1.4;">Nos ayudan a mejorar el sitio. Datos seudoanonimizados. Proveedor: Google LLC (EE.UU., Data Privacy Framework).</p>
-        <p style="font-size:11px; color:#ccc; margin:3px 0 0;">Cookies: <code>_ga</code>, <code>_ga_CK0BB6T9TB</code> · Duración: hasta 1 año.</p>
+        <strong style="font-size:13px; color:#222;">Analytiques · Google Analytics 4</strong>
+        <p style="font-size:12px; color:#aaa; margin:3px 0 0; line-height:1.4;">Ils nous aident à améliorer le site. Données pseudonymisées. Fournisseur : Google LLC (USA, Data Privacy Framework).</p>
+        <p style="font-size:11px; color:#ccc; margin:3px 0 0;">Cookies : <code>_ga</code>, <code>_ga_CK0BB6T9TB</code> · Durée : jusqu'à 1 an.</p>
       </div>
       <label style="position:relative; display:inline-block; width:48px; height:26px; flex-shrink:0;">
         <input type="checkbox" id="toggle-analytics" onchange="toggleAnalytics()" style="opacity:0; width:0; height:0;">
@@ -1224,40 +1245,41 @@ et coordination préalable</p>
     </div>
 
     <div style="display:flex; gap:8px; margin-top:20px; flex-wrap:wrap;">
-      <button onclick="savePanelPreferences()" style="background:#2196F3; color:#fff; border:none; padding:11px 22px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; flex:1; min-width:140px;">Guardar preferencias</button>
-      <button onclick="acceptAllFromPanel()" style="background:#f5f5f5; color:#333; border:1px solid #e0e0e0; padding:11px 18px; border-radius:8px; cursor:pointer; font-size:13px;">Aceptar todo</button>
-      <button onclick="rejectAllFromPanel()" style="background:transparent; color:#aaa; border:1px solid #e8e8e8; padding:11px 18px; border-radius:8px; cursor:pointer; font-size:13px;">Rechazar todo</button>
+      <button onclick="savePanelPreferences()" style="background:#2196F3; color:#fff; border:none; padding:11px 22px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; flex:1; min-width:140px;">Enregistrer les préférences</button>
+      <button onclick="acceptAllFromPanel()" style="background:#f5f5f5; color:#333; border:1px solid #e0e0e0; padding:11px 18px; border-radius:8px; cursor:pointer; font-size:13px;">Tout accepter</button>
+      <button onclick="rejectAllFromPanel()" style="background:transparent; color:#aaa; border:1px solid #e8e8e8; padding:11px 18px; border-radius:8px; cursor:pointer; font-size:13px;">Tout refuser</button>
     </div>
     <p style="font-size:11px; color:#bbb; margin:14px 0 0; text-align:center;">
-      <a href="politica-cookies.html" style="color:#2196F3;">Política de cookies</a> · <a href="politica-privacidad.html" style="color:#2196F3;">Política de privacidad</a> · Puedes cambiar tu decisión en cualquier momento desde el pie de página.
+      <a href="politica-cookies.html" style="color:#2196F3;">Politique de cookies</a> · <a href="politica-privacidad.html" style="color:#2196F3;">Politique de confidentialité</a> · Vous pouvez modifier votre décision à tout moment depuis le pied de page.
     </p>
   </div>
 </div>
 
+<scricgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 // ================================================================
-//  GESTIÓN DE CONSENTIMIENTO DE cookies — RGPD / LSSI-CE art. 22.2
-//  IMPLEMENTACIÓN ÚNICA — no existen otras funciones acceptcookies/
-//  rejectcookies ni otros banners en este archivo.
+//  COOKIE CONSENT MANAGEMENT — GDPR / LSSI-CE art. 22.2
+//  SINGLE IMPLEMENTATION — there are no other acceptcookies/
+//  rejectcookies functions or other banners in this file.
 //
-//  FLUJO VERIFICADO:
-//  [1] Primera visita → sin cookie_consent en localStorage
-//      → banner visible, GA4 bloqueado (ga-disable = true desde <head>)
-//  [2] Usuario acepta → acceptcookies() → guarda 'accepted' en localStorage
-//      → oculta banner → llama loadGA4() → GA4 se inyecta dinámicamente
-//  [3] Usuario rechaza → rejectcookies() → guarda 'rejected' en localStorage
-//      → llama deleteGAcookies() → borra _ga, _ga_* del dispositivo
-//      → GA4 permanece bloqueado
-//  [4] "Cambiar preferencias" → openCookiePanel() → oculta banner, abre panel
-//      → toggle refleja estado actual → "Guardar" aplica cambio y borra cookies si procede
-//  [5] Visita recurrente (accepted) → loadGA4() automático en init
-//  [6] Visita recurrente (rejected) → GA4 permanece bloqueado, sin banner
+//  VERIFIED FLOW:
+//  [1] First visit → no cookie_consent in localStorage
+//      → banner visible, GA4 blocked (ga-disable = true from <head>)
+//  [2] User accepts → acceptcookies() → stores 'accepted' in localStorage
+//      → hides banner → calls loadGA4() → GA4 is injected dynamically
+//  [3] User rejects → rejectcookies() → stores 'rejected' in localStorage
+//      → calls deleteGAcookies() → removes _ga, _ga_* from the device
+//      → GA4 remains blocked
+//  [4] "Change preferences" → openCookiePanel() → hides banner, opens panel
+//      → toggle reflects current state → "Save" applies the change and removes cookies if needed
+//  [5] Returning visit (accepted) → automatic loadGA4() on init
+//  [6] Returning visit (rejected) → GA4 remains blocked, no banner
 // ================================================================
 
-// --- Helpers de consentimiento con caducidad de 12 meses ---
+// --- Consent helpers with 12-month expiry ---
 var CONSENT_KEY = 'cookie_consent';
 var CONSENT_TS_KEY = 'cookie_consent_ts';
-var CONSENT_TTL_MS = 24 * 30 * 24 * 60 * 60 * 1000; // 12 meses aprox.
+var CONSENT_TTL_MS = 12 * 30 * 24 * 60 * 60 * 1000; // approx. 12 months
 
 function setConsent(value) {
   try {
@@ -1271,7 +1293,7 @@ function getConsent() {
     var value = localStorage.getItem(CONSENT_KEY);
     var ts = parseInt(localStorage.getItem(CONSENT_TS_KEY) || '0', 10);
     if (!value) return null;
-    // Si ha caducado, borrar y devolver null para volver a pedir consentimiento
+    // If expired, remove it and return null to request consent again
     if (ts && (Date.now() - ts) > CONSENT_TTL_MS) {
       localStorage.removeItem(CONSENT_KEY);
       localStorage.removeItem(CONSENT_TS_KEY);
@@ -1281,7 +1303,7 @@ function getConsent() {
   } catch(e) { return null; }
 }
 
-// --- Borrado real de cookies de GA4 en todos los paths/dominios ---
+// --- Actual deletion of GA4 cookies across all paths/domains ---
 function deleteGAcookies() {
   var cookies = document.cookie.split(';');
   var domain = location.hostname.replace(/^www\./, '');
@@ -1300,7 +1322,7 @@ function deleteGAcookies() {
   });
 }
 
-// --- Estado del toggle analíticas ---
+// --- Analytics toggle state ---
 var analyticsEnabled = false;
 
 function setToggle(enabled) {
@@ -1311,7 +1333,7 @@ function setToggle(enabled) {
   if (track && thumb) {
     track.style.background = enabled ? '#2196F3' : '#ccc';
     thumb.style.left = enabled ? '25px' : '3px';
-    // FIX 3: actualizar el input sin disparar onchange (evita bucle)
+    // FIX 3: update input without triggering onchange
     if (input) {
       input.removeEventListener('change', toggleAnalytics);
       input.checked = enabled;
@@ -1321,7 +1343,7 @@ function setToggle(enabled) {
 }
 
 function toggleAnalytics() {
-  // FIX 3: sincronizar estado con el valor real del checkbox
+  // FIX 3: sync state with real checkbox value
   var input = document.getElementById('toggle-analytics');
   var newState = input ? input.checked : !analyticsEnabled;
   analyticsEnabled = newState;
@@ -1333,7 +1355,7 @@ function toggleAnalytics() {
   }
 }
 
-// --- Abrir / cerrar panel ---
+// --- Open / close panel ---
 function openCookiePanel() {
   var consent = getConsent();
   setToggle(consent === 'accepted');
@@ -1343,19 +1365,19 @@ function openCookiePanel() {
 
 function closeCookiePanel() {
   document.getElementById('cookie-panel').style.display = 'none';
-  // FIX 4: si el usuario cierra el panel sin haber tomado ninguna decisión,
-  // restaurar el banner para que no quede sin opción de consentir/rechazar
+  // FIX 4: if the user closes the panel without making a decision,
+  // restore the banner so they still have the option to accept/reject
   if (!getConsent()) {
     document.getElementById('cookie-banner').style.display = 'block';
   }
 }
 
-// Cerrar panel al hacer clic fuera del contenido
+// Close panel when clicking outside the content
 document.getElementById('cookie-panel').addEventListener('click', function(e) {
   if (e.target === this) closeCookiePanel();
 });
 
-// --- Funciones del banner (primera capa) ---
+// --- Banner functions (first layer) ---
 function acceptcookies() {
   setConsent('accepted');
   document.getElementById('cookie-banner').style.display = 'none';
@@ -1369,7 +1391,7 @@ function rejectcookies() {
   document.getElementById('cookie-banner').style.display = 'none';
 }
 
-// --- Funciones del panel (segunda capa) ---
+// --- Panel functions (second layer) ---
 function savePanelPreferences() {
   if (analyticsEnabled) {
     setConsent('accepted');
@@ -1378,10 +1400,10 @@ function savePanelPreferences() {
     var prev = getConsent();
     setConsent('rejected');
     window['ga-disable-G-CK0BB6T9TB'] = true;
-    if (prev === 'accepted') deleteGAcookies(); // borrar cookies reales si cambia de aceptado a rechazado
+    if (prev === 'accepted') deleteGAcookies(); // remove actual cookies if changing from accepted to rejected
   }
   closeCookiePanel();
-  showConsentToast(analyticsEnabled ? 'Preferencias guardadas: cookies analíticas activadas.' : 'Preferencias guardadas: cookies analíticas desactivadas y eliminadas.');
+  showConsentToast(analyticsEnabled ? 'Préférences enregistrées : cookies analytiques activés.' : 'Préférences enregistrées : cookies analytiques désactivés et supprimés.');
 }
 
 function acceptAllFromPanel() {
@@ -1389,7 +1411,7 @@ function acceptAllFromPanel() {
   setConsent('accepted');
   loadGA4();
   closeCookiePanel();
-  showConsentToast('cookies analíticas aceptadas. ¡Gracias!');
+  showConsentToast('Cookies analytiques acceptés. Merci !');
 }
 
 function rejectAllFromPanel() {
@@ -1399,18 +1421,19 @@ function rejectAllFromPanel() {
   window['ga-disable-G-CK0BB6T9TB'] = true;
   if (prev === 'accepted') deleteGAcookies();
   closeCookiePanel();
-  showConsentToast('cookies analíticas rechazadas y eliminadas.');
+  showConsentToast('Cookies analytiques refusés et supprimés.');
 }
 
-// --- Toast de confirmación ---
+// --- Confirmation toast ---
 function showConsentToast(msg) {
   var t = document.createElement('div');
   t.textContent = msg;
-t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#323232;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;z-index:11000;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .4s;max-width:calc(100vw - 32px);white-space:normal;text-align:center;word-break:break-word;';  document.body.appendChild(t);
+  t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#323232;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;z-index:11000;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .4s;max-width:calc(100vw - 32px);white-space:normal;text-align:center;word-break:break-word;';
+  document.body.appendChild(t);
   setTimeout(function(){ t.style.opacity='0'; setTimeout(function(){ t.remove(); }, 400); }, 3500);
 }
 
-// --- Inicialización al cargar la página ---
+// --- Initialization on page load ---
 (function() {
   var consent = getConsent();
   if (!consent) {
@@ -1418,11 +1441,11 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
   } else if (consent === 'accepted') {
     loadGA4();
   }
-  // Si 'rejected': GA4 permanece bloqueado desde el <head>
+  // If 'rejected': GA4 remains blocked from <head>
 })();
 </script>
 
-    <script>
+<script>
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1439,18 +1462,17 @@ t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%
             });
         });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-  const nav = document.querySelector('nav');
-  if (nav) {
-    if (window.scrollY > 50) {
-      nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
-    } else {
-      nav.style.boxShadow = '';
-    }
-  }
-});
-    </script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.15)';
+                }
+            }
+        });
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var btn  = document.querySelector('.nav-toggle');
