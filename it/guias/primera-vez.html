@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prima volta in camper a Gran Canaria: consigli e guida completa</title>
+  <meta name="description" content="Guida per la tua prima volta in camper a Gran Canaria. Consigli pratici, errori da evitare e come sfruttare al massimo il tuo primo viaggio.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png">
+  <link rel="canonical" href="https://campycanaria.com/guias/primera-vez.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+    .main-nav { background: #fff; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 50px; width: auto; }
+    .lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher a:hover {
+  background: #f0f7ff;
+  color: #2196F3;
+}
+
+.lang-switcher a.active {
+  background: #2196F3;
+  color: #fff;
+}
+    .nav-links { display: flex; list-style: none; gap: 30px; }
+    .nav-links a { text-decoration: none; color: #333; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active-page { color: #2196F3; }
+    .nav-toggle { display: none; }
+    .page-hero { background: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)), url('../../img/banner1.webp') center/cover no-repeat; padding: 160px 20px 80px; text-align: center; color: #fff; }
+    .page-hero .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 16px; letter-spacing: 0.3px; }
+    .page-hero .breadcrumb a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .page-hero .breadcrumb a:hover { color: #fff; }
+    .page-hero .breadcrumb span { margin: 0 6px; }
+    .page-hero h1 { font-size: 46px; font-weight: 600; margin-bottom: 16px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); line-height: 1.2; }
+    .page-hero p { font-size: 19px; max-width: 620px; margin: 0 auto; opacity: .93; text-shadow: 1px 1px 4px rgba(0,0,0,0.4); font-weight: 300; }
+    .guide-content { padding: 80px 20px; background: #fff; }
+    .container { max-width: 800px; margin: 0 auto; }
+    .guide-index { background: #f8fbff; border: 1px solid #daeaf8; border-radius: 12px; padding: 24px 28px; margin-bottom: 54px; }
+    .guide-index h2 { font-size: 15px; font-weight: 700; color: #1565C0; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+    .guide-index ol { padding-left: 20px; }
+    .guide-index ol li { font-size: 15px; color: #444; margin-bottom: 6px; line-height: 1.6; }
+    .guide-index ol li a { color: #2196F3; text-decoration: none; }
+    .guide-index ol li a:hover { text-decoration: underline; }
+    .guide-section { margin-bottom: 54px; }
+    .guide-section h2 { font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid #e8f4fd; }
+    .guide-section h3 { font-size: 18px; font-weight: 600; color: #1a1a1a; margin: 28px 0 10px; }
+    .guide-section p { font-size: 16px; color: #444; line-height: 1.85; margin-bottom: 16px; }
+    .guide-section ul, .guide-section ol { padding-left: 20px; margin-bottom: 14px; }
+    .guide-section ul li, .guide-section ol li { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 6px; }
+    .guide-box { background: #f0f7ff; border: 1px solid #c8e0f8; border-left: 4px solid #2196F3; border-radius: 10px; padding: 22px 24px; margin: 28px 0; }
+    .guide-box h3 { font-size: 16px; font-weight: 700; color: #1565C0; margin-bottom: 12px; }
+    .guide-box p { font-size: 15px; color: #333; line-height: 1.8; margin-bottom: 0; }
+    .guide-warning { background: #fff8e1; border: 1px solid #ffe082; border-left: 4px solid #FFC107; border-radius: 10px; padding: 22px 24px; margin: 28px 0; }
+    .guide-warning h3 { font-size: 16px; font-weight: 700; color: #e65100; margin-bottom: 10px; }
+    .guide-warning p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 0; }
+    .faq-item { border-bottom: 1px solid #eaeaea; padding: 22px 0; }
+    .faq-item:first-of-type { border-top: 1px solid #eaeaea; }
+    .faq-item h3 { font-size: 17px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; }
+    .faq-item p { font-size: 15px; color: #555; line-height: 1.8; }
+    .guide-divider { border: none; border-top: 1px solid #eaeaea; margin: 52px 0; }
+    .cta-section { background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../../img/banner2.webp') center 20%/cover no-repeat; color: #fff; text-align: center; padding: 90px 20px; }
+    .cta-section h2 { font-size: 36px; font-weight: 600; margin-bottom: 16px; }
+    .cta-section p { font-size: 18px; margin-bottom: 36px; opacity: .95; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .btn { padding: 16px 42px; text-decoration: none; text-transform: uppercase; font-size: 14px; font-weight: 600; letter-spacing: 1px; transition: all 0.3s; cursor: pointer; border-radius: 5px; display: inline-block; }
+    .btn-white { background: #fff; color: #2196F3; border: 2px solid #fff; }
+    .btn-white:hover { background: transparent; color: #fff; border-color: #fff; }
+    .site-footer { background: #0f1115; color: rgba(255,255,255,.86); padding: 70px 20px 24px; border-top: 1px solid rgba(255,255,255,.06); }
+    .footer-container { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 0.9fr; gap: 40px; }
+    .footer-col h3 { margin: 18px 0 14px; font-size: 16px; letter-spacing: .2px; color: #fff; }
+    .footer-col p { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.85; margin: 0 0 12px; }
+    .footer-col strong { color: rgba(255,255,255,.92); font-weight: 600; }
+    .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+    .footer-logo { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); }
+    .footer-brand-name { font-weight: 700; color: #fff; line-height: 1.1; }
+    .footer-brand-tag { font-size: 13px; color: rgba(255,255,255,.65); margin-top: 3px; }
+    .footer-note { margin-top: 14px; padding: 14px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .footer-links a { color: rgba(255,255,255,.78); text-decoration: none; font-size: 14px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); transition: all .2s ease; }
+    .footer-links a:hover { transform: translateY(-1px); background: rgba(33,150,243,.12); border-color: rgba(33,150,243,.35); color: #fff; }
+    .footer-card { margin-top: 18px; padding: 14px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+    .footer-card-title { font-size: 12px; letter-spacing: .6px; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 6px; }
+    .footer-card-text { color: rgba(255,255,255,.9); font-weight: 600; font-size: 14px; }
+    .footer-bottom { margin-top: 38px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; align-items: center; gap: 12px; color: rgba(255,255,255,.6); font-size: 13px; }
+    .footer-mini-links { display: flex; align-items: center; gap: 10px; }
+    .footer-mini-links a { color: rgba(255,255,255,.75); text-decoration: none; }
+    .footer-mini-links a:hover { color: #fff; }
+    .footer-mini-links .dot { color: rgba(255,255,255,.35); }
+    .instagram-float { position: fixed; bottom: 25px; right: 20px; width: 50px; height: 50px; background: #E1306C; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.25); z-index: 9999; transition: all 0.3s ease; text-decoration: none; }
+    .instagram-float:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 12px 25px rgba(0,0,0,0.35); background: #C72A60; }
+    .nav-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 999; }
+    .nav-overlay.show { opacity: 1; pointer-events: auto; }
+        @media (max-width: 768px) {
+      .lang-switcher {
+  margin-left: auto;
+  margin-right: 10px;
+  gap: 6px;
+}
+
+.lang-switcher a {
+  font-size: 12px;
+  padding: 5px 6px;
+}
+      .nav-links { display: none; opacity: 0; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease; position: absolute; top: 70px; right: 20px; left: 20px; flex-direction: column; background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+      .nav-links.open { display: flex; opacity: 1; transform: translateY(0); }
+      .nav-links li { opacity: 0; transform: translateX(10px); transition: opacity .25s ease, transform .25s ease; }
+      .nav-links.open li { opacity: 1; transform: translateX(0); }
+      .nav-links.open li:nth-child(1) { transition-delay: .05s; }
+      .nav-links.open li:nth-child(2) { transition-delay: .10s; }
+      .nav-links.open li:nth-child(3) { transition-delay: .15s; }
+      .nav-links.open li:nth-child(4) { transition-delay: .20s; }
+      .nav-links.open li:nth-child(5) { transition-delay: .25s; }
+      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(0,0,0,.12); background: #fff; border-radius: 10px; cursor: pointer; }
+      .nav-container { position: relative; }
+      .page-hero h1 { font-size: 30px; }
+      .page-hero p { font-size: 16px; }
+      .guide-section h2 { font-size: 20px; }
+      .cta-section h2 { font-size: 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/"><img src="../../img/logo.webp" alt="Campy Canaria"></a>
+      <div class="lang-switcher">
+  <a href="/guias/primera-vez.html">ES</a>
+  <a href="/en/guias/primera-vez.html">EN</a>
+  <a href="/fr/guias/primera-vez.html">FR</a>
+  <a href="/de/guias/primera-vez.html">DE</a>
+  <a href="/it/guias/primera-vez.html" class="active">IT</a>
+</div>
+    </div>
+    <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#vehiculo">Il veicolo</a></li>
+      <li><a href="/#como-funciona">Come funziona</a></li>
+      <li><a href="/guias/" class="active-page">Guide</a></li>
+      <li><a href="/#contacto">Contatti</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="/guias/">Guide</a>
+    <span>›</span>
+    Prima volta in camper
+  </div>
+  <h1>Consigli per la tua prima volta in camper</h1>
+  <p>Tutto quello che avremmo voluto sapere prima di cominciare</p>
+</div>
+
+<section class="guide-content">
+  <div class="container">
+
+    <div class="guide-section">
+      <p>La prima volta che viaggi in camper di solito si mescola emozione, dubbi e una leggera sensazione di partire per un'avventura senza avere tutto sotto controllo. Ed è del tutto normale. Anche se dall'esterno sembra un viaggio semplice, l'esperienza cambia parecchio rispetto a viaggiare in macchina o soggiornare in hotel, perché qui guidi, cucini, dormi e organizzi tutto nello stesso spazio.</p>
+      <p>In questa guida abbiamo raccolto i migliori consigli per la tua prima volta in camper, incentrati su ciò che fa davvero la differenza: la preparazione preliminare, l'organizzazione quotidiana e la mentalità con cui affronti il viaggio. Non si tratta di essere perfetti fin dall'inizio, ma di evitare gli errori più tipici e di cominciare a godersi il tutto fin dal primo giorno.</p>
+      <p>Se stai pensando di fare il tuo primo viaggio in camper a Gran Canaria, questa guida ti aiuterà a evitare gli errori più comuni e a goderti ogni momento fin dall'inizio.</p>
+    </div>
+
+    <div class="guide-index">
+      <h2>📋 Indice</h2>
+      <ol>
+        <li><a href="#antes-de-salir">Cosa devi avere chiaro prima di partire</a></li>
+        <li><a href="#preparacion">Come prepararti per il tuo primo viaggio in camper</a></li>
+        <li><a href="#organizacion">Organizzazione degli interni e distribuzione delle cose</a></li>
+        <li><a href="#mentalidad">La mentalità giusta per godersi il viaggio davvero</a></li>
+        <li><a href="#errores">Errori comuni in una prima volta in camper</a></li>
+        <li><a href="#gran-canaria">La tua prima volta in camper a Gran Canaria</a></li>
+        <li><a href="#faq">Domande frequenti</a></li>
+      </ol>
+    </div>
+
+    <div class="guide-section" id="antes-de-salir">
+      <h2>Cosa devi avere chiaro prima di partire</h2>
+      <p>Dopo aver osservato molte prime volte in camper a Gran Canaria, ci sono schemi che si ripetono spesso e che vale la pena conoscere prima di iniziare.</p>
+      <p>Prima del primo viaggio conviene accettare qualcosa di importante: un camper non funziona come un piccolo appartamento, ma come un modo diverso di viaggiare. Lo spazio è limitato, l'ordine conta molto di più e ogni piccola decisione influisce sul resto della giornata. Prima accetti che il viaggio sia fatto di semplicità e adattamento, meglio lo vivrai.</p>
+      <p>È anche importante non idealizzare troppo l'esperienza. Viaggiare in camper può essere incredibile, ma non significa vivere ogni minuto in uno spot perfetto di fronte al mare. Ci saranno momenti di organizzazione, cambi di programma, ricerca di parcheggio o piccoli aggiustamenti al volo. E questo non significa che il viaggio stia andando male, ma che fa parte della normalità dell'esperienza.</p>
+      <p>La chiave è partire con aspettative realistiche: non cercare la perfezione, non riempire il programma di troppe tappe e capire che la libertà del camper non consiste nell'improvvisare tutto, ma nell'avere margine per decidere meglio.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section" id="preparacion">
+      <h2>Come prepararti per il tuo primo viaggio in camper</h2>
+
+      <h3>Porta meno cose di quante credi</h3>
+      <p>Uno degli errori più comuni in una prima volta in camper è caricare troppo. Troppi vestiti, oggetti "per ogni evenienza", cibo in eccesso e accessori che poi non si usano mai. In un camper tutto occupa spazio e l'ordine è fondamentale.</p>
+      <p>La cosa migliore è preparare solo il necessario: abiti comodi e pratici, qualcosa di caldo anche se la destinazione sembra calda, prodotti igienici essenziali e lo stretto indispensabile per cucinare in modo semplice. Meno cose porti, più sarà facile muoverti, riordinare e trovare ciò che ti serve.</p>
+
+      <h3>Controlla l'essenziale prima di partire</h3>
+      <p>Prima di partire conviene familiarizzarsi con le basi del camper: dove va ogni cosa, come si aprono e chiudono i mobili, quali luci usare, come funziona l'acqua, dove si trova la vaiglieria e cosa devi fare prima di metterti in moto. Quella piccola revisione iniziale evita molti errori da principiante e dà molta più sicurezza durante il viaggio.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section" id="organizacion">
+      <h2>Organizzazione degli interni e distribuzione delle cose</h2>
+      <p>In un camper piccolo, l'ordine non è un dettaglio: è parte del comfort. Quando ogni oggetto ha un posto ben preciso, tutto scorre molto meglio. Quando le cose vengono lasciate "in giro", lo spazio si disorganizza in fretta.</p>
+      <p>La cosa più pratica è dividere ciò che porti in gruppi: vestiti, cibo, igiene, tecnologia e oggetti d'uso frequente. Ciò di cui ti servirai di più deve essere sempre accessibile. Ciò di cui hai bisogno solo occasionalmente può essere riposto più in fondo. Così eviti di dover rovistare ovunque ogni volta che cerchi qualcosa di piccolo.</p>
+
+      <div class="guide-box">
+        <h3>💡 Una routine minima che fa la differenza</h3>
+        <p>Riordinare prima di guidare, tenere libera la zona principale e non far accumulare oggetti fuori posto. Questa disciplina semplice cambia molto l'esperienza, perché evita che il camper sembri ancora più piccolo e rende tutto molto più comodo.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section" id="mentalidad">
+      <h2>La mentalità giusta per godersi il viaggio davvero</h2>
+
+      <h3>Non cercare di vedere tutto</h3>
+      <p>Uno dei grandi errori in una prima volta in camper è voler sfruttare così tanto il viaggio da trasformarlo in una corsa. Troppe destinazioni, troppe strade e troppi cambi di posto. Il risultato di solito è stanchezza e la sensazione di non aver goduto del percorso.</p>
+      <p>Il camper si gode di più quando si lascia respiro tra una tappa e l'altra. Non è necessario fare mille cose al giorno. A volte basta percorrere un bel tratto di strada, fermarsi in un posto piacevole e lasciare che la giornata abbia il suo ritmo.</p>
+
+      <h3>Sii flessibile con i piani</h3>
+      <p>Viaggiare in camper richiede una mentalità più aperta. Può cambiare il tempo, una zona potrebbe non piacerti, potrebbe esserci vento, rumore o semplicemente voglia di spostarsi altrove. E questo non è un fallimento del viaggio, ma è proprio uno dei vantaggi di portare la casa con sé.</p>
+      <p>Avere un'idea generale del percorso va bene, ma senza trasformarla in un obbligo rigido. La flessibilità è una delle cose più apprezzate quando si sono già fatti diversi viaggi.</p>
+
+      <h3>Capisci che il comfort sta nella semplicità</h3>
+      <p>Le persone che godono meglio del camper di solito non sono quelle che portano più cose, ma quelle che capiscono meglio il ritmo del viaggio. Mangiare in modo semplice, spostarsi senza fretta, riordinare in fretta e adattarsi a ciò che capita dà risultati molto migliori rispetto al tentare di riprodurre il comfort di casa in uno spazio piccolo.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section" id="errores">
+      <h2>Errori comuni in una prima volta in camper</h2>
+      <p>Ci sono diversi errori che si ripetono molto spesso quando si viaggia in camper per la prima volta. Il primo è caricare il viaggio di aspettative e pensare che tutto debba andare alla perfezione. Il secondo è portare troppe cose. Il terzo, non lasciare abbastanza margine tra una tappa e l'altra.</p>
+      <p>È anche molto comune non pensare abbastanza alla logistica: dove mettere ogni cosa, quando riordinare, cosa tenere a portata di mano o come organizzare il cibo. Niente di tutto questo sembra importante all'inizio, ma finisce per incidere molto sul comfort reale del viaggio.</p>
+
+      <div class="guide-warning">
+        <h3>⚠️ Attenzione a questo errore molto frequente</h3>
+        <p>Ossessionarsi nel dormire nel "posto migliore possibile" ogni notte. Spesso conviene molto di più scegliere una zona pratica e tranquilla che perdere tempo a cercare un luogo apparentemente perfetto.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section">
+      <h2>Noleggiare un camper per una prima esperienza confortevole</h2>
+      <p>Se è la tua prima volta, una delle migliori decisioni è scegliere un camper già attrezzato e pensato per rendere tutto semplice, come quello che proponiamo da Campy Canaria. Quando il veicolo è ben organizzato e ha tutto il necessario per viaggiare comodamente, l'esperienza migliora moltissimo e puoi concentrarti sul godersi il percorso, invece di risolvere piccoli problemi in continuazione.</p>
+      <p>La prima volta in camper non dovrebbe sembrare una prova complicata, ma un modo diverso e molto più libero di scoprire una destinazione al proprio ritmo.</p>
+      <p>Se vuoi vedere esattamente come funziona, puoi visitare la nostra pagina di <a href="/">noleggio camper a Gran Canaria</a> e vedere cosa è incluso.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section" id="gran-canaria">
+      <h2>La tua prima volta in camper a Gran Canaria</h2>
+      <p>Gran Canaria è una delle migliori destinazioni per una prima esperienza in camper, perché combina distanze brevi, varietà di paesaggi e buon clima tutto l'anno. In pochi chilometri puoi passare dalla costa a zone di montagna come Tejeda o il Roque Nublo.</p>
+      <p>Inoltre, essendo un'isola, è più facile pianificare itinerari senza complicazioni e senza lunghe ore di guida. Questo la rende ideale per imparare come funziona un camper.</p>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section" id="faq">
+      <h2>Domande frequenti</h2>
+
+      <div class="faq-item">
+        <h3>È difficile viaggiare in camper per la prima volta?</h3>
+        <p>No, ma richiede un piccolo cambio di mentalità. All'inizio tutto è nuovo, ma appena capisci come organizzarti e rallenti il ritmo, l'esperienza diventa molto più naturale.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Qual è la cosa più importante per un primo viaggio?</h3>
+        <p>La cosa più importante è partire con un'idea semplice: portare poco, non sovraccaricare il programma e mantenere l'ordine nel camper. Questo rende tutto il viaggio molto più comodo.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Quanti giorni sono ideali per la prima volta?</h3>
+        <p>Un viaggio breve di qualche giorno è di solito un ottimo modo per cominciare. Permette di provare l'esperienza senza complicarla troppo e di capire rapidamente come ti piace viaggiare in camper.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Bisogna pianificare tutto?</h3>
+        <p>No. La cosa migliore è avere una base pianificata, ma lasciare margine per adattarsi. Il camper si gode di più quando non trasformi il viaggio in un orario rigido.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Quale mentalità aiuta di più?</h3>
+        <p>Andare con calma, semplificare e accettare che non è necessario fare tutto alla perfezione. Meno cerchi di controllare ogni dettaglio, più sarà facile godersi il viaggio.</p>
+      </div>
+    </div>
+
+    <hr class="guide-divider">
+
+    <div class="guide-section">
+      <h2>Conclusione</h2>
+      <p>La prima volta in camper si ricorda spesso a lungo, proprio perché cambia il modo di viaggiare. Non si tratta solo di spostarsi da un posto all'altro, ma di imparare a vivere il viaggio con più libertà, più flessibilità e un rapporto diverso con il tempo e lo spazio.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div>
+    <h2>Pensi di scoprire l'isola in autonomia?</h2>
+    <p>Prenota il tuo camper ed esplora Gran Canaria in totale libertà.</p>
+    <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener" class="btn btn-white">
+      Prenota su Yescapa
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img class="footer-logo" src="../../img/logo.webp" alt="Logo Campy Canaria">
+          <div>
+            <div class="footer-brand-name">Campy Canaria</div>
+            <div class="footer-brand-tag">Noleggio camper a Gran Canaria</div>
+          </div>
+        </div>
+        <h3>Note legali</h3>
+        <p>In conformità con la <strong>Legge 34/2002, dell'11 luglio, sui Servizi della Società dell'Informazione e del Commercio Elettronico (LSSI-CE)</strong>, si comunica quanto segue:</p>
+        <div class="footer-note">
+          <p><strong>Titolare:</strong> Campy Canaria (proprietario privato del veicolo)</p>
+          <p><strong>Indirizzo:</strong> Gran Canaria, Isole Canarie, Spagna</p>
+          <p><strong>Attività:</strong> Sito informativo sul noleggio di un veicolo privato registrato sulla piattaforma Yescapa.</p>
+          <p><strong>Intermediazione:</strong> Campy Canaria non gestisce prenotazioni, pagamenti né contratti direttamente. Tutte le prenotazioni avvengono esclusivamente tramite <a href="https://www.yescapa.es" target="_blank" rel="noopener" style="color:#60a5fa;">Yescapa</a>.</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Privacy e cookie</h3>
+        <p>Questo sito non raccoglie dati personali direttamente né dispone di moduli di registrazione.</p>
+        <div class="footer-note">
+          <p><strong>Cookie analitici:</strong> Questo sito utilizza Google Analytics (Google LLC) per misurare l'utilizzo del sito. Vengono installati solo con il tuo previo consenso, ai sensi del GDPR (UE) 2016/679.</p>
+          <p><strong>Diritti GDPR:</strong> Puoi esercitare i tuoi diritti contattandoci tramite Instagram o, per i dati delle prenotazioni, direttamente con Yescapa secondo la loro <a href="https://www.yescapa.es/privacy/confidentiality" target="_blank" rel="noopener" style="color:#60a5fa;">informativa sulla privacy</a>.</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Link utili</h3>
+        <nav class="footer-links">
+          <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener">Vai al nostro annuncio su Yescapa</a>
+          <a href="https://www.yescapa.es/how-yescapa-works" target="_blank" rel="noopener">Come funziona Yescapa</a>
+          <a href="https://www.yescapa.es/todos-los-seguros/lagun-aro/" target="_blank" rel="noopener">Assicurazioni su Yescapa</a>
+          <a href="https://www.yescapa.es/privacy/confidentiality" target="_blank" rel="noopener">Informativa sulla privacy di Yescapa</a>
+          <a href="https://www.aepd.es" target="_blank" rel="noopener">Agenzia spagnola per la protezione dei dati</a>
+        </nav>
+        <div class="footer-card">
+          <div class="footer-card-title">Piattaforma di prenotazione</div>
+          <div class="footer-card-text">Yescapa · Noleggio di camper e autocaravan</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Campy Canaria · Gran Canaria, Spagna</div>
+      <div class="footer-mini-links">
+        <a href="../../aviso-legal.html">Note legali</a>
+        <span class="dot">•</span>
+        <a href="../../politica-privacidad.html">Informativa sulla privacy</a>
+        <span class="dot">•</span>
+        <a href="../../politica-cookies.html">Politica dei cookie</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://www.instagram.com/campycanaria/" target="_blank" rel="noopener" class="instagram-float" aria-label="Seguici su Instagram">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('nav');
+    if (nav) nav.style.boxShadow = window.scrollY > 50 ? '0 5px 20px rgba(0,0,0,0.15)' : '';
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-links');
+    if (!btn || !menu) return;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function isOpen() { return menu.classList.contains('open'); }
+    function openMenu() { menu.classList.add('open'); overlay.classList.add('show'); btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { menu.classList.remove('open'); overlay.classList.remove('show'); btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+
+    btn.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); isOpen() ? closeMenu() : openMenu(); });
+    overlay.addEventListener('click', function () { if (isOpen()) closeMenu(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen()) closeMenu(); });
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+  });
+</script>
+
+</body>
+</html>
