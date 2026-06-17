@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camper-Benutzerhandbuch | Campy Canaria</title>
+  <meta name="description" content="Benutzerhandbuch für den Campy Canaria Camper auf Deutsch: Strom, Wasser, WC, Küche, Schlösser, Radwechsel und Notfälle.">
+  <link rel="canonical" href="https://campycanaria.com/de/manual.html">
+  <link rel="alternate" hreflang="es" href="https://campycanaria.com/manual.html">
+  <link rel="alternate" hreflang="en" href="https://campycanaria.com/en/manual.html">
+  <link rel="alternate" hreflang="fr" href="https://campycanaria.com/fr/manual.html">
+  <link rel="alternate" hreflang="de" href="https://campycanaria.com/de/manual.html">
+  <link rel="alternate" hreflang="it" href="https://campycanaria.com/it/manual.html">
+  <link rel="alternate" hreflang="x-default" href="https://campycanaria.com/manual.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:#f8f9fa;overflow-x:hidden}
+a{color:inherit}
+.main-nav{background:#fff;padding:15px 0;box-shadow:0 2px 5px rgba(0,0,0,.1);position:fixed;width:100%;top:0;z-index:1000}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;position:relative}
+.logo{display:flex;align-items:center;gap:12px}.logo>a{display:inline-flex;align-items:center;border-radius:10px;padding:2px}.logo img{height:50px;width:auto}.logo>a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.lang-switcher{display:flex;align-items:center;gap:10px;margin-left:20px}.lang-switcher a{text-decoration:none;color:#333;font-size:13px;font-weight:600;padding:6px 8px;border-radius:6px;transition:all .3s ease}.lang-switcher a:hover{background:#f0f7ff;color:#2196F3}.lang-switcher a.active{background:#2196F3;color:#fff}
+.nav-links{display:flex;list-style:none;gap:30px}.nav-links a{text-decoration:none;color:#333;font-size:14px;font-weight:500;transition:color .3s}.nav-links a:hover,.nav-links a[aria-current="page"]{color:#2196F3}.nav-toggle{display:none}
+.manual-hero{background:linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.48)),url('../img/banner1.webp');background-size:cover;background-position:center;min-height:430px;display:flex;align-items:center;justify-content:center;text-align:center;padding:145px 20px 70px;color:#fff}
+.hero-content{max-width:900px}.hero-kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:1px solid rgba(255,255,255,.38);border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(4px);font-size:14px;font-weight:600;margin-bottom:18px}.manual-hero h1{font-size:50px;font-weight:600;line-height:1.18;margin-bottom:16px;text-shadow:2px 2px 8px rgba(0,0,0,.5)}.manual-hero p{font-size:20px;font-weight:300;max-width:700px;margin:0 auto;text-shadow:1px 1px 4px rgba(0,0,0,.55)}
+.manual-container{max-width:920px;margin:0 auto;padding:65px 20px 90px}.manual-intro{text-align:center;margin:0 auto 38px;max-width:720px}.manual-intro h2{font-size:36px;font-weight:600;color:#333;margin-bottom:10px}.manual-intro p{font-size:17px;color:#666}
+.section-card{background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:24px;overflow:hidden;border:1px solid rgba(0,0,0,.035);transition:transform .2s ease,box-shadow .2s ease}.section-card:hover{box-shadow:0 8px 25px rgba(0,0,0,.09)}
+.section-header{display:flex;align-items:center;gap:14px;padding:22px 24px;cursor:pointer;user-select:none;transition:background .2s}.section-header:hover{background:#f0f7ff}.section-header:focus-visible{outline:3px solid rgba(33,150,243,.35);outline-offset:-3px}.section-icon{width:50px;height:50px;background:#2196F3;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;flex-shrink:0}.section-title-text{flex:1}.section-title-text h2{font-size:19px;font-weight:700;color:#1a1a1a}.section-title-text p{font-size:13px;color:#777;margin-top:2px}.chevron{font-size:18px;color:#aaa;transition:transform .3s}.section-card.open .chevron{transform:rotate(180deg)}
+.section-body{display:none;padding:0 24px 26px;border-top:1px solid #f0f0f0}.section-card.open .section-body{display:block}
+.step-list{list-style:none;margin-top:16px}.step-list li{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}.step-num{width:28px;height:28px;background:#2196F3;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}.step-list li p{font-size:14px;color:#444;line-height:1.65}
+.info-list{list-style:none;margin-top:14px}.info-list li{padding:9px 0 9px 24px;position:relative;font-size:14px;color:#444;border-bottom:1px solid #f5f5f5;line-height:1.65}.info-list li:last-child{border-bottom:none}.info-list li::before{content:'✓';position:absolute;left:0;color:#2196F3;font-weight:700}
+.volt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.volt-card{border-radius:8px;padding:13px;text-align:center}.volt-card.ok{background:#e8f5e9}.volt-card.mid{background:#fff8e1}.volt-card.low{background:#ffebee}.volt-value{font-size:18px;font-weight:700;margin-bottom:4px}.volt-card.ok .volt-value{color:#2e7d32}.volt-card.mid .volt-value{color:#f57f17}.volt-card.low .volt-value{color:#c62828}.volt-label{font-size:12px;color:#666}
+.panel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.panel-btn{background:#1a1a2e;border-radius:8px;padding:15px 8px;text-align:center;color:#fff}.panel-btn i{font-size:22px;margin-bottom:6px;display:block;color:#4dabf7}.btn-num{font-size:11px;background:#2196F3;color:#fff;border-radius:4px;padding:1px 6px;display:inline-block;margin-bottom:4px}.panel-btn p{font-size:11px;color:#ccc;line-height:1.3}
+.alert-box{border-radius:8px;padding:13px 16px;margin-top:14px;display:flex;gap:10px;align-items:flex-start;font-size:13px}.alert-box.warn{background:#fff8e1;border-left:4px solid #f9a825}.alert-box.info{background:#e3f2fd;border-left:4px solid #2196F3}.alert-box.danger{background:#ffebee;border-left:4px solid #e53935}.alert-box i{margin-top:2px;flex-shrink:0}.alert-box.warn i{color:#f9a825}.alert-box.info i{color:#2196F3}.alert-box.danger i{color:#e53935}.alert-box a{color:#1976D2;text-decoration:none}
+.subsection{margin-top:21px}.subsection h3{font-size:14px;font-weight:700;color:#2196F3;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #e3f2fd}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.contact-card{background:#f0f7ff;border-radius:8px;padding:14px;display:flex;gap:12px;align-items:center}.contact-card i{font-size:22px;color:#2196F3;flex-shrink:0}.contact-card .name{font-weight:700;font-size:14px}.contact-card .phone{font-size:13px;color:#555}.contact-card a{color:#2196F3;text-decoration:none}
+.emergency-list{margin-top:14px}.emergency-item{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:14px}.emergency-item:last-child{border-bottom:none}.service{color:#444}.number{font-weight:700;font-size:16px;color:#2196F3;background:#e3f2fd;padding:2px 10px;border-radius:20px;white-space:nowrap}
+.back-home{text-align:center;margin-top:38px}.btn{padding:15px 34px;text-decoration:none;text-transform:uppercase;font-size:14px;font-weight:600;letter-spacing:.8px;transition:all .3s;cursor:pointer;border-radius:5px;display:inline-block}.btn-primary{background:#2196F3;color:#fff;border:2px solid #2196F3}.btn-primary:hover{background:#1976D2;border-color:#1976D2;transform:translateY(-3px);box-shadow:0 8px 20px rgba(33,150,243,.4)}
+.site-footer{background:#0f1115;color:rgba(255,255,255,.86);padding:62px 20px 24px;border-top:1px solid rgba(255,255,255,.06)}.footer-container{max-width:1200px;margin:0 auto}.footer-grid{display:grid;grid-template-columns:1.25fr .8fr .9fr;gap:40px}.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}.footer-logo{width:54px;height:54px;border-radius:12px;object-fit:cover;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}.footer-brand-name{font-weight:700;color:#fff;line-height:1.1}.footer-brand-tag{font-size:13px;color:rgba(255,255,255,.65);margin-top:3px}.footer-col h3{margin:0 0 14px;font-size:16px;color:#fff}.footer-col p{color:rgba(255,255,255,.72);font-size:14px;line-height:1.85}.footer-links{display:flex;flex-direction:column;gap:10px;margin-top:8px}.footer-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);transition:all .2s}.footer-links a:hover{transform:translateY(-1px);background:rgba(33,150,243,.12);border-color:rgba(33,150,243,.35);color:#fff}.footer-card{padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}.footer-card-title{font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}.footer-card-text{color:rgba(255,255,255,.9);font-weight:600;font-size:14px}.footer-bottom{margin-top:38px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;gap:12px;color:rgba(255,255,255,.6);font-size:13px}.footer-mini-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.footer-mini-links a{color:rgba(255,255,255,.75);text-decoration:none}.footer-mini-links a:hover{color:#fff}.dot{color:rgba(255,255,255,.35)}
+.instagram-float{position:fixed;bottom:25px;right:20px;width:50px;height:50px;background:#E1306C;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:9999;transition:all .3s;text-decoration:none}.instagram-float:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 12px 25px rgba(0,0,0,.35);background:#C72A60}
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:999}.nav-overlay.show{opacity:1;pointer-events:auto}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:26px}.footer-bottom{flex-direction:column;align-items:flex-start}}
+@media(max-width:768px){.lang-switcher{margin-left:auto;margin-right:10px;gap:5px}.lang-switcher a{font-size:11px;padding:5px 6px}.nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(0,0,0,.12);background:#fff;border-radius:10px;cursor:pointer}.nav-links{display:none;position:absolute;top:70px;right:20px;left:20px;flex-direction:column;gap:0;background:#fff;border-radius:12px;padding:10px;box-shadow:0 12px 30px rgba(0,0,0,.12);opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s}.nav-links.open{display:flex;opacity:1;transform:translateY(0)}.nav-links li{opacity:0;transform:translateX(10px);transition:opacity .25s,transform .25s}.nav-links.open li{opacity:1;transform:translateX(0)}.nav-links.open li:nth-child(1){transition-delay:.05s}.nav-links.open li:nth-child(2){transition-delay:.1s}.nav-links.open li:nth-child(3){transition-delay:.15s}.nav-links.open li:nth-child(4){transition-delay:.2s}.nav-links.open li:nth-child(5){transition-delay:.25s}.nav-links a{display:block;padding:11px 12px}.manual-hero{min-height:390px;padding-top:140px}.manual-hero h1{font-size:38px}.manual-hero p{font-size:17px}.manual-intro h2{font-size:30px}}
+@media(max-width:600px){.logo img{height:43px}.manual-hero{min-height:360px;padding:125px 20px 58px}.manual-hero h1{font-size:31px}.hero-kicker{font-size:12px}.manual-container{padding:45px 14px 70px}.manual-intro h2{font-size:27px}.section-header{padding:18px 16px;gap:11px}.section-icon{width:44px;height:44px;font-size:20px}.section-title-text h2{font-size:17px}.section-body{padding:0 16px 22px}.panel-grid{grid-template-columns:repeat(2,1fr)}.volt-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.emergency-item{align-items:flex-start}.footer-mini-links{gap:7px}.instagram-float{bottom:18px;right:15px}}
+</style>
+
+<!-- Cookies y Google Analytics 4: carga solo tras consentimiento -->
+<script>
+(function () {
+  'use strict';
+
+  if (window.__CAMPY_COOKIE_MANAGER_LOADED__) return;
+  window.__CAMPY_COOKIE_MANAGER_LOADED__ = true;
+
+  var GA_ID = 'G-CK0BB6T9TB';
+  var CONSENT_KEY = 'cookie_consent';
+  var CONSENT_TS_KEY = 'cookie_consent_ts';
+
+  // 365 días exactos.
+  var CONSENT_TTL_MS = 365 * 24 * 60 * 60 * 1000;
+  var GA_COOKIE_SECONDS = 365 * 24 * 60 * 60;
+
+  var lang = (document.documentElement.lang || 'es').slice(0, 2).toLowerCase();
+  if (['es', 'en', 'fr', 'de', 'it'].indexOf(lang) === -1) lang = 'es';
+
+  var texts = {
+    es: {
+      title: 'Esta web usa cookies analíticas',
+      description: 'Usamos Google Analytics 4 para conocer el uso de la web y mejorarla. No se carga hasta que aceptas.',
+      accept: 'Aceptar',
+      reject: 'Rechazar',
+      configure: 'Configurar',
+      preferences: 'Preferencias de cookies',
+      intro: 'Puedes activar o desactivar las cookies analíticas. Las funciones esenciales siempre permanecen activas.',
+      essential: 'Esenciales',
+      essentialText: 'Necesarias para guardar tu decisión y permitir el funcionamiento básico de la web.',
+      always: 'Siempre activas',
+      analytics: 'Analíticas · Google Analytics 4',
+      analyticsText: 'Nos ayudan a medir visitas y uso de la web. Proveedor: Google LLC.',
+      duration: 'Cookies _ga y _ga_CK0BB6T9TB · duración máxima: 12 meses desde la primera visita.',
+      save: 'Guardar preferencias',
+      policy: 'Política de cookies',
+      privacy: 'Política de privacidad',
+      change: 'Cambiar preferencias de cookies',
+      savedOn: 'Cookies analíticas activadas.',
+      savedOff: 'Cookies analíticas rechazadas y eliminadas.'
+    },
+    en: {
+      title: 'This website uses analytics cookies',
+      description: 'We use Google Analytics 4 to understand website usage and improve it. It is not loaded until you accept.',
+      accept: 'Accept',
+      reject: 'Reject',
+      configure: 'Configure',
+      preferences: 'Cookie preferences',
+      intro: 'You can enable or disable analytics cookies. Essential functions always remain enabled.',
+      essential: 'Essential',
+      essentialText: 'Required to save your choice and allow the website to function.',
+      always: 'Always enabled',
+      analytics: 'Analytics · Google Analytics 4',
+      analyticsText: 'They help us measure visits and website usage. Provider: Google LLC.',
+      duration: 'Cookies _ga and _ga_CK0BB6T9TB · maximum duration: 12 months from the first visit.',
+      save: 'Save preferences',
+      policy: 'Cookie policy',
+      privacy: 'Privacy policy',
+      change: 'Change cookie preferences',
+      savedOn: 'Analytics cookies enabled.',
+      savedOff: 'Analytics cookies rejected and deleted.'
+    },
+    fr: {
+      title: 'Ce site utilise des cookies analytiques',
+      description: 'Nous utilisons Google Analytics 4 pour mesurer l’utilisation du site et l’améliorer. Il ne se charge pas avant votre accord.',
+      accept: 'Accepter',
+      reject: 'Refuser',
+      configure: 'Configurer',
+      preferences: 'Préférences des cookies',
+      intro: 'Vous pouvez activer ou désactiver les cookies analytiques. Les fonctions essentielles restent toujours actives.',
+      essential: 'Essentiels',
+      essentialText: 'Nécessaires pour enregistrer votre choix et assurer le fonctionnement du site.',
+      always: 'Toujours actifs',
+      analytics: 'Analytiques · Google Analytics 4',
+      analyticsText: 'Ils nous aident à mesurer les visites et l’utilisation du site. Fournisseur : Google LLC.',
+      duration: 'Cookies _ga et _ga_CK0BB6T9TB · durée maximale : 12 mois depuis la première visite.',
+      save: 'Enregistrer',
+      policy: 'Politique de cookies',
+      privacy: 'Politique de confidentialité',
+      change: 'Modifier les préférences de cookies',
+      savedOn: 'Cookies analytiques activés.',
+      savedOff: 'Cookies analytiques refusés et supprimés.'
+    },
+    de: {
+      title: 'Diese Website verwendet Analyse-Cookies',
+      description: 'Wir verwenden Google Analytics 4, um die Nutzung der Website zu messen und sie zu verbessern. Es wird erst nach Ihrer Zustimmung geladen.',
+      accept: 'Akzeptieren',
+      reject: 'Ablehnen',
+      configure: 'Einstellen',
+      preferences: 'Cookie-Einstellungen',
+      intro: 'Sie können Analyse-Cookies aktivieren oder deaktivieren. Erforderliche Funktionen bleiben immer aktiv.',
+      essential: 'Erforderlich',
+      essentialText: 'Notwendig, um Ihre Auswahl zu speichern und die Website zu betreiben.',
+      always: 'Immer aktiv',
+      analytics: 'Analyse · Google Analytics 4',
+      analyticsText: 'Sie helfen uns, Besuche und die Nutzung der Website zu messen. Anbieter: Google LLC.',
+      duration: 'Cookies _ga und _ga_CK0BB6T9TB · maximale Dauer: 12 Monate ab dem ersten Besuch.',
+      save: 'Einstellungen speichern',
+      policy: 'Cookie-Richtlinie',
+      privacy: 'Datenschutz',
+      change: 'Cookie-Einstellungen ändern',
+      savedOn: 'Analyse-Cookies aktiviert.',
+      savedOff: 'Analyse-Cookies abgelehnt und gelöscht.'
+    },
+    it: {
+      title: 'Questo sito utilizza cookie analitici',
+      description: 'Utilizziamo Google Analytics 4 per misurare l’uso del sito e migliorarlo. Non viene caricato prima del consenso.',
+      accept: 'Accetta',
+      reject: 'Rifiuta',
+      configure: 'Configura',
+      preferences: 'Preferenze dei cookie',
+      intro: 'Puoi attivare o disattivare i cookie analitici. Le funzioni essenziali restano sempre attive.',
+      essential: 'Essenziali',
+      essentialText: 'Necessari per salvare la tua scelta e consentire il funzionamento del sito.',
+      always: 'Sempre attivi',
+      analytics: 'Analitici · Google Analytics 4',
+      analyticsText: 'Ci aiutano a misurare visite e utilizzo del sito. Fornitore: Google LLC.',
+      duration: 'Cookie _ga e _ga_CK0BB6T9TB · durata massima: 12 mesi dalla prima visita.',
+      save: 'Salva preferenze',
+      policy: 'Politica sui cookie',
+      privacy: 'Privacy',
+      change: 'Modifica preferenze cookie',
+      savedOn: 'Cookie analitici attivati.',
+      savedOff: 'Cookie analitici rifiutati ed eliminati.'
+    }
+  };
+
+  var t = texts[lang];
+  var languagePrefix = lang === 'es' ? '' : '/' + lang;
+  var cookiePolicy = languagePrefix + '/politica-cookies.html';
+  var privacyPolicy = languagePrefix + '/politica-privacidad.html';
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  window['ga-disable-' + GA_ID] = true;
+
+  var ga4Loaded = false;
+  var ga4Ready = false;
+  var qrEventSent = false;
+  var analyticsEnabled = false;
+
+  function setConsent(value) {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+      localStorage.setItem(CONSENT_TS_KEY, Date.now().toString());
+    } catch (error) {}
+  }
+
+  function deleteGACookies() {
+    var cookies = document.cookie.split(';');
+    var hostname = location.hostname;
+    var rootDomain = hostname.replace(/^www\./, '');
+    var domains = ['', hostname, '.' + rootDomain, rootDomain];
+
+    cookies.forEach(function (cookie) {
+      var name = cookie.split('=')[0].trim();
+
+      if (name === '_ga' || name.indexOf('_ga_') === 0) {
+        domains.forEach(function (domain) {
+          var domainPart = domain ? '; domain=' + domain : '';
+          document.cookie =
+            name +
+            '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; path=/' +
+            domainPart +
+            '; SameSite=Lax';
+        });
+      }
+    });
+  }
+
+  function getConsent() {
+    try {
+      var value = localStorage.getItem(CONSENT_KEY);
+      var timestamp = parseInt(localStorage.getItem(CONSENT_TS_KEY) || '0', 10);
+
+      if (!value || !timestamp) return null;
+
+      if (Date.now() - timestamp >= CONSENT_TTL_MS) {
+        localStorage.removeItem(CONSENT_KEY);
+        localStorage.removeItem(CONSENT_TS_KEY);
+        window['ga-disable-' + GA_ID] = true;
+        deleteGACookies();
+        return null;
+      }
+
+      return value;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function sendQrEvent() {
+    if (qrEventSent || !ga4Ready || getConsent() !== 'accepted') return;
+
+    var source = new URLSearchParams(window.location.search).get('src');
+    if (!source) return;
+
+    window.gtag('event', 'qr_visit', {
+      qr_source: source
+    });
+
+    qrEventSent = true;
+  }
+
+  function loadGA4() {
+    if (getConsent() !== 'accepted') return;
+
+    window['ga-disable-' + GA_ID] = false;
+
+    if (ga4Loaded) {
+      sendQrEvent();
+      return;
+    }
+
+    ga4Loaded = true;
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+
+    script.onload = function () {
+      window.gtag('js', new Date());
+
+      window.gtag('config', GA_ID, {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_expires: GA_COOKIE_SECONDS,
+        cookie_update: false
+      });
+
+      ga4Ready = true;
+      sendQrEvent();
+    };
+
+    script.onerror = function () {
+      ga4Loaded = false;
+      ga4Ready = false;
+      window['ga-disable-' + GA_ID] = true;
+    };
+
+    document.head.appendChild(script);
+  }
+
+  function safeGtagEvent(eventName, params) {
+    try {
+      if (getConsent() === 'accepted' && ga4Ready) {
+        window.gtag('event', eventName, params || {});
+      }
+    } catch (error) {}
+  }
+
+  function setToggle(enabled) {
+    analyticsEnabled = enabled;
+
+    var input = document.getElementById('campy-toggle-analytics');
+    var track = document.getElementById('campy-toggle-track');
+    var thumb = document.getElementById('campy-toggle-thumb');
+
+    if (input) input.checked = enabled;
+    if (track) track.style.background = enabled ? '#2196F3' : '#bbb';
+    if (thumb) thumb.style.transform = enabled ? 'translateX(22px)' : 'translateX(0)';
+  }
+
+  function showToast(message) {
+    var toast = document.createElement('div');
+    toast.textContent = message;
+    toast.className = 'campy-cookie-toast';
+    document.body.appendChild(toast);
+
+    setTimeout(function () {
+      toast.style.opacity = '0';
+      setTimeout(function () {
+        toast.remove();
+      }, 350);
+    }, 2600);
+  }
+
+  function showBanner() {
+    var banner = document.getElementById('campy-cookie-banner');
+    if (banner) banner.hidden = false;
+  }
+
+  function hideBanner() {
+    var banner = document.getElementById('campy-cookie-banner');
+    if (banner) banner.hidden = true;
+  }
+
+  function openCookiePanel() {
+    var panel = document.getElementById('campy-cookie-panel');
+    setToggle(getConsent() === 'accepted');
+    hideBanner();
+    if (panel) panel.hidden = false;
+  }
+
+  function closeCookiePanel() {
+    var panel = document.getElementById('campy-cookie-panel');
+    if (panel) panel.hidden = true;
+    if (!getConsent()) showBanner();
+  }
+
+  function acceptAnalytics() {
+    setConsent('accepted');
+    setToggle(true);
+    hideBanner();
+    closeCookiePanel();
+    loadGA4();
+    showToast(t.savedOn);
+  }
+
+  function rejectAnalytics() {
+    setConsent('rejected');
+    setToggle(false);
+    window['ga-disable-' + GA_ID] = true;
+    deleteGACookies();
+    hideBanner();
+    closeCookiePanel();
+    showToast(t.savedOff);
+  }
+
+  function savePreferences() {
+    if (analyticsEnabled) {
+      acceptAnalytics();
+    } else {
+      rejectAnalytics();
+    }
+  }
+
+  function addPreferencesLink() {
+    var existing = document.getElementById('cookie-prefs-link');
+
+    if (existing) {
+      existing.removeAttribute('onclick');
+      existing.addEventListener('click', function (event) {
+        event.preventDefault();
+        openCookiePanel();
+      });
+      return;
+    }
+
+    var footerLinks = document.querySelector('.footer-mini-links');
+    if (!footerLinks) return;
+
+    var separator = document.createElement('span');
+    separator.className = 'dot';
+    separator.textContent = '•';
+
+    var link = document.createElement('a');
+    link.href = '#';
+    link.id = 'cookie-prefs-link';
+    link.textContent = t.change;
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      openCookiePanel();
+    });
+
+    footerLinks.appendChild(separator);
+    footerLinks.appendChild(link);
+  }
+
+  function createUI() {
+    var style = document.createElement('style');
+    style.textContent = [
+      '.campy-cookie-ui{font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif}',
+      '#campy-cookie-banner[hidden],#campy-cookie-panel[hidden]{display:none!important}',
+      '#campy-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:12000;background:#fff;color:#333;border-top:1px solid #ddd;box-shadow:0 -5px 25px rgba(0,0,0,.15);padding:18px 20px}',
+      '.campy-cookie-banner-inner{max-width:1120px;margin:auto;display:flex;gap:20px;align-items:center;justify-content:space-between}',
+      '.campy-cookie-copy{max-width:720px}.campy-cookie-copy strong{display:block;color:#111;font-size:16px;margin-bottom:4px}.campy-cookie-copy p{font-size:13px;line-height:1.55;margin:0;color:#555}.campy-cookie-copy a{color:#1976D2}',
+      '.campy-cookie-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}',
+      '.campy-cookie-button{min-height:44px;padding:10px 18px;border-radius:8px;border:1px solid #1976D2;background:#fff;color:#1976D2;font-size:14px;font-weight:700;cursor:pointer}',
+      '.campy-cookie-button:hover{background:#eef7ff}.campy-cookie-button.primary{background:#2196F3;color:#fff;border-color:#2196F3}.campy-cookie-button.primary:hover{background:#1976D2}',
+      '#campy-cookie-panel{position:fixed;inset:0;z-index:12010;background:rgba(0,0,0,.58);padding:20px;display:flex;align-items:flex-end;justify-content:center}',
+      '.campy-cookie-panel-card{background:#fff;color:#333;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:16px;padding:24px;box-shadow:0 18px 55px rgba(0,0,0,.28)}',
+      '.campy-cookie-panel-card h2{font-size:22px;color:#111;margin:0 0 7px}.campy-cookie-panel-card>p{font-size:13px;color:#666;margin:0 0 18px}',
+      '.campy-cookie-row{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:16px 0;border-top:1px solid #eee}.campy-cookie-row strong{font-size:14px}.campy-cookie-row p{font-size:12px;color:#777;margin:4px 0 0;line-height:1.45}',
+      '.campy-cookie-always{white-space:nowrap;background:#eee;color:#666;border-radius:999px;padding:5px 10px;font-size:11px}',
+      '.campy-cookie-switch{position:relative;width:48px;height:26px;flex:0 0 48px}.campy-cookie-switch input{position:absolute;opacity:0}.campy-cookie-track{position:absolute;inset:0;border-radius:30px;background:#bbb;cursor:pointer;transition:.25s}.campy-cookie-thumb{position:absolute;width:20px;height:20px;left:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25);pointer-events:none;transition:.25s}',
+      '.campy-cookie-panel-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.campy-cookie-panel-actions .campy-cookie-button{flex:1}',
+      '.campy-cookie-legal{font-size:11px!important;text-align:center;margin-top:15px!important}.campy-cookie-legal a{color:#1976D2}',
+      '.campy-cookie-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:13000;background:#242424;color:#fff;padding:12px 18px;border-radius:8px;font-size:13px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,.3);transition:opacity .35s;max-width:calc(100vw - 30px)}',
+      '@media(max-width:760px){.campy-cookie-banner-inner{align-items:stretch;flex-direction:column}.campy-cookie-actions{display:grid;grid-template-columns:1fr 1fr;justify-content:stretch}.campy-cookie-actions .campy-cookie-button:last-child{grid-column:1/-1}.campy-cookie-button{width:100%}.campy-cookie-row{align-items:flex-start}}'
+    ].join('');
+    document.head.appendChild(style);
+
+    var banner = document.createElement('div');
+    banner.id = 'campy-cookie-banner';
+    banner.className = 'campy-cookie-ui';
+    banner.hidden = true;
+    banner.innerHTML =
+      '<div class="campy-cookie-banner-inner">' +
+        '<div class="campy-cookie-copy">' +
+          '<strong>' + t.title + '</strong>' +
+          '<p>' + t.description + ' <a href="' + cookiePolicy + '">' + t.policy + '</a>.</p>' +
+        '</div>' +
+        '<div class="campy-cookie-actions">' +
+          '<button type="button" class="campy-cookie-button primary" id="campy-cookie-accept">' + t.accept + '</button>' +
+          '<button type="button" class="campy-cookie-button" id="campy-cookie-reject">' + t.reject + '</button>' +
+          '<button type="button" class="campy-cookie-button" id="campy-cookie-configure">' + t.configure + '</button>' +
+        '</div>' +
+      '</div>';
+
+    var panel = document.createElement('div');
+    panel.id = 'campy-cookie-panel';
+    panel.className = 'campy-cookie-ui';
+    panel.hidden = true;
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-modal', 'true');
+    panel.setAttribute('aria-labelledby', 'campy-cookie-panel-title');
+    panel.innerHTML =
+      '<div class="campy-cookie-panel-card">' +
+        '<h2 id="campy-cookie-panel-title">' + t.preferences + '</h2>' +
+        '<p>' + t.intro + '</p>' +
+        '<div class="campy-cookie-row">' +
+          '<div><strong>' + t.essential + '</strong><p>' + t.essentialText + '</p></div>' +
+          '<span class="campy-cookie-always">' + t.always + '</span>' +
+        '</div>' +
+        '<div class="campy-cookie-row">' +
+          '<div><strong>' + t.analytics + '</strong><p>' + t.analyticsText + '</p><p>' + t.duration + '</p></div>' +
+          '<label class="campy-cookie-switch">' +
+            '<input id="campy-toggle-analytics" type="checkbox">' +
+            '<span class="campy-cookie-track" id="campy-toggle-track"></span>' +
+            '<span class="campy-cookie-thumb" id="campy-toggle-thumb"></span>' +
+          '</label>' +
+        '</div>' +
+        '<div class="campy-cookie-panel-actions">' +
+          '<button type="button" class="campy-cookie-button primary" id="campy-cookie-save">' + t.save + '</button>' +
+          '<button type="button" class="campy-cookie-button" id="campy-cookie-accept-all">' + t.accept + '</button>' +
+          '<button type="button" class="campy-cookie-button" id="campy-cookie-reject-all">' + t.reject + '</button>' +
+        '</div>' +
+        '<p class="campy-cookie-legal"><a href="' + cookiePolicy + '">' + t.policy + '</a> · <a href="' + privacyPolicy + '">' + t.privacy + '</a></p>' +
+      '</div>';
+
+    document.body.appendChild(banner);
+    document.body.appendChild(panel);
+
+    document.getElementById('campy-cookie-accept').addEventListener('click', acceptAnalytics);
+    document.getElementById('campy-cookie-reject').addEventListener('click', rejectAnalytics);
+    document.getElementById('campy-cookie-configure').addEventListener('click', openCookiePanel);
+    document.getElementById('campy-cookie-save').addEventListener('click', savePreferences);
+    document.getElementById('campy-cookie-accept-all').addEventListener('click', acceptAnalytics);
+    document.getElementById('campy-cookie-reject-all').addEventListener('click', rejectAnalytics);
+
+    document.getElementById('campy-toggle-analytics').addEventListener('change', function (event) {
+      setToggle(event.target.checked);
+    });
+
+    document.getElementById('campy-toggle-track').addEventListener('click', function () {
+      setToggle(!analyticsEnabled);
+    });
+
+    panel.addEventListener('click', function (event) {
+      if (event.target === panel) closeCookiePanel();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !panel.hidden) closeCookiePanel();
+    });
+
+    addPreferencesLink();
+
+    var consent = getConsent();
+
+    if (consent === 'accepted') {
+      loadGA4();
+    } else if (!consent) {
+      showBanner();
+    }
+  }
+
+  window.getConsent = getConsent;
+  window.safeGtagEvent = safeGtagEvent;
+  window.openCookiePanel = openCookiePanel;
+  window.deleteGACookies = deleteGACookies;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createUI);
+  } else {
+    createUI();
+  }
+})();
+</script>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="/de/" aria-label="Campy Canaria"><img src="../img/logo.webp" alt="Campy Canaria"></a>
+        <div class="lang-switcher"><a href="/manual.html">ES</a><a href="/en/manual.html">EN</a><a href="/fr/manual.html">FR</a><a href="/de/manual.html" class="active" aria-current="page">DE</a><a href="/it/manual.html">IT</a></div>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-menu"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <ul class="nav-links" id="main-menu">
+        <li><a href="/de/">Startseite</a></li>
+        <li><a href="/de/#vehiculo">Das Fahrzeug</a></li>
+        <li><a href="/de/#como-funciona">So funktioniert es</a></li>
+        <li><a href="/de/guias/">Reiseführer</a></li>
+        <li><a href="/de/#contacto">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="manual-hero">
+    <div class="hero-content">
+      <div class="hero-kicker"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Camper-Handbuch</div>
+      <h1>Camper-Benutzerhandbuch</h1>
+      <p>Alles, was du für dein Abenteuer auf Gran Canaria wissen musst 🌴</p>
+    </div>
+  </header>
+
+  <main class="manual-container">
+    <div class="manual-intro">
+      <h2>Camper-Benutzerhandbuch</h2>
+      <p>Der praktische Leitfaden für unseren Camper während deiner Reise auf Gran Canaria.</p>
+    </div>
+<div class="section-card open">
+<div aria-controls="section-de-1" aria-expanded="true" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-bolt"></i></div>
+<div class="section-title-text"><h2>1. Schnellstart</h2><p>Hauptschalter und Bedienfeld</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-1">
+<div class="subsection"><h3>Hauptschalter (unter dem Beifahrersitz — zwei rote Schalter)</h3>
+<ul class="info-list">
+<li><strong>Links:</strong> Solaranlage — immer eingeschaltet lassen.</li>
+<li><strong>Rechts — WOHN-GENERAL:</strong> Innenraumstrom (Licht, Wasserhahn, Kühlschrank, USB). Einschalten zur Nutzung.</li>
+</ul>
+</div>
+<div class="subsection"><h3>Innen-Bedienfeld (links → rechts)</h3>
+<div class="panel-grid">
+<div class="panel-btn"><i class="fa-solid fa-fire"></i><span class="btn-num">1</span><p>Warmwasser</p></div>
+<div class="panel-btn"><i class="fa-solid fa-faucet"></i><span class="btn-num">2</span><p>Wasserpumpe</p></div>
+<div class="panel-btn"><i class="fa-solid fa-lightbulb"></i><span class="btn-num">3</span><p>Licht, USB &amp; Audio</p></div>
+<div class="panel-btn"><i class="fa-solid fa-snowflake"></i><span class="btn-num">4</span><p>Kühlschrank</p></div>
+</div>
+</div>
+<div class="subsection"><h3>Voltmeter (zwischen Zigarettenanzünder und USB)</h3>
+<div class="volt-grid">
+<div class="volt-card ok"><div class="volt-value">&gt;12,8V</div><div class="volt-label">✅ Voll geladen</div></div>
+<div class="volt-card mid"><div class="volt-value">12,0–12,6V</div><div class="volt-label">⚠️ Halb geladen</div></div>
+<div class="volt-card low"><div class="volt-value">&lt;11,8V</div><div class="volt-label">🔴 Bald laden (Motor starten oder Solar in die Sonne)</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-2" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-music"></i></div>
+<div class="section-title-text"><h2>2. Energie &amp; Multimedia</h2><p>Licht, USB, Steckdosen und Audio</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-2">
+<div class="alert-box info"><i class="fa-solid fa-circle-info"></i><span><strong>Taste 3</strong> am Bedienfeld aktivieren für Licht, USB und Heck-Audio.</span></div>
+<div class="subsection"><h3>Lichtschalter</h3>
+<ul class="info-list">
+<li>Links am Spülenfensterrahmen.</li>
+<li>Linker Pfosten beim Eingang durch die Seitentür.</li>
+<li>Linker Pfosten beim Öffnen der Hecktüren.</li>
+</ul>
+</div>
+<div class="subsection"><h3>Zigarettenanzünder-Steckdosen (2)</h3>
+<ul class="info-list">
+<li>Am Bedienfeld.</li>
+<li>Heckbereich nahe dem Bett (Taste 3 muss aktiv sein).</li>
+</ul>
+</div>
+<div class="subsection"><h3>USB-Anschlüsse</h3>
+<ul class="info-list"><li>2 Anschlüsse am Bedienfeld. USB-A/USB-C Adapter inklusive.</li></ul>
+</div>
+<div class="subsection"><h3>Audio</h3>
+<ul class="info-list">
+<li><strong>Heck-Audio:</strong> Taste 3 + hinterer Schalter (neben der Steckdose). Bluetooth: <strong>YM069</strong>.</li>
+<li><strong>Kabinen-Audio:</strong> Bluetooth: <strong>BT-CAR</strong>. Kompatibel mit CarPlay und Android Auto per USB.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-3" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-droplet"></i></div>
+<div class="section-title-text"><h2>3. Wassersystem</h2><p>Befüllen, Entleeren, Hahn und Dusche</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-3">
+<div class="subsection"><h3>Frischwasser befüllen</h3>
+<ul class="step-list">
+<li><div class="step-num">1</div><p>Haupt- und Seitentür des Spülenschranks öffnen.</p></li>
+<li><div class="step-num">2</div><p>Tank hinter der Seitentür. Oberen Deckel abschrauben.</p></li>
+<li><div class="step-num">3</div><p>Schlauch so weit wie möglich einführen, um Spritzen zu vermeiden.</p></li>
+<li><div class="step-num">4</div><p>Wasser einschalten. Voll wenn Seitensensor 100% anzeigt oder Wasser ~10 cm unter dem Rand ist.</p></li>
+<li><div class="step-num">5</div><p>Deckel fest zuschrauben, um Überlaufen während der Fahrt zu vermeiden.</p></li>
+</ul>
+</div>
+<div class="subsection"><h3>Grauwasser entleeren</h3>
+<div class="alert-box warn"><i class="fa-solid fa-triangle-exclamation"></i><span>Bei vollem Tank ertönt ein Alarm und eine gelbe Lampe leuchtet. Alarm mit dem Schalter unter der Spüle (links) abschalten.</span></div>
+<ul class="step-list">
+<li><div class="step-num">1</div><p>Schlauch zu einer genehmigten Entsorgungsstelle führen.</p></li>
+<li><div class="step-num">2</div><p>Ventil öffnen und Tank entleeren.</p></li>
+<li><div class="step-num">3</div><p>Hahn einige Sekunden öffnen, um mit Frischwasser zu spülen.</p></li>
+<li><div class="step-num">4</div><p>Schlauch einrollen und Ventil schließen.</p></li>
+</ul>
+</div>
+<div class="subsection"><h3>Hahn und Außendusche</h3>
+<ul class="info-list">
+<li><strong>Taste 2</strong> einschalten, um die Pumpe zu aktivieren.</li>
+<li>Der Hahn ist ausziehbar — durch das Fenster ziehen als Außendusche (Haken im Plastikbehälter unter dem Bett).</li>
+</ul>
+</div>
+<div class="subsection"><h3>Warmwasser (Taste 1)</h3>
+<ul class="info-list">
+<li>Empfohlen: Motor laufen lassen beim Erhitzen.</li>
+<li>Steigt ~1 °C alle 10 Min, max. 35 °C in 240 Min.</li>
+<li>Nicht mit leerem Tank benutzen.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-4" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-toilet"></i></div>
+<div class="section-title-text"><h2>4. Portable Toilette</h2><p>Benutzung und Entleerung</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-4">
+<div class="alert-box info"><i class="fa-solid fa-circle-info"></i><span>Standort: Schrank rechts vom Kühlschrank. Nicht fahren wenn der untere Tank mehr als ¾ gefüllt ist.</span></div>
+<div class="subsection"><h3>Vor der Benutzung</h3>
+<ul class="info-list"><li>Unteren Tank mit ~2 L Wasser und einem Deckel des grünen Produkts befüllen.</li></ul>
+</div>
+<div class="subsection"><h3>Benutzung</h3>
+<ul class="step-list">
+<li><div class="step-num">1</div><p>Deckel heben.</p></li>
+<li><div class="step-num">2</div><p>Klappe mit dem Hebel öffnen.</p></li>
+<li><div class="step-num">3</div><p>Toilette benutzen.</p></li>
+<li><div class="step-num">4</div><p>Spülschlauch herausziehen und Rückstände ins Innere spülen.</p></li>
+<li><div class="step-num">5</div><p>Mit der WC-Flasche nachspülen für frischen Geruch.</p></li>
+<li><div class="step-num">6</div><p>Klappe schließen.</p></li>
+</ul>
+</div>
+<div class="subsection"><h3>Entleerung</h3>
+<ul class="step-list">
+<li><div class="step-num">1</div><p>Unteren Tank mit dem Seitenknopf abnehmen.</p></li>
+<li><div class="step-num">2</div><p>An einem genehmigten Ort entleeren.</p></li>
+<li><div class="step-num">3</div><p>Mit Wasser ausspülen und wieder befestigen.</p></li>
+</ul>
+</div>
+<div class="alert-box danger"><i class="fa-solid fa-ban"></i><span>Kein Papier oder Feuchttücher einwerfen. Nicht der Sonne aussetzen.</span></div>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-5" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-fire-burner"></i></div>
+<div class="section-title-text"><h2>5. Küche &amp; Gas</h2><p>Tragbarer Gasofen</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-5">
+<ul class="info-list">
+<li>Gasflasche unter der Spüle, rechte Seite.</li>
+<li>Ofen herausnehmen und auf einer stabilen Fläche abstellen (z.B. Tisch).</li>
+<li>Ventil der Gasflasche vor Gebrauch öffnen.</li>
+<li>Ofenknopf drücken und drehen, um mit dem Zündfunken zu zünden.</li>
+<li>Ventil schließen und Gasflasche nach dem Kochen trennen.</li>
+</ul>
+<div class="alert-box danger"><i class="fa-solid fa-ban"></i><span>Gasflasche niemals angeschlossen lassen, wenn sie nicht benutzt wird.</span></div>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-6" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-lock"></i></div>
+<div class="section-title-text"><h2>6. Schlösser &amp; Hinweise</h2><p>Türen und Vorhängeschlösser</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-6">
+<ul class="info-list">
+<li><strong>Fahrertür:</strong> schließt durch Drehen des Schlüssels nach <strong>rechts</strong>.</li>
+<li><strong>Beifahrer-, Seiten- und Hecktüren:</strong> schließen durch Drehen des Schlüssels nach <strong>links</strong>.</li>
+<li><strong>Außen-Vorhängeschlösser:</strong> einrasten ohne zu drücken.</li>
+<li><strong>Innere Schiebetür:</strong> gesichert durch Ziehen des Hebels nach rechts. Zum Öffnen nach links drücken.</li>
+</ul>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-7" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-circle-dot"></i></div>
+<div class="section-title-text"><h2>7. Reifenwechsel</h2><p>Ersatzreifen und Werkzeug</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-7">
+<div class="subsection"><h3>Werkzeug &amp; Standort</h3>
+<ul class="info-list">
+<li><strong>Werkzeug</strong> unter dem Bett (linke Seite): Wagenheber, Heberstange, 17mm-Schlüssel, Verlängerungen, Ratsche und 14mm-Nuss.</li>
+<li><strong>Ersatzreifen:</strong> unter dem Heckchassis.</li>
+</ul>
+</div>
+<div class="subsection"><h3>Schritte</h3>
+<ul class="step-list">
+<li><div class="step-num">1</div><p>An einem sicheren Ort anhalten.</p></li>
+<li><div class="step-num">2</div><p>Beide Verlängerungen mit der Ratsche und der 14mm-Nuss zusammenstecken.</p></li>
+<li><div class="step-num">3</div><p>Durch das quadratische Loch in der Mitte des Fahrzeughecks einführen.</p></li>
+<li><div class="step-num">4</div><p>Mutter unten einrasten. Drehen um das Kabel zu lösen und Reifen herauszunehmen.</p></li>
+<li><div class="step-num">5</div><p>Haken drehen bis er durch das Felgenloch passt und Reifen entnehmen.</p></li>
+<li><div class="step-num">6</div><p>Kabel wieder spannen sobald der Ersatzreifen entnommen ist.</p></li>
+<li><div class="step-num">7</div><p>Schrauben des platten Reifens lösen (nicht entfernen). Wagenheber an tragfähiger Stelle ansetzen und Fahrzeug heben.</p></li>
+<li><div class="step-num">8</div><p>Reifen wechseln, Muttern aufsetzen (nicht ganz anziehen), Fahrzeug herunterlassen.</p></li>
+<li><div class="step-num">9</div><p>Schrauben am Boden festziehen. Nächste Werkstatt aufsuchen.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-8" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-kit-medical"></i></div>
+<div class="section-title-text"><h2>8. Notfälle &amp; Extras</h2><p>Erste-Hilfe-Kasten und Notrufnummern</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-8">
+<div class="subsection"><h3>Erste-Hilfe-Kasten</h3>
+<ul class="info-list">
+<li>Unter dem Bett, links hängend.</li>
+<li>Enthält: Verbände, Gaze, Tourniquet, Rettungsdecke und Schere.</li>
+</ul>
+</div>
+<div class="subsection"><h3>Notrufnummern</h3>
+<div class="emergency-list">
+<div class="emergency-item"><span class="service">🆘 Allgemeine Notfälle</span><span class="number">112</span></div>
+<div class="emergency-item"><span class="service">🚔 Verkehrspolizei</span><span class="number">062</span></div>
+<div class="emergency-item"><span class="service">👮 Nationalpolizei</span><span class="number">091</span></div>
+<div class="emergency-item"><span class="service">🚓 Lokalpolizei</span><span class="number">092</span></div>
+<div class="emergency-item"><span class="service">💊 Apothekennotdienst</span><span class="number">091</span></div>
+<div class="emergency-item"><span class="service">🏝️ Tourismus Kanarische Inseln</span><span class="number">012</span></div>
+<div class="emergency-item"><span class="service">🚌 Busse Gran Canaria</span><span class="number">928 252 630</span></div>
+<div class="emergency-item"><span class="service">🛣️ Straßeninfo DGT</span><span class="number">011</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-card">
+<div aria-controls="section-de-9" aria-expanded="false" class="section-header" role="button" tabindex="0">
+<div class="section-icon"><i class="fa-solid fa-headset"></i></div>
+<div class="section-title-text"><h2>9. Kontakt</h2><p>Fragen? Wir helfen gerne!</p></div>
+<i class="fa-solid fa-chevron-down chevron"></i>
+</div>
+<div class="section-body" id="section-de-9">
+<div class="contact-grid">
+<div class="contact-card"><i class="fa-brands fa-whatsapp"></i><div><div class="name">Alberto</div><div class="phone"><a href="tel:+34622254201">+34 622 254 201</a></div></div></div>
+<div class="contact-card"><i class="fa-brands fa-whatsapp"></i><div><div class="name">Lauren</div><div class="phone"><a href="tel:+34665813002">+34 665 813 002</a></div></div></div>
+</div>
+<div class="alert-box info" style="margin-top:14px"><i class="fa-brands fa-instagram"></i><span>Auch per Instagram erreichbar: <a href="https://instagram.com/campycanaria" target="_blank"><strong>@campycanaria</strong></a></span></div>
+</div>
+</div>
+    <div class="back-home"><a class="btn btn-primary" href="/de/"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>&nbsp; Zurück zur Startseite</a></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img class="footer-logo" src="../img/logo.webp" alt="Campy Canaria">
+            <div><div class="footer-brand-name">Campy Canaria</div><div class="footer-brand-tag">Campervermietung auf Gran Canaria</div></div>
+          </div>
+          <p>Der praktische Leitfaden für unseren Camper während deiner Reise auf Gran Canaria.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Nützliche Links</h3>
+          <nav class="footer-links" aria-label="Nützliche Links">
+            <a href="/de/">Startseite</a>
+            <a href="/de/guias/">Gran-Canaria-Reiseführer</a>
+            <a href="https://www.yescapa.es/campers/100885" target="_blank" rel="noopener">Sicher über Yescapa buchen</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <div class="footer-card">
+            <div class="footer-card-title">Kontakt</div>
+            <div class="footer-card-text"><a href="mailto:campycanaria@gmail.com">campycanaria@gmail.com</a><br><a href="https://instagram.com/campycanaria" target="_blank" rel="noopener">@campycanaria</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Campy Canaria · Gran Canaria, España</div>
+        <div class="footer-mini-links">
+          <a href="/de/aviso-legal.html">Impressum</a><span class="dot">•</span>
+          <a href="/de/politica-privacidad.html">Datenschutz</a><span class="dot">•</span>
+          <a href="/de/politica-cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="instagram-float" href="https://instagram.com/campycanaria" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.section-header').forEach(function (header) {
+      function toggle() {
+        var card = header.closest('.section-card');
+        var open = card.classList.toggle('open');
+        header.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      header.addEventListener('click', toggle);
+      header.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
+      });
+      header.removeAttribute('onclick');
+    });
+
+    var btn = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-links');
+    var overlay = document.querySelector('.nav-overlay');
+    if (!btn || !menu || !overlay) return;
+    function isOpen() { return menu.classList.contains('open'); }
+    function openMenu() { menu.classList.add('open'); overlay.classList.add('show'); btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeMenu() { menu.classList.remove('open'); overlay.classList.remove('show'); btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    btn.addEventListener('click', function () { isOpen() ? closeMenu() : openMenu(); });
+    overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && isOpen()) closeMenu(); });
+    menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeMenu); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 768 && isOpen()) closeMenu(); });
+  });
+  </script>
+</body>
+</html>
