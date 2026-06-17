@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manual de la camper | Selecciona tu idioma</title>
+  <meta name="description" content="Selecciona el idioma del manual de uso de la camper Campy Canaria.">
+
+  <!-- Evita que esta portada aparezca en buscadores -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="referrer" content="no-referrer">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+  <style>
+    :root {
+      --primary: #2196F3;
+      --primary-dark: #1976D2;
+      --text: #1f2933;
+      --muted: #66727e;
+      --surface: #ffffff;
+      --page: #f5f8fb;
+      --border: rgba(0, 0, 0, .07);
+      --shadow: 0 14px 36px rgba(15, 23, 42, .12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--page);
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: var(--page);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .main-nav {
+      width: 100%;
+      height: 82px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .09);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    .logo img {
+      display: block;
+      width: auto;
+      height: 52px;
+    }
+
+    .logo:focus-visible {
+      outline: 3px solid rgba(33, 150, 243, .45);
+      outline-offset: 5px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 128px 20px 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .62)),
+        url("img/banner1.webp") center / cover no-repeat;
+    }
+
+    .selector-panel {
+      width: min(960px, 100%);
+      padding: 42px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .95);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(9px);
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      color: var(--primary-dark);
+      background: #e3f2fd;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .35px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: clamp(31px, 5vw, 48px);
+      line-height: 1.12;
+      font-weight: 700;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: clamp(16px, 2.2vw, 19px);
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .language-card {
+      min-height: 186px;
+      padding: 22px 15px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface);
+      box-shadow: 0 4px 15px rgba(15, 23, 42, .06);
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease,
+        background .22s ease;
+    }
+
+    .language-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(33, 150, 243, .48);
+      background: #f6fbff;
+      box-shadow: 0 13px 27px rgba(33, 150, 243, .15);
+    }
+
+    .language-card:focus-visible {
+      outline: 4px solid rgba(33, 150, 243, .32);
+      outline-offset: 3px;
+    }
+
+    .flag {
+      margin-bottom: 12px;
+      font-size: 43px;
+      line-height: 1;
+      filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .13));
+    }
+
+    .language-name {
+      margin-bottom: 4px;
+      font-size: 19px;
+      font-weight: 750;
+    }
+
+    .manual-label {
+      min-height: 40px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .open-label {
+      margin-top: 13px;
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .open-label::after {
+      content: "  →";
+    }
+
+    .privacy-note {
+      margin-top: 25px;
+      color: #7b8792;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .language-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .main-nav {
+        height: 74px;
+      }
+
+      .logo img {
+        height: 46px;
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding: 104px 14px 28px;
+        align-items: flex-start;
+      }
+
+      .selector-panel {
+        padding: 27px 16px 22px;
+        border-radius: 18px;
+      }
+
+      .intro {
+        margin-bottom: 23px;
+      }
+
+      .language-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .language-card {
+        min-height: 96px;
+        padding: 14px 17px;
+        display: grid;
+        grid-template-columns: 54px 1fr auto;
+        grid-template-rows: auto auto;
+        column-gap: 12px;
+        text-align: left;
+      }
+
+      .flag {
+        grid-row: 1 / 3;
+        margin: 0;
+        font-size: 36px;
+        text-align: center;
+      }
+
+      .language-name {
+        align-self: end;
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .manual-label {
+        min-height: 0;
+        align-self: start;
+        font-size: 12px;
+      }
+
+      .open-label {
+        grid-column: 3;
+        grid-row: 1 / 3;
+        align-self: center;
+        margin: 0;
+        font-size: 0;
+      }
+
+      .open-label::after {
+        content: "→";
+        font-size: 24px;
+      }
+
+      .privacy-note {
+        margin-top: 19px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="main-nav" aria-label="Campy Canaria">
+    <div class="nav-container">
+      <a class="logo" href="/" aria-label="Ir a Campy Canaria">
+        <img src="img/logo.webp" alt="Campy Canaria">
+      </a>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <section class="selector-panel" aria-labelledby="page-title">
+      <div class="intro">
+        <div class="kicker">Manual de la camper</div>
+        <h1 id="page-title">Selecciona tu idioma</h1>
+        <p>Choose your language · Choisissez votre langue · Sprache wählen · Seleziona la lingua</p>
+      </div>
+
+      <div class="language-grid" aria-label="Idiomas disponibles">
+        <a class="language-card" href="/manual.html" lang="es" hreflang="es" aria-label="Abrir el manual en español">
+          <span class="flag" aria-hidden="true">🇪🇸</span>
+          <span class="language-name">Español</span>
+          <span class="manual-label">Manual en español</span>
+          <span class="open-label">Abrir manual</span>
+        </a>
+
+        <a class="language-card" href="/en/manual.html" lang="en" hreflang="en" aria-label="Open the manual in English">
+          <span class="flag" aria-hidden="true">🇬🇧</span>
+          <span class="language-name">English</span>
+          <span class="manual-label">English user manual</span>
+          <span class="open-label">Open manual</span>
+        </a>
+
+        <a class="language-card" href="/fr/manual.html" lang="fr" hreflang="fr" aria-label="Ouvrir le manuel en français">
+          <span class="flag" aria-hidden="true">🇫🇷</span>
+          <span class="language-name">Français</span>
+          <span class="manual-label">Manuel en français</span>
+          <span class="open-label">Ouvrir</span>
+        </a>
+
+        <a class="language-card" href="/de/manual.html" lang="de" hreflang="de" aria-label="Handbuch auf Deutsch öffnen">
+          <span class="flag" aria-hidden="true">🇩🇪</span>
+          <span class="language-name">Deutsch</span>
+          <span class="manual-label">Handbuch auf Deutsch</span>
+          <span class="open-label">Öffnen</span>
+        </a>
+
+        <a class="language-card" href="/it/manual.html" lang="it" hreflang="it" aria-label="Apri il manuale in italiano">
+          <span class="flag" aria-hidden="true">🇮🇹</span>
+          <span class="language-name">Italiano</span>
+          <span class="manual-label">Manuale in italiano</span>
+          <span class="open-label">Apri</span>
+        </a>
+      </div>
+
+      <p class="privacy-note">Página destinada a los viajeros de Campy Canaria.</p>
+    </section>
+  </main>
+</body>
+</html>
